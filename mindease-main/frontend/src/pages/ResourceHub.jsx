@@ -3,14 +3,78 @@ import { Search, Filter, PlayCircle } from 'lucide-react';
 
 const ResourceHub = () => {
   const [activeFilter, setActiveFilter] = useState('All');
-  const filters = ['All', 'Anxiety', 'Sleep', 'Mindfulness', 'Relationships', 'Study Tips'];
+  const [searchQuery, setSearchQuery] = useState('');
+  const filters = ['All', 'Crisis Support', 'Anxiety', 'Sleep', 'Mindfulness', 'Self-Help'];
 
   const resources = [
-    { title: "5-Minute Guided Meditation for Exams", tag: "MINDFULNESS", rating: "4.8", length: "5:20", desc: "A quick session designed specifically for students to reset during intense...", type: "audio", image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?fit=crop&w=400&h=250&q=80" },
-    { title: "The Science of Sleep and Academic Success", tag: "SLEEP", rating: "4.9", length: "8 min read", desc: "Learn how sleep cycles affect memory retention and how to optimize...", type: "article", image: "https://images.unsplash.com/photo-1511295742362-92c96b124e52?fit=crop&w=400&h=250&q=80" },
-    { title: "Overcoming Anxiety and Stress", tag: "ANXIETY", rating: "4.7", length: "12:45", desc: "Expert tips on managing college-related anxiety and building long-term...", type: "video", image: "https://images.unsplash.com/photo-1508247201083-a4c849195bdf?fit=crop&w=400&h=250&q=80" },
-    { title: "Daily Yoga Routine for Students", tag: "MINDFULNESS", rating: "4.6", length: "15:00", desc: "Relieve tension from sitting at a desk all day with these simple yoga poses.", type: "video", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?fit=crop&w=400&h=250&q=80" }
+    {
+      title: 'Tele-MANAS India (24x7 Mental Health Helpline)',
+      tag: 'CRISIS SUPPORT',
+      rating: 'Trusted',
+      length: '24/7',
+      desc: 'National mental health helpline. Call 14416 or 1-800-891-4416 for immediate support.',
+      type: 'helpline',
+      link: 'https://telemanas.mohfw.gov.in/home',
+      image: 'https://images.unsplash.com/photo-1576086213369-97a306d36557?fit=crop&w=400&h=250&q=80'
+    },
+    {
+      title: 'iCALL Psychosocial Helpline',
+      tag: 'CRISIS SUPPORT',
+      rating: 'Trusted',
+      length: 'Helpline',
+      desc: 'Professional, confidential emotional support in India via phone/email/chat.',
+      type: 'helpline',
+      link: 'https://icallhelpline.org/',
+      image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?fit=crop&w=400&h=250&q=80'
+    },
+    {
+      title: 'NIMHANS Centre for Well Being',
+      tag: 'SELF-HELP',
+      rating: 'Clinical',
+      length: 'Articles',
+      desc: 'Evidence-informed mental wellness material from a leading Indian institute.',
+      type: 'article',
+      link: 'https://nimhans.ac.in/centre-for-well-being/',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?fit=crop&w=400&h=250&q=80'
+    },
+    {
+      title: 'NHS: Self-help for Anxiety',
+      tag: 'ANXIETY',
+      rating: 'Clinical',
+      length: 'Guide',
+      desc: 'Practical self-help strategies from the UK National Health Service.',
+      type: 'article',
+      link: 'https://www.nhs.uk/mental-health/conditions/generalised-anxiety-disorder/self-help/',
+      image: 'https://images.unsplash.com/photo-1493836512294-502baa1986e2?fit=crop&w=400&h=250&q=80'
+    },
+    {
+      title: 'CDC: About Sleep',
+      tag: 'SLEEP',
+      rating: 'Evidence',
+      length: '5 min read',
+      desc: 'Simple sleep habits that improve focus, energy, and mental health.',
+      type: 'article',
+      link: 'https://www.cdc.gov/sleep/about/index.html',
+      image: 'https://images.unsplash.com/photo-1455642305367-68834a5f90a9?fit=crop&w=400&h=250&q=80'
+    },
+    {
+      title: 'Mindful Self-Compassion Practices',
+      tag: 'MINDFULNESS',
+      rating: 'Trusted',
+      length: 'Exercises',
+      desc: 'Free guided practices for reducing stress and self-criticism.',
+      type: 'audio',
+      link: 'https://self-compassion.org/category/exercises/',
+      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?fit=crop&w=400&h=250&q=80'
+    }
   ];
+
+  const filteredResources = resources.filter((item) => {
+    const matchesFilter = activeFilter === 'All' || item.tag.toLowerCase() === activeFilter.toLowerCase();
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch = !q || item.title.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q);
+    return matchesFilter && matchesSearch;
+  });
 
   return (
     <div className="animate-fade-in" style={{ paddingBottom: '3rem' }}>
@@ -19,7 +83,7 @@ const ResourceHub = () => {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
         <div>
           <h1 style={{ fontSize: '1.8rem', color: 'var(--secondary)' }}>Wellness Resource Hub</h1>
-          <p style={{ color: 'var(--text-secondary)', margin: '0.25rem 0 1rem 0' }}>Expert-curated content to help you thrive mentally and physically.</p>
+          <p style={{ color: 'var(--text-secondary)', margin: '0.25rem 0 1rem 0' }}>Evidence-based mental health resources and helplines with real working links.</p>
           
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             {filters.map(filter => (
@@ -45,7 +109,14 @@ const ResourceHub = () => {
           <button className="btn btn-outline" style={{ padding: '0.6rem', border: '1px solid var(--border-light)', color: 'var(--text-secondary)' }}><Filter size={18}/></button>
           <div style={{ position: 'relative' }}>
             <Search size={16} color="var(--text-muted)" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
-            <input type="text" placeholder="Search resources..." className="input-field" style={{ paddingLeft: '2.5rem', borderRadius: '999px', width: '250px' }} />
+            <input
+              type="text"
+              placeholder="Search resources..."
+              className="input-field"
+              style={{ paddingLeft: '2.5rem', borderRadius: '999px', width: '250px' }}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
           </div>
         </div>
       </div>
@@ -54,17 +125,23 @@ const ResourceHub = () => {
       <div style={{ background: 'linear-gradient(135deg, #0ea5e9, #10b981)', borderRadius: '24px', padding: '3.5rem 3rem', color: 'white', marginBottom: '3rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '600px' }}>
           <span style={{ fontSize: '0.75rem', fontWeight: 'bold', letterSpacing: '2px', backgroundColor: 'rgba(255,255,255,0.2)', padding: '0.3rem 0.8rem', borderRadius: '999px', display: 'inline-block', marginBottom: '1.5rem' }}>FEATURED SERIES</span>
-          <h2 style={{ fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem' }}>Mindful Semester: The Complete Guide</h2>
-          <p style={{ fontSize: '1.05rem', opacity: 0.9, marginBottom: '2rem', lineHeight: 1.6 }}>A 12-part masterclass on maintaining mental clarity and emotional balance throughout your academic year.</p>
-          <button className="btn" style={{ backgroundColor: 'white', color: '#0ea5e9', padding: '0.75rem 1.5rem', fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            Start Learning Now <PlayCircle size={18} />
-          </button>
+          <h2 style={{ fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem' }}>Need Immediate Mental Health Support?</h2>
+          <p style={{ fontSize: '1.05rem', opacity: 0.9, marginBottom: '2rem', lineHeight: 1.6 }}>If you or someone you know is in distress, use a verified helpline now. You do not have to go through this alone.</p>
+          <a
+            href="https://telemanas.mohfw.gov.in/home"
+            target="_blank"
+            rel="noreferrer"
+            className="btn"
+            style={{ backgroundColor: 'white', color: '#0ea5e9', padding: '0.75rem 1.5rem', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}
+          >
+            Open Tele-MANAS <PlayCircle size={18} />
+          </a>
         </div>
       </div>
 
       {/* Grid */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '1.5rem' }}>
-        {resources.map((item, idx) => (
+        {filteredResources.map((item, idx) => (
           <div key={idx} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ height: '160px', position: 'relative' }}>
               <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -79,11 +156,23 @@ const ResourceHub = () => {
               </div>
               <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', lineHeight: 1.3, color: 'var(--text-primary)' }}>{item.title}</h3>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.85rem', lineHeight: 1.5, marginBottom: '1.5rem' }}>{item.desc}</p>
-              <a href="#" style={{ marginTop: 'auto', display: 'inline-block', fontSize: '0.9rem', color: '#0ea5e9', fontWeight: '600' }}>Open Resource ↗</a>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+                style={{ marginTop: 'auto', display: 'inline-block', fontSize: '0.9rem', color: '#0ea5e9', fontWeight: '600' }}
+              >
+                Open Resource ↗
+              </a>
             </div>
           </div>
         ))}
       </div>
+      {filteredResources.length === 0 && (
+        <div className="card" style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+          No resources match your search. Try a broader keyword.
+        </div>
+      )}
 
     </div>
   );

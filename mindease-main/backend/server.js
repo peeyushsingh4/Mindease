@@ -1,8 +1,8 @@
 require('dotenv').config();
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
+const { getFirebaseApp } = require('./lib/firebase');
 
 const app = express();
 
@@ -90,23 +90,8 @@ const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
   try {
-    let uri;
-
-    if (process.env.MONGO_URI && !process.env.MONGO_URI.includes('127.0.0.1')) {
-      // Production / staging: use the real MongoDB URI from .env
-      uri = process.env.MONGO_URI;
-      await mongoose.connect(uri);
-      console.log('MongoDB connected:', uri.replace(/:\/\/.*@/, '://***@')); // hide credentials in log
-    } else {
-      // Development fallback: use in-memory server if no real URI is provided
-      // WARNING: all data is lost when the server restarts in this mode
-      console.warn('[DEV] No persistent MONGO_URI set — using in-memory MongoDB. Data will not survive restarts.');
-      const { MongoMemoryServer } = require('mongodb-memory-server');
-      const mongoServer = await MongoMemoryServer.create();
-      uri = mongoServer.getUri();
-      await mongoose.connect(uri);
-      console.log('MongoDB Memory Server connected (development only)');
-    }
+    getFirebaseApp();
+    console.log('Firebase Admin initialized');
 
     app.listen(PORT, () =>
       console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`)

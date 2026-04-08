@@ -7,3 +7,4 @@ export const API_BASE_URL = (
 ).replace(/\/$/, '');
 
 export const TOKEN_STORAGE_KEY = 'mindease.mobile.token';
+export const REFRESH_TOKEN_STORAGE_KEY = 'mindease.mobile.refreshToken';

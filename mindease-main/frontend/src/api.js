@@ -1,6 +1,7 @@
 import axios from 'axios';
 const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api').replace(/\/$/, '');
 const AUTH_UNAUTHORIZED_EVENT = 'auth:unauthorized';
+const REFRESH_STORAGE_KEY = 'refreshToken';
 
 // Create an Axios instance
 const api = axios.create({
@@ -32,10 +33,37 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
+    const originalRequest = error?.config;
+    if (error?.response?.status === 401 && !originalRequest?._retry) {
+      originalRequest._retry = true;
+      try {
+        const refreshToken = localStorage.getItem(REFRESH_STORAGE_KEY);
+        if (refreshToken) {
+          const refreshRes = await axios.post(`${API_BASE_URL}/auth/refresh`, { refreshToken });
+          const nextToken = refreshRes?.data?.token;
+          const nextRefreshToken = refreshRes?.data?.refreshToken;
+          if (nextToken) {
+            localStorage.setItem('token', nextToken);
+            if (nextRefreshToken) {
+              localStorage.setItem(REFRESH_STORAGE_KEY, nextRefreshToken);
+            }
+            originalRequest.headers = {
+              ...originalRequest.headers,
+              Authorization: `Bearer ${nextToken}`
+            };
+            return api(originalRequest);
+          }
+        }
+      } catch (refreshErr) {
+        // Fall through to unauthorized handling below.
+      }
+    }
+
     if (error?.response?.status === 401) {
       try {
         localStorage.removeItem('token');
+        localStorage.removeItem(REFRESH_STORAGE_KEY);
       } catch (err) {
         console.error('Could not clear auth token from local storage:', err);
       }
@@ -61,4 +89,5 @@ export const getApiErrorMessage = (error, fallback = 'Something went wrong. Plea
 
 export { AUTH_UNAUTHORIZED_EVENT };
 export { API_BASE_URL };
+export { REFRESH_STORAGE_KEY };
 export default api;

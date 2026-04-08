@@ -1,4 +1,6 @@
-const Journal = require('../models/Journal');
+const { getDb } = require('../lib/firebase');
+
+const nowIso = () => new Date().toISOString();
 
 // @desc    Add journal entry
 // @route   POST /api/journal
@@ -7,11 +9,14 @@ exports.addEntry = async (req, res) => {
   try {
     const { content, prompt } = req.body;
 
-    const journal = await Journal.create({
+    const payload = {
       user: req.user.id,
       content,
-      prompt
-    });
+      prompt,
+      createdAt: nowIso()
+    };
+    const docRef = await getDb().collection('journals').add(payload);
+    const journal = { _id: docRef.id, id: docRef.id, ...payload };
 
     res.status(201).json({
       success: true,
@@ -27,7 +32,10 @@ exports.addEntry = async (req, res) => {
 // @access  Private
 exports.getEntries = async (req, res) => {
   try {
-    const entries = await Journal.find({ user: req.user.id }).sort('-createdAt');
+    const snapshot = await getDb().collection('journals').where('user', '==', req.user.id).get();
+    const entries = snapshot.docs
+      .map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }))
+      .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
     res.status(200).json({
       success: true,
       count: entries.length,

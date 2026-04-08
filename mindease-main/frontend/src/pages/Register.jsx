@@ -34,13 +34,13 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name || !email || !password) return setError('Please fill in all required fields.');
+    if (!name.trim() || !email.trim() || !password) return setError('Please fill in all required fields.');
     if (password.length < 6) return setError('Password must be at least 6 characters.');
     if (!guardianName || !guardianPhone) return setError('Please provide emergency contact details.');
     setError('');
     setLoading(true);
     try {
-      await register(name, email, password, role);
+      await register(name.trim(), email.trim(), password, role);
       // Save guardian details after registration
       try {
         await api.put('/auth/guardian', { guardianName, guardianPhone, guardianRelation });

@@ -1,4 +1,6 @@
-const Screening = require('../models/Screening');
+const { getDb } = require('../lib/firebase');
+
+const nowIso = () => new Date().toISOString();
 
 const getSeverity = (type, score) => {
   if (type === 'PHQ-9') {
@@ -36,13 +38,16 @@ exports.submitScreening = async (req, res) => {
     const score = answers.reduce((acc, curr) => acc + Number(curr), 0);
     const severity = getSeverity(type, score);
 
-    const screening = await Screening.create({
+    const payload = {
       user: req.user.id,
       type,
       score,
       severity,
-      answers
-    });
+      answers,
+      createdAt: nowIso()
+    };
+    const docRef = await getDb().collection('screenings').add(payload);
+    const screening = { _id: docRef.id, id: docRef.id, ...payload };
 
     res.status(201).json({ success: true, data: screening });
   } catch (err) {
@@ -55,7 +60,10 @@ exports.submitScreening = async (req, res) => {
 // @access  Private
 exports.getScreenings = async (req, res) => {
   try {
-    const screenings = await Screening.find({ user: req.user.id }).sort('-createdAt');
+    const snapshot = await getDb().collection('screenings').where('user', '==', req.user.id).get();
+    const screenings = snapshot.docs
+      .map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }))
+      .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
     res.status(200).json({ success: true, count: screenings.length, data: screenings });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });

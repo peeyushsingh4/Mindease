@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import api from '../api/client';
-import { TOKEN_STORAGE_KEY } from '../config/constants';
+import { REFRESH_TOKEN_STORAGE_KEY, TOKEN_STORAGE_KEY } from '../config/constants';
 
 const AuthContext = createContext(null);
 
@@ -14,12 +14,16 @@ export const AuthProvider = ({ children }) => {
 
   const clearSession = async () => {
     await AsyncStorage.removeItem(TOKEN_STORAGE_KEY);
+    await AsyncStorage.removeItem(REFRESH_TOKEN_STORAGE_KEY);
     setToken(null);
     setUser(null);
   };
 
-  const saveSession = async (nextToken, nextUser) => {
+  const saveSession = async (nextToken, nextRefreshToken, nextUser) => {
     await AsyncStorage.setItem(TOKEN_STORAGE_KEY, nextToken);
+    if (nextRefreshToken) {
+      await AsyncStorage.setItem(REFRESH_TOKEN_STORAGE_KEY, nextRefreshToken);
+    }
     setToken(nextToken);
     setUser(nextUser);
   };
@@ -65,30 +69,33 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     const res = await api.post('/auth/login', { email, password });
     const nextToken = res?.data?.token;
+    const nextRefreshToken = res?.data?.refreshToken;
     if (!nextToken) {
       throw new Error('Auth token was not returned from login.');
     }
-    await saveSession(nextToken, extractUser(res));
+    await saveSession(nextToken, nextRefreshToken, extractUser(res));
     return extractUser(res);
   };
 
   const register = async ({ name, email, password, role = 'student' }) => {
     const res = await api.post('/auth/register', { name, email, password, role });
     const nextToken = res?.data?.token;
+    const nextRefreshToken = res?.data?.refreshToken;
     if (!nextToken) {
       throw new Error('Auth token was not returned from registration.');
     }
-    await saveSession(nextToken, extractUser(res));
+    await saveSession(nextToken, nextRefreshToken, extractUser(res));
     return extractUser(res);
   };
 
   const loginAnonymous = async (guardianData = {}) => {
     const res = await api.post('/auth/anonymous', guardianData);
     const nextToken = res?.data?.token;
+    const nextRefreshToken = res?.data?.refreshToken;
     if (!nextToken) {
       throw new Error('Auth token was not returned from anonymous login.');
     }
-    await saveSession(nextToken, extractUser(res));
+    await saveSession(nextToken, nextRefreshToken, extractUser(res));
     return extractUser(res);
   };
 

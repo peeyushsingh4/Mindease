@@ -1,16 +1,20 @@
 # MindEase (Web + Backend + Mobile)
 
 MindEase is a mental-health support platform with:
-- `backend`: Express + MongoDB API with auth, chat, screening, mood, journal, forum, and appointments.
+- `backend`: Express + Firebase (Firestore + Firebase Auth) API with auth, chat, screening, mood, journal, forum, and appointments.
 - `frontend`: React web app.
 - `mobile`: Expo React Native mobile app.
 
 ## Run Backend
 1. Open `backend/.env` (create from your existing env values).
-2. Set `JWT_SECRET` and (optionally) `MONGO_URI`.
+2. Set Firebase backend credentials:
+   - `FIREBASE_PROJECT_ID`
+   - `FIREBASE_CLIENT_EMAIL`
+   - `FIREBASE_PRIVATE_KEY` (with escaped `\n`)
+   - `FIREBASE_WEB_API_KEY` (for login/refresh flow)
 3. Optional AI setup:
-   - `ANTHROPIC_API_KEY=<your_key>`
-   - `ANTHROPIC_MODEL=claude-3-5-sonnet-latest` (or another supported model)
+   - `OPENAI_API_KEY=<your_key>`
+   - `OPENAI_MODEL=gpt-4o-mini`
 4. Start:
    - `npm install`
    - `npm run dev`
@@ -26,4 +30,5 @@ MindEase is a mental-health support platform with:
 
 ## Notes
 - CORS now supports comma-separated `ALLOWED_ORIGINS` in backend `.env`.
-- If no Anthropic API key is set, chat gracefully uses a local fallback response.
+- If no OpenAI API key is set, chat gracefully uses a local fallback response.
+- Web and mobile token sessions now use Firebase ID tokens with refresh support.

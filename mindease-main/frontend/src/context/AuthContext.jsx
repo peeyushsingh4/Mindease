@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect, useRef } from 'react';
-import api, { AUTH_UNAUTHORIZED_EVENT } from '../api';
+import api, { AUTH_UNAUTHORIZED_EVENT, REFRESH_STORAGE_KEY } from '../api';
 export const AuthContext = createContext(null);
 
 const getStoredToken = () => {
@@ -23,6 +23,18 @@ const persistToken = (token) => {
   }
 };
 
+const persistRefreshToken = (refreshToken) => {
+  try {
+    if (refreshToken) {
+      localStorage.setItem(REFRESH_STORAGE_KEY, refreshToken);
+      return;
+    }
+    localStorage.removeItem(REFRESH_STORAGE_KEY);
+  } catch (err) {
+    console.error('Failed to update refresh token in local storage:', err);
+  }
+};
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(() => getStoredToken());
@@ -35,6 +47,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const handleUnauthorized = () => {
       persistToken(null);
+      persistRefreshToken(null);
       setToken(null);
       setUser(null);
       setLoading(false);
@@ -102,12 +115,14 @@ export const AuthProvider = ({ children }) => {
 
   const applySession = (res) => {
     const nextToken = res.data?.token;
+    const nextRefreshToken = res.data?.refreshToken;
     const nextUser = res.data?.user || res.data?.data || null;
     if (!nextToken) {
       throw new Error('Authentication token was not returned by the server.');
     }
 
     persistToken(nextToken);
+    persistRefreshToken(nextRefreshToken || null);
     setToken(nextToken);
     setUser(nextUser);
 
@@ -137,6 +152,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     persistToken(null);
+    persistRefreshToken(null);
     setToken(null);
     setUser(null);
     setLoading(false);

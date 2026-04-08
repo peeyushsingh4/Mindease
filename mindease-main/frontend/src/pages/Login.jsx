@@ -94,11 +94,11 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) return setError('Please fill all required fields.');
+    if (!email.trim() || !password) return setError('Please fill all required fields.');
     setError('');
     setIsSubmitting(true);
     try {
-      await login(email, password);
+      await login(email.trim(), password);
       navigate('/dashboard');
     } catch (err) {
       setError(

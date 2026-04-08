@@ -35,6 +35,7 @@ const PostSchema = new mongoose.Schema({
   },
   comments: [{
     user: { type: mongoose.Schema.ObjectId, ref: 'User' },
+    authorName: { type: String, default: 'Anonymous Student' },
     text: { type: String, required: true },
     createdAt: { type: Date, default: Date.now }
   }],

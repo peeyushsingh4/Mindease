@@ -1,6 +1,9 @@
-const CrisisAlert = require('../models/CrisisAlert');
-const User = require('../models/User');
-const ChatMessage = require('../models/ChatMessage');
+const { getDb } = require('../lib/firebase');
+
+const nowIso = () => new Date().toISOString();
+const chatCollection = () => getDb().collection('chatMessages');
+const usersCollection = () => getDb().collection('users');
+const crisisCollection = () => getDb().collection('crisisAlerts');
 
 // ─── Crisis keyword detection (fast pre-screen before LLM) ──────────────────
 const crisisKeywords = [
@@ -16,20 +19,21 @@ function detectCrisis(text) {
 }
 function generateFallbackReply(message) {
   const lower = message.toLowerCase();
+  const shortReflection = `Thank you for sharing this with me. It sounds like "${message.slice(0, 80)}${message.length > 80 ? '...' : ''}" is weighing on you right now.`;
 
   if (lower.includes('exam') || lower.includes('stress') || lower.includes('overwhelmed')) {
-    return "Thanks for sharing that — exam stress can feel very heavy, and you're not weak for feeling this way.\n\nTry this quick reset:\n1) Inhale for 4 seconds\n2) Hold for 4 seconds\n3) Exhale for 6 seconds\nRepeat 4 times.\n\nThen pick just one next step for the next 20 minutes. If you want, I can help you break your study load into a simple plan.";
+    return `${shortReflection}\n\nIt makes sense that exam pressure is draining your mind and body. Let's make it manageable, one small step at a time.\n\nTry this now:\n1) Inhale for 4 seconds\n2) Hold for 4 seconds\n3) Exhale for 6 seconds\nRepeat 4 times.\n\nThen choose only one task for the next 20 minutes (not the whole syllabus). After that, we can plan your next block together.\n\nWould you like me to help you create a very simple 2-hour study plan right now?`;
   }
 
   if (lower.includes('anxious') || lower.includes('anxiety') || lower.includes('panic')) {
-    return "I hear you. Anxiety can make everything feel urgent and unsafe, even when you're doing your best.\n\nLet’s ground your body first: name 5 things you can see, 4 things you can feel, 3 things you can hear, 2 things you can smell, and 1 thing you can taste.\n\nIf you'd like, we can also book a counsellor session from the app together.";
+    return `${shortReflection}\n\nYou're not overreacting. Anxiety can make everything feel urgent even when you are trying your best.\n\nLet's ground your body first:\n- 5 things you can see\n- 4 things you can feel\n- 3 things you can hear\n- 2 things you can smell\n- 1 thing you can taste\n\nStay with each step slowly. Your body often settles before your thoughts do.\n\nDo you want to continue with a 60-second breathing exercise together?`;
   }
 
   if (lower.includes('sleep') || lower.includes('insomnia') || lower.includes('tired')) {
-    return "Sleep struggles can affect your whole mood and focus. A small routine tonight can help:\n- No screen 30 minutes before bed\n- Slow breathing for 2 minutes\n- Keep room cool and lights dim\n- Write down worries in one short note, then close it\n\nWould you like a simple 3-night sleep reset plan?";
+    return `${shortReflection}\n\nSleep problems can make everything else feel harder, so this is important.\n\nFor tonight, try a short wind-down routine:\n- No screens 30 minutes before bed\n- Slow breathing for 2 minutes\n- Dim lights and keep room cool\n- Write worries on paper, then set it aside\n\nWe don't need perfection tonight, only a calmer start.\n\nWould you like a practical 3-night sleep reset plan?`;
   }
 
-  return "Thank you for opening up. I’m here with you.\n\nEven when things feel heavy, talking about it is a strong first step. Would you like to share what feels hardest right now — thoughts, body symptoms, or a specific situation? We can work through it one step at a time.";
+  return `${shortReflection}\n\nI am here with you. Opening up like this takes courage.\n\nLet's slow things down and focus on one part first. If it helps, place one hand on your chest and take 5 slower breaths while reading this.\n\nWhat feels hardest right now: your thoughts, your emotions, or something happening in your life?`;
 }
 
 // ─── Send alert to guardian ───────────────────────────────────────────────────
@@ -74,20 +78,20 @@ exports.chatRespond = async (req, res) => {
 
     // Save the incoming user message to DB (always, before responding)
     try {
-      await ChatMessage.create({ user: req.user.id, role: 'user', text: message, isCrisis });
+      await chatCollection().add({ user: req.user.id, role: 'user', text: message, isCrisis, createdAt: nowIso() });
     } catch (saveErr) {
       console.error('Failed to save user message:', saveErr.message);
     }
 
     if (isCrisis) {
       try {
-        await CrisisAlert.create({ user: req.user.id, message: message.slice(0, 500) });
+        await crisisCollection().add({ user: req.user.id, message: message.slice(0, 500), createdAt: nowIso() });
       } catch (saveErr) {
         console.error('Failed to save crisis alert:', saveErr.message);
       }
       try {
-        const user = await User.findById(req.user.id);
-        if (user) await notifyGuardian(user, message);
+        const userDoc = await usersCollection().doc(req.user.id).get();
+        if (userDoc.exists) await notifyGuardian({ _id: userDoc.id, ...userDoc.data() }, message);
       } catch (notifyErr) {
         console.error('Failed to notify guardian:', notifyErr.message);
       }
@@ -96,7 +100,7 @@ exports.chatRespond = async (req, res) => {
 
       // Save crisis assistant reply to DB
       try {
-        await ChatMessage.create({ user: req.user.id, role: 'assistant', text: crisisReply, isCrisis: true });
+        await chatCollection().add({ user: req.user.id, role: 'assistant', text: crisisReply, isCrisis: true, createdAt: nowIso() });
       } catch (saveErr) {
         console.error('Failed to save crisis reply:', saveErr.message);
       }
@@ -115,10 +119,11 @@ exports.chatRespond = async (req, res) => {
     // 2. Load recent messages from DB for this user (reliable persistent history)
     let dbHistory = [];
     try {
-      const pastMessages = await ChatMessage.find({ user: req.user.id })
-        .sort({ createdAt: -1 })
-        .limit(40)
-        .lean();
+      const snapshot = await chatCollection().where('user', '==', req.user.id).get();
+      const pastMessages = snapshot.docs
+        .map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }))
+        .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1))
+        .slice(0, 40);
       // Sort back to chronological order for the model and exclude the freshly-saved input.
       const chronological = pastMessages.reverse();
       dbHistory = chronological.slice(0, -1).map(m => ({ role: m.role, content: m.text }));
@@ -135,24 +140,34 @@ exports.chatRespond = async (req, res) => {
     const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
     let aiText = '';
     let provider = 'fallback';
-    const systemPrompt = `You are MindEase, a warm and empathetic AI mental health support companion for college students.
+    const systemPrompt = `You are MindEase, a highly supportive mental-health counselling companion for college students.
 
-Your role:
-- Listen deeply and respond with genuine empathy and care
-- Ask thoughtful follow-up questions to understand the user better
-- Provide evidence-based coping strategies (CBT, mindfulness, grounding) when appropriate
-- Gently encourage professional help when needed
-- Remember context from earlier in the conversation and refer back to it naturally
-- Never give identical cookie-cutter responses — each reply should feel personal and specific to what this person shared
+Response style requirements:
+- Start by validating the user's feelings in plain, human language.
+- Reflect one concrete detail from the user's message so it feels personalized.
+- Keep responses concise (around 90-220 words unless user asks for detail).
+- Offer one actionable coping step (breathing, grounding, reframing, routine, or help-seeking).
+- Use counselling micro-skills: reflection, normalization, and collaborative next-step planning.
+- When useful, briefly apply CBT-style framing (thought-feeling-behavior) in simple words.
+- Ask one gentle follow-up question to continue the conversation.
+- Never be preachy or robotic; avoid repeating identical templates.
 
-Tone: warm, non-judgmental, conversational, like talking to a caring friend who also knows about mental health.
+Clinical and safety boundaries:
+- You are not a replacement for licensed therapy, diagnosis, or emergency care.
+- Do not provide diagnoses or medication advice.
+- If risk appears high, encourage immediate professional or emergency support.
+- If the user asks for psychiatrist-level clinical interpretation, provide psychoeducation and suggest qualified professional assessment.
 
 SAFETY RULES:
 - If the user mentions suicide, self-harm, or hurting themselves, treat it as an emergency: validate their pain deeply, provide crisis hotlines (iCall: 9152987821, Vandrevala: 1860-2662-345, Emergency: 112).
 - Never diagnose.
 - Never replace professional therapy.
 
-Platform context: MindEase is a digital psychological support platform. Users can also book appointments with real counsellors, track moods, and journal.`;
+Platform context: MindEase is a digital psychological support platform. Users can book appointments with counsellors, track moods, and journal.
+
+Output format:
+- Plain text only (no markdown headings).
+- Prefer short paragraphs and short bullet-like lines only when listing steps.`;
 
     if (OPENAI_API_KEY && OPENAI_API_KEY !== 'your_openai_api_key_here') {
       try {
@@ -193,7 +208,7 @@ Platform context: MindEase is a digital psychological support platform. Users ca
 
     // Save assistant reply to DB
     try {
-      await ChatMessage.create({ user: req.user.id, role: 'assistant', text: aiText, isCrisis: false });
+        await chatCollection().add({ user: req.user.id, role: 'assistant', text: aiText, isCrisis: false, createdAt: nowIso() });
     } catch (saveErr) {
       console.error('Failed to save assistant reply:', saveErr.message);
     }
@@ -219,10 +234,11 @@ Platform context: MindEase is a digital psychological support platform. Users ca
 // @access  Private
 exports.getChatHistory = async (req, res) => {
   try {
-    const messages = await ChatMessage.find({ user: req.user.id })
-      .sort({ createdAt: 1 })
-      .limit(100)
-      .lean();
+    const snapshot = await chatCollection().where('user', '==', req.user.id).get();
+    const messages = snapshot.docs
+      .map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }))
+      .sort((a, b) => (a.createdAt > b.createdAt ? 1 : -1))
+      .slice(0, 100);
     res.status(200).json({ success: true, data: messages });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });

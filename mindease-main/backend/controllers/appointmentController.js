@@ -1,5 +1,8 @@
-const Appointment = require('../models/Appointment');
-const User = require('../models/User');
+const { getDb } = require('../lib/firebase');
+
+const nowIso = () => new Date().toISOString();
+const appointmentsCollection = () => getDb().collection('appointments');
+const usersCollection = () => getDb().collection('users');
 
 // @desc    Create appointment
 // @route   POST /api/appointments
@@ -9,8 +12,8 @@ exports.createAppointment = async (req, res) => {
     const { counsellorId, date, timeSlot, notes } = req.body;
 
     // Verify counsellor exists
-    const counsellor = await User.findOne({ _id: counsellorId, role: 'counsellor' });
-    if (!counsellor) {
+    const counsellorDoc = await usersCollection().doc(counsellorId).get();
+    if (!counsellorDoc.exists || counsellorDoc.data().role !== 'counsellor') {
       return res.status(404).json({ success: false, error: 'Counsellor not found' });
     }
 
@@ -23,12 +26,18 @@ exports.createAppointment = async (req, res) => {
     const endOfDay = new Date(appointmentDate);
     endOfDay.setHours(23, 59, 59, 999);
 
-    const conflict = await Appointment.findOne({
-      counsellor: counsellorId,
-      timeSlot,
-      date: { $gte: startOfDay, $lte: endOfDay },
-      status: { $in: ['pending', 'approved'] }
-    });
+    const snapshot = await appointmentsCollection().where('counsellor', '==', counsellorId).get();
+    const conflict = snapshot.docs
+      .map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }))
+      .find((item) => {
+        const itemDate = new Date(item.date);
+        return (
+          item.timeSlot === timeSlot &&
+          itemDate >= startOfDay &&
+          itemDate <= endOfDay &&
+          ['pending', 'approved'].includes(item.status)
+        );
+      });
 
     if (conflict) {
       return res.status(409).json({
@@ -37,13 +46,18 @@ exports.createAppointment = async (req, res) => {
       });
     }
 
-    const appointment = await Appointment.create({
+    const payload = {
       student: req.user.id,
       counsellor: counsellorId,
       date,
       timeSlot,
-      notes
-    });
+      notes,
+      status: 'pending',
+      meetingLink: '',
+      createdAt: nowIso()
+    };
+    const docRef = await appointmentsCollection().add(payload);
+    const appointment = { _id: docRef.id, id: docRef.id, ...payload };
 
     res.status(201).json({
       success: true,
@@ -59,20 +73,30 @@ exports.createAppointment = async (req, res) => {
 // @access  Private
 exports.getAppointments = async (req, res) => {
   try {
-    let query;
+    const snapshot = await appointmentsCollection().get();
+    const rawAppointments = snapshot.docs.map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }));
+    const scoped = rawAppointments.filter((item) => {
+      if (req.user.role === 'admin') return true;
+      if (req.user.role === 'counsellor') return item.counsellor === req.user.id;
+      return item.student === req.user.id;
+    });
 
-    if (req.user.role === 'counsellor') {
-      query = { counsellor: req.user.id };
-    } else if (req.user.role === 'admin') {
-      query = {}; // admin sees all
-    } else {
-      query = { student: req.user.id };
-    }
+    const userIds = [...new Set(scoped.flatMap((item) => [item.student, item.counsellor]).filter(Boolean))];
+    const userDocs = await Promise.all(userIds.map((id) => usersCollection().doc(id).get()));
+    const usersMap = {};
+    userDocs.forEach((doc) => {
+      if (doc.exists) {
+        usersMap[doc.id] = { _id: doc.id, id: doc.id, name: doc.data().name || '', email: doc.data().email || '', role: doc.data().role || 'student' };
+      }
+    });
 
-    const appointments = await Appointment.find(query)
-      .populate({ path: 'counsellor', select: 'name email role' })
-      .populate({ path: 'student', select: 'name email role' })
-      .sort('date');
+    const appointments = scoped
+      .map((item) => ({
+        ...item,
+        student: usersMap[item.student] || item.student,
+        counsellor: usersMap[item.counsellor] || item.counsellor
+      }))
+      .sort((a, b) => (new Date(a.date) > new Date(b.date) ? 1 : -1));
 
     res.status(200).json({
       success: true,
@@ -89,25 +113,27 @@ exports.getAppointments = async (req, res) => {
 // @access  Private (Counsellor, Admin)
 exports.updateStatus = async (req, res) => {
   try {
-    let appointment = await Appointment.findById(req.params.id);
-
-    if (!appointment) {
+    const appointmentRef = appointmentsCollection().doc(req.params.id);
+    const appointmentDoc = await appointmentRef.get();
+    if (!appointmentDoc.exists) {
       return res.status(404).json({ success: false, error: 'Appointment not found' });
     }
+    const appointment = appointmentDoc.data();
 
-    if (appointment.counsellor.toString() !== req.user.id && req.user.role !== 'admin') {
+    if (appointment.counsellor !== req.user.id && req.user.role !== 'admin') {
       return res.status(403).json({ success: false, error: 'Not authorized' });
     }
 
-    appointment = await Appointment.findByIdAndUpdate(
-      req.params.id,
-      { status: req.body.status, meetingLink: req.body.meetingLink },
-      { returnDocument: 'after', runValidators: true }
-    );
+    await appointmentRef.update({
+      status: req.body.status,
+      meetingLink: req.body.meetingLink || ''
+    });
+    const updatedDoc = await appointmentRef.get();
+    const updated = { _id: updatedDoc.id, id: updatedDoc.id, ...updatedDoc.data() };
 
     res.status(200).json({
       success: true,
-      data: appointment
+      data: updated
     });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });

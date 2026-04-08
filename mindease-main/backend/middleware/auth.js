@@ -1,5 +1,4 @@
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+const { getAuth, getDb } = require('../lib/firebase');
 
 // Protect routes — verifies JWT and attaches req.user
 exports.protect = async (req, res, next) => {
@@ -14,12 +13,17 @@ exports.protect = async (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await User.findById(decoded.id);
-
-    if (!req.user) {
+    const decoded = await getAuth().verifyIdToken(token);
+    const userDoc = await getDb().collection('users').doc(decoded.uid).get();
+    if (!userDoc.exists) {
       return res.status(401).json({ success: false, error: 'Not authorised — user no longer exists' });
     }
+
+    req.user = {
+      id: userDoc.id,
+      uid: userDoc.id,
+      ...userDoc.data()
+    };
 
     next();
   } catch (err) {
