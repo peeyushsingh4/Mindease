@@ -59,7 +59,7 @@ async function notifyGuardian(user, triggerMessage) {
   }
 }
 
-// @desc    Respond to user chat message using Claude AI
+// @desc    Respond to user chat message using OpenAI
 // @route   POST /api/chat/respond
 // @access  Private
 exports.chatRespond = async (req, res) => {
@@ -112,15 +112,16 @@ exports.chatRespond = async (req, res) => {
       });
     }
 
-    // 2. Load last 20 messages from DB for this user (reliable persistent history)
+    // 2. Load recent messages from DB for this user (reliable persistent history)
     let dbHistory = [];
     try {
       const pastMessages = await ChatMessage.find({ user: req.user.id })
-        .sort({ createdAt: 1 })
+        .sort({ createdAt: -1 })
         .limit(40)
         .lean();
-      // Exclude the message we just saved (last entry) to avoid duplication
-      dbHistory = pastMessages.slice(0, -1).map(m => ({ role: m.role, content: m.text }));
+      // Sort back to chronological order for the model and exclude the freshly-saved input.
+      const chronological = pastMessages.reverse();
+      dbHistory = chronological.slice(0, -1).map(m => ({ role: m.role, content: m.text }));
     } catch (histErr) {
       console.error('Failed to load chat history:', histErr.message);
       // Fall back to frontend-provided history if DB read fails
@@ -128,10 +129,10 @@ exports.chatRespond = async (req, res) => {
     }
 
     // Add the current user message at the end
-    const claudeMessages = [...dbHistory, { role: 'user', content: message }];
+    const conversationMessages = [...dbHistory, { role: 'user', content: message }];
 
-    // 3. Call Claude API (with local fallback if unavailable)
-    const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+    // 3. Call OpenAI API (with local fallback if unavailable)
+    const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
     let aiText = '';
     let provider = 'fallback';
     const systemPrompt = `You are MindEase, a warm and empathetic AI mental health support companion for college students.
@@ -153,33 +154,35 @@ SAFETY RULES:
 
 Platform context: MindEase is a digital psychological support platform. Users can also book appointments with real counsellors, track moods, and journal.`;
 
-    if (ANTHROPIC_API_KEY && ANTHROPIC_API_KEY !== 'your_anthropic_api_key_here') {
+    if (OPENAI_API_KEY && OPENAI_API_KEY !== 'your_openai_api_key_here') {
       try {
-        const apiResponse = await fetch('https://api.anthropic.com/v1/messages', {
+        const apiResponse = await fetch('https://api.openai.com/v1/chat/completions', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'x-api-key': ANTHROPIC_API_KEY,
-            'anthropic-version': '2023-06-01'
+            Authorization: `Bearer ${OPENAI_API_KEY}`
           },
           body: JSON.stringify({
-            model: 'claude-sonnet-4-20250514',
+            model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+            temperature: 0.7,
             max_tokens: 500,
-            system: systemPrompt,
-            messages: claudeMessages
+            messages: [
+              { role: 'system', content: systemPrompt },
+              ...conversationMessages
+            ]
           })
         });
 
         if (!apiResponse.ok) {
           const errText = await apiResponse.text();
-          throw new Error(`Claude API error: ${errText}`);
+          throw new Error(`OpenAI API error: ${errText}`);
         }
 
         const aiData = await apiResponse.json();
-        aiText = aiData.content?.[0]?.text || '';
-        provider = 'anthropic';
+        aiText = aiData?.choices?.[0]?.message?.content || '';
+        provider = 'openai';
       } catch (apiErr) {
-        console.error('Claude API unavailable, switching to fallback response:', apiErr.message);
+        console.error('OpenAI API unavailable, switching to fallback response:', apiErr.message);
       }
     }
 

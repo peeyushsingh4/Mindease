@@ -13,8 +13,19 @@ app.use(express.json({ limit: '10kb' }));
 // BUG FIX 2: CORS was configured with cors() and no options, which allows ANY
 // origin to call the API. Restricting to the local frontend by default.
 // Change ALLOWED_ORIGIN in .env for production deployment.
+const allowedOrigins = (process.env.ALLOWED_ORIGINS || process.env.ALLOWED_ORIGIN || 'http://localhost:5173,http://localhost:19006')
+  .split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN || 'http://localhost:5173',
+  origin: (origin, callback) => {
+    // Native mobile apps may send no Origin header.
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error('Not allowed by CORS'));
+  },
   credentials: true
 }));
 

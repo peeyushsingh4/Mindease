@@ -1,0 +1,13 @@
+# Environment files
+**/.env
+**/.env.*
+!**/.env.example
+
+# Dependencies
+**/node_modules/
+
+# Expo / React Native local files
+mobile/.expo/
+
+# Logs
+**/*.log
