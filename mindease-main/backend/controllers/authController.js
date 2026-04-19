@@ -1,19 +1,54 @@
 const { getAuth, getDb } = require('../lib/firebase');
+const { normalizeGuardianPhone, toGuardianPhoneE164 } = require('../utils/guardianPhone');
 
 const normalizeUser = (uid, userDoc) => ({
   id: uid,
   _id: uid,
   name: userDoc.name || '',
   email: userDoc.email || '',
+  age: Number.isFinite(Number(userDoc.age)) ? Number(userDoc.age) : null,
   role: userDoc.role || 'student',
   isAnonymous: Boolean(userDoc.isAnonymous),
   anonymousId: userDoc.anonymousId || '',
   guardianName: userDoc.guardianName || '',
   guardianPhone: userDoc.guardianPhone || '',
-  guardianRelation: userDoc.guardianRelation || ''
+  guardianRelation: userDoc.guardianRelation || '',
+  guardianPhoneVerified: Boolean(userDoc.guardianPhoneVerified)
 });
 
 const nowIso = () => new Date().toISOString();
+/** Users must be 16 or older. */
+const MINIMUM_AGE = 16;
+const UNDERAGE_MESSAGE = 'MindEase is available for users aged 16 and above.';
+const LOGIN_AGE_REQUIRED_MESSAGE = 'Please enter your age to finish signing in.';
+const GUARDIAN_PHONE_MESSAGE = 'Emergency contact number must be exactly 10 digits with numbers only.';
+
+const usersCollection = () => getDb().collection('users');
+
+const buildGuardianFields = ({ guardianName, guardianPhone, guardianRelation }, { verified = false } = {}) => {
+  const normalizedPhone = normalizeGuardianPhone(guardianPhone);
+  return {
+    guardianName: (guardianName || '').trim(),
+    guardianPhone: normalizedPhone,
+    guardianPhoneE164: normalizedPhone ? toGuardianPhoneE164(normalizedPhone) : '',
+    guardianRelation: (guardianRelation || '').trim(),
+    guardianPhoneVerified: Boolean(verified && normalizedPhone),
+    guardianPhoneVerifiedAt: verified && normalizedPhone ? nowIso() : null,
+  };
+};
+
+const toComparableIndianPhone = (phoneNumber) => {
+  const digits = String(phoneNumber || '').replace(/\D/g, '');
+  if (digits.length === 10) return digits;
+  if (digits.length === 12 && digits.startsWith('91')) return digits.slice(2);
+  return '';
+};
+
+const parseAge = (value) => {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed)) return null;
+  return Math.floor(parsed);
+};
 
 const requireWebApiKey = () => {
   const apiKey = process.env.FIREBASE_WEB_API_KEY;
@@ -93,11 +128,15 @@ const refreshIdToken = async (refreshToken) => {
 // @access  Public
 exports.register = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { name, email, password, role, age } = req.body;
     const normalizedEmail = email?.trim().toLowerCase();
+    const parsedAge = parseAge(age);
 
-    if (!name?.trim() || !normalizedEmail || !password) {
-      return res.status(400).json({ success: false, error: 'Name, email, and password are required' });
+    if (!name?.trim() || !normalizedEmail || !password || parsedAge === null) {
+      return res.status(400).json({ success: false, error: 'Name, email, password, and age are required' });
+    }
+    if (parsedAge < MINIMUM_AGE) {
+      return res.status(403).json({ success: false, error: UNDERAGE_MESSAGE });
     }
 
     // BUG FIX (defence-in-depth): Even though the frontend no longer shows the 'admin'
@@ -114,12 +153,16 @@ exports.register = async (req, res) => {
     const profile = {
       name: name.trim(),
       email: normalizedEmail,
+      age: parsedAge,
       role: safeRole,
       isAnonymous: false,
       anonymousId: '',
       guardianName: '',
       guardianPhone: '',
+      guardianPhoneE164: '',
       guardianRelation: '',
+      guardianPhoneVerified: false,
+      guardianPhoneVerifiedAt: null,
       createdAt: nowIso()
     };
     await getDb().collection('users').doc(authUser.uid).set(profile);
@@ -148,8 +191,9 @@ exports.register = async (req, res) => {
 // @access  Public
 exports.login = async (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { email, password, age } = req.body;
     const normalizedEmail = email?.trim().toLowerCase();
+    const providedAge = parseAge(age);
 
     if (!normalizedEmail || !password) {
       return res.status(400).json({ success: false, error: 'Please provide an email and password' });
@@ -163,12 +207,31 @@ exports.login = async (req, res) => {
     if (!userDoc.exists) {
       return res.status(404).json({ success: false, error: 'User profile not found' });
     }
+    const userData = userDoc.data();
+    let parsedAge = parseAge(userData.age);
+
+    if (parsedAge === null) {
+      if (providedAge === null) {
+        return res.status(400).json({ success: false, error: LOGIN_AGE_REQUIRED_MESSAGE });
+      }
+      if (providedAge < MINIMUM_AGE) {
+        return res.status(403).json({ success: false, error: UNDERAGE_MESSAGE });
+      }
+
+      parsedAge = providedAge;
+      userData.age = parsedAge;
+      await getDb().collection('users').doc(signInResult.localId).set({ age: parsedAge }, { merge: true });
+    }
+
+    if (parsedAge === null || parsedAge < MINIMUM_AGE) {
+      return res.status(403).json({ success: false, error: UNDERAGE_MESSAGE });
+    }
 
     return res.status(200).json({
       success: true,
       token: signInResult.token,
       refreshToken: signInResult.refreshToken,
-      user: normalizeUser(userDoc.id, userDoc.data())
+      user: normalizeUser(userDoc.id, userData)
     });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });
@@ -180,7 +243,14 @@ exports.login = async (req, res) => {
 // @access  Public
 exports.anonymous = async (req, res) => {
   try {
-    const { guardianName, guardianPhone, guardianRelation } = req.body;
+    const { guardianName, guardianPhone, guardianRelation, age } = req.body;
+    const parsedAge = parseAge(age);
+    if (parsedAge === null) {
+      return res.status(400).json({ success: false, error: 'Age is required for authentication.' });
+    }
+    if (parsedAge < MINIMUM_AGE) {
+      return res.status(403).json({ success: false, error: UNDERAGE_MESSAGE });
+    }
     const anonymousId = `anon_${Math.random().toString(36).slice(2, 11)}`;
     const authUser = await getAuth().createUser({
       displayName: anonymousId
@@ -190,9 +260,8 @@ exports.anonymous = async (req, res) => {
       isAnonymous: true,
       anonymousId,
       role: 'student',
-      guardianName: guardianName || '',
-      guardianPhone: guardianPhone || '',
-      guardianRelation: guardianRelation || '',
+      age: parsedAge,
+      ...buildGuardianFields({ guardianName, guardianPhone, guardianRelation }, { verified: false }),
       name: '',
       email: '',
       createdAt: nowIso()
@@ -219,13 +288,18 @@ exports.anonymous = async (req, res) => {
 exports.updateGuardian = async (req, res) => {
   try {
     const { guardianName, guardianPhone, guardianRelation } = req.body;
-    const userRef = getDb().collection('users').doc(req.user.id);
+    const normalizedPhone = normalizeGuardianPhone(guardianPhone);
+    if (!guardianName?.trim() || !normalizedPhone) {
+      return res.status(400).json({ success: false, error: GUARDIAN_PHONE_MESSAGE });
+    }
+    const userRef = usersCollection().doc(req.user.id);
+    const existingUser = await userRef.get();
+    const existingData = existingUser.exists ? existingUser.data() : {};
+    // One-time verification policy: once verified, do not force re-verification.
+    const keepVerified = Boolean(existingData.guardianPhoneVerified) || normalizeGuardianPhone(existingData.guardianPhone) === normalizedPhone;
+
     await userRef.set(
-      {
-        guardianName: (guardianName || '').trim(),
-        guardianPhone: (guardianPhone || '').trim(),
-        guardianRelation: (guardianRelation || '').trim()
-      },
+      buildGuardianFields({ guardianName, guardianPhone: normalizedPhone, guardianRelation }, { verified: keepVerified }),
       { merge: true }
     );
     const userDoc = await userRef.get();
@@ -235,16 +309,67 @@ exports.updateGuardian = async (req, res) => {
   }
 };
 
+// @desc    Verify guardian phone through Firebase Phone Auth proof
+// @route   POST /api/auth/guardian/verify-firebase
+// @access  Private
+exports.verifyGuardianWithFirebase = async (req, res) => {
+  try {
+    const { guardianName, guardianPhone, guardianRelation, firebaseIdToken } = req.body;
+    const normalizedPhone = normalizeGuardianPhone(guardianPhone);
+    if (!guardianName?.trim() || !normalizedPhone) {
+      return res.status(400).json({ success: false, error: GUARDIAN_PHONE_MESSAGE });
+    }
+    if (!firebaseIdToken) {
+      return res.status(400).json({ success: false, error: 'Firebase verification token is required.' });
+    }
+
+    const decoded = await getAuth().verifyIdToken(firebaseIdToken);
+    const firebasePhone = toComparableIndianPhone(decoded?.phone_number || '');
+    if (!firebasePhone || firebasePhone !== normalizedPhone) {
+      return res.status(400).json({ success: false, error: 'Verified phone does not match emergency contact number.' });
+    }
+
+    const userRef = usersCollection().doc(req.user.id);
+    await userRef.set(
+      {
+        ...buildGuardianFields(
+          { guardianName, guardianPhone: normalizedPhone, guardianRelation },
+          { verified: true }
+        ),
+        guardianOtpCode: null,
+        guardianOtpExpiresAt: null,
+        guardianOtpRequestedAt: null,
+        guardianOtpAttempts: 0,
+      },
+      { merge: true }
+    );
+
+    const updatedDoc = await userRef.get();
+    return res.status(200).json({
+      success: true,
+      data: normalizeUser(updatedDoc.id, updatedDoc.data()),
+      user: normalizeUser(updatedDoc.id, updatedDoc.data()),
+    });
+  } catch (err) {
+    return res.status(400).json({ success: false, error: err.message || 'Firebase phone verification failed.' });
+  }
+};
+
 // @desc    Get current logged in user
 // @route   GET /api/auth/me
 // @access  Private
 exports.getMe = async (req, res) => {
   try {
-    const userDoc = await getDb().collection('users').doc(req.user.id).get();
+    const userDoc = await usersCollection().doc(req.user.id).get();
     if (!userDoc.exists) {
       return res.status(404).json({ success: false, error: 'User not found' });
     }
-    res.status(200).json({ success: true, data: normalizeUser(userDoc.id, userDoc.data()), user: normalizeUser(userDoc.id, userDoc.data()) });
+    const userData = userDoc.data();
+    const parsedAge = parseAge(userData.age);
+    if (parsedAge === null || parsedAge < MINIMUM_AGE) {
+      return res.status(403).json({ success: false, error: UNDERAGE_MESSAGE });
+    }
+    res.status(200).json({ success: true, data: normalizeUser(userDoc.id, userData), user: normalizeUser(userDoc.id, userData) });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });
   }
@@ -281,15 +406,20 @@ exports.refresh = async (req, res) => {
     if (!result.ok) {
       return res.status(401).json({ success: false, error: result.error });
     }
-    const userDoc = await getDb().collection('users').doc(result.localId).get();
+    const userDoc = await usersCollection().doc(result.localId).get();
     if (!userDoc.exists) {
       return res.status(404).json({ success: false, error: 'User profile not found' });
+    }
+    const userData = userDoc.data();
+    const parsedAge = parseAge(userData.age);
+    if (parsedAge === null || parsedAge < MINIMUM_AGE) {
+      return res.status(403).json({ success: false, error: UNDERAGE_MESSAGE });
     }
     return res.status(200).json({
       success: true,
       token: result.token,
       refreshToken: result.refreshToken,
-      user: normalizeUser(userDoc.id, userDoc.data())
+      user: normalizeUser(userDoc.id, userData)
     });
   } catch (err) {
     return res.status(400).json({ success: false, error: err.message });

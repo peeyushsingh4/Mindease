@@ -5,12 +5,12 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
+    "scheme": "mindease",
     "splash": {
-      "backgroundColor": "#F1FAEE"
+      "backgroundColor": "#f2f9f2",
+      "resizeMode": "contain"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "android": {
       "package": "com.mindease.mobile"
     },

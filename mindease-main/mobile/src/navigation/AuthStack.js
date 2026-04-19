@@ -11,9 +11,9 @@ const AuthStack = () => (
     initialRouteName="Welcome"
     screenOptions={{
       headerStyle: { backgroundColor: '#FFFFFF' },
-      headerTintColor: '#1D3557',
+      headerTintColor: '#1e3a5f',
       headerTitleStyle: { fontWeight: '700' },
-      contentStyle: { backgroundColor: '#F1FAEE' },
+      contentStyle: { backgroundColor: '#f2f9f2' },
     }}
   >
     <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ headerShown: false }} />

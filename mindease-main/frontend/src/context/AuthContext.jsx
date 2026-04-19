@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { createContext, useState, useEffect, useRef } from 'react';
 import api, { AUTH_UNAUTHORIZED_EVENT, REFRESH_STORAGE_KEY } from '../api';
 export const AuthContext = createContext(null);
@@ -136,8 +137,8 @@ export const AuthProvider = ({ children }) => {
     applySession(res);
   };
 
-  const register = async (name, email, password, role) => {
-    const res = await api.post('/auth/register', { name, email, password, role });
+  const register = async (name, email, password, role, age) => {
+    const res = await api.post('/auth/register', { name, email, password, role, age });
     applySession(res);
   };
 
@@ -150,6 +151,15 @@ export const AuthProvider = ({ children }) => {
     setUser((prev) => (prev ? { ...prev, ...fields } : prev));
   };
 
+  const verifyGuardianWithFirebase = async (guardianPayload) => {
+    const res = await api.post('/auth/guardian/verify-firebase', guardianPayload);
+    const nextUser = res.data?.user || res.data?.data || null;
+    if (nextUser) {
+      setUser(nextUser);
+    }
+    return nextUser;
+  };
+
   const logout = () => {
     persistToken(null);
     persistRefreshToken(null);
@@ -159,7 +169,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, token, loading, login, register, loginAnonymous, logout, updateUser }}>
+    <AuthContext.Provider value={{ user, token, loading, login, register, loginAnonymous, logout, updateUser, verifyGuardianWithFirebase }}>
       {children}
     </AuthContext.Provider>
   );

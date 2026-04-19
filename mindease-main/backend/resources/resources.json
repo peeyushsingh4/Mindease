@@ -1,0 +1,41 @@
+{
+  "items": [
+    {
+      "id": "breathing_box",
+      "tags": ["anxiety", "panic", "stress"],
+      "title": "Box breathing (2 minutes)",
+      "text": "Try 4-4-4-4 breathing: inhale 4, hold 4, exhale 4, hold 4. Repeat for 2 minutes. If it feels too intense, shorten the hold."
+    },
+    {
+      "id": "grounding_54321",
+      "tags": ["anxiety", "panic", "overwhelm"],
+      "title": "5-4-3-2-1 grounding",
+      "text": "Name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste. Go slowly and describe each item."
+    },
+    {
+      "id": "sleep_winddown",
+      "tags": ["sleep", "insomnia", "tired"],
+      "title": "Simple wind-down routine",
+      "text": "For tonight: dim lights, no screens for 20–30 minutes, slow breathing 2 minutes, and write worries on paper (then set it aside). Aim for “calmer”, not perfect."
+    },
+    {
+      "id": "study_overwhelm",
+      "tags": ["exam", "study", "overwhelm", "stress"],
+      "title": "When exams feel overwhelming",
+      "text": "Pick one tiny next step for 15–20 minutes (not the whole syllabus). After one block, take a 3-minute break and choose the next single step."
+    },
+    {
+      "id": "reach_out",
+      "tags": ["lonely", "low_mood", "support"],
+      "title": "Reaching out safely",
+      "text": "If you can, message one trusted person: “I’m having a hard day—can you stay with me for a bit?” Small contact can reduce intensity even if the problem isn’t solved yet."
+    },
+    {
+      "id": "professional_help",
+      "tags": ["high_risk", "depression", "anxiety"],
+      "title": "Getting support",
+      "text": "If this has been persistent, severe, or impacting daily life, talking to a licensed professional can help. If you share your country, I can suggest appropriate helpline and next-step options."
+    }
+  ]
+}
+

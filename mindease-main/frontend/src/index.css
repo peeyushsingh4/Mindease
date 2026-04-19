@@ -1,41 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* MindCare Brand Colors */
-  --primary: #457B9D;
-  --primary-hover: #1D3557;
-  --primary-light: #EBF4F8;
-  --primary-glow: rgba(69, 123, 157, 0.25);
+  /* MindCare — sign-in (#4A768F) + dashboard (mint / navy / steel blue) */
+  --auth-page-bg: #4a768f;
+  --secondary: #1e3a5f;
+  --primary: #5482a1;
+  --primary-hover: #1d3557;
+  --primary-light: #ebf2f7;
+  --primary-glow: rgba(84, 130, 161, 0.28);
 
-  --accent: #A8DADC;
-  --accent-hover: #7FC4C7;
-  --accent-red: #E63946;
+  --accent: #a8dadc;
+  --accent-hover: #7fc4c7;
+  --accent-red: #e63946;
   --accent-red-light: rgba(230, 57, 70, 0.1);
 
-  --bg-main: #F1FAEE;
+  --bg-main: #f2f9f2;
   --bg-card: #ffffff;
-  --bg-subtle: #EBF4F8;
+  --bg-subtle: #ebf2fa;
+  --input-fill: #ebf2fa;
 
-  --text-primary: #1D3557;
-  --text-secondary: #4a6580;
-  --text-muted: #8ea8be;
+  --text-primary: #1e3a5f;
+  --text-secondary: #607d8b;
+  --text-muted: #78909c;
   --text-light: #ffffff;
+
+  --alert-peach-bg: #fff5eb;
+  --alert-peach-border: #f0dcc8;
+  --alert-peach-title: #7c4a2b;
+  --alert-peach-body: #9a5f3c;
+  --alert-peach-accent: #b45309;
 
   /* Status Colors */
   --success: #22c55e;
   --warning: #f59e0b;
-  --danger: #E63946;
+  --danger: #e63946;
 
   /* Borders and Shadows */
-  --border-light: rgba(69, 123, 157, 0.1);
+  --border-light: rgba(84, 130, 161, 0.12);
   --border-radius-lg: 24px;
   --border-radius-md: 16px;
   --border-radius-sm: 8px;
 
-  --shadow-sm: 0 2px 12px rgba(69, 123, 157, 0.08);
-  --shadow-md: 0 8px 30px rgba(69, 123, 157, 0.12);
-  --shadow-lg: 0 20px 50px rgba(69, 123, 157, 0.18);
-  --shadow-xl: 0 30px 60px rgba(29, 53, 87, 0.15);
+  --shadow-sm: 0 2px 12px rgba(84, 130, 161, 0.08);
+  --shadow-md: 0 8px 30px rgba(84, 130, 161, 0.12);
+  --shadow-lg: 0 20px 50px rgba(84, 130, 161, 0.16);
+  --shadow-xl: 0 30px 60px rgba(30, 58, 95, 0.14);
 }
 
 [data-theme='dark'] {
@@ -201,7 +210,7 @@ a:hover {
   padding: 0.8rem 1.1rem;
   border: 1.5px solid var(--border-light);
   border-radius: var(--border-radius-sm);
-  background-color: var(--bg-card);
+  background-color: var(--input-fill);
   color: var(--text-primary);
   font-family: inherit;
   font-size: 0.95rem;
@@ -385,7 +394,7 @@ a:hover {
   padding: 2rem 1.5rem;
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--secondary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -407,13 +416,13 @@ a:hover {
 
 .nav-link:hover {
   background-color: var(--primary-light);
-  color: var(--primary);
+  color: var(--secondary);
   text-decoration: none;
 }
 
 .nav-link.active {
   background-color: var(--primary-light);
-  color: var(--primary);
+  color: var(--secondary);
   border-left-color: var(--primary);
   border-radius: 0 20px 20px 0;
   margin-right: 1.5rem;
@@ -433,7 +442,7 @@ a:hover {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(160deg, var(--bg-main) 0%, #d4ecee 50%, var(--bg-main) 100%);
+  background: linear-gradient(160deg, var(--bg-main) 0%, #e8f2ea 50%, var(--bg-main) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -446,7 +455,7 @@ a:hover {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(168, 218, 220, 0.35) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(84, 130, 161, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -458,7 +467,7 @@ a:hover {
   width: 450px;
   height: 450px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(69, 123, 157, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(84, 130, 161, 0.1) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -475,14 +484,14 @@ a:hover {
   z-index: 100;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(241, 250, 238, 0.85);
-  border-bottom: 1px solid rgba(168, 218, 220, 0.2);
+  background: rgba(242, 249, 242, 0.9);
+  border-bottom: 1px solid rgba(84, 130, 161, 0.12);
   transition: background 0.3s ease, box-shadow 0.3s ease;
   animation: fadeInDown 0.5s ease forwards;
 }
 
 .landing-nav.scrolled {
-  background: rgba(241, 250, 238, 0.97);
+  background: rgba(242, 249, 242, 0.97);
   box-shadow: var(--shadow-sm);
 }
 

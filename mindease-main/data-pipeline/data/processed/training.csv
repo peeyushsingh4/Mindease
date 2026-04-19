@@ -1,0 +1,1201 @@
+text,label
+56 male bachelor's unemployed 6.0 0.4 3 9 0 0 none 0 1 none 4 3 7 5 1 anxiety_4 depression_2,low
+69 female bachelor's retired 8.8 2.8 6 6 0 0 none 1 0 none 1 4 7 4 6 anxiety_18 depression_7,high
+46 female master's employed 5.3 1.6 5 8 0 0 none 0 1 none 8 7 8 1 1 anxiety_5 depression_13,medium
+32 female high school unemployed 8.8 0.5 4 4 1 1 none 0 0 none 7 4 8 4 4 anxiety_6 depression_3,low
+60 female bachelor's retired 7.2 0.7 2 3 0 0 none 1 1 frequent 8 9 5 7 7 anxiety_7 depression_15,high
+25 male other student 4.4 2.8 7 1 0 0 occasional 0 0 occasional 1 7 1 4 6 anxiety_15 depression_1,high
+38 female master's student 7.1 1.3 5 7 0 0 none 1 1 none 5 1 4 1 8 anxiety_1 depression_3,low
+56 non-binary master's unemployed 3.3 0.5 4 4 1 1 none 0 0 none 9 1 4 1 4 anxiety_4 depression_10,medium
+36 male bachelor's student 7.4 6.8 8 8 0 1 occasional 0 0 occasional 5 4 3 1 9 anxiety_1 depression_15,high
+40 female high school employed 7.8 2.5 9 3 0 0 none 0 0 none 3 9 8 5 8 anxiety_11 depression_6,medium
+28 male other retired 5.6 6.3 9 1 0 0 occasional 0 0 occasional 9 4 3 7 5 anxiety_18 depression_20,high
+28 female high school employed 6.7 1.1 3 5 0 0 occasional 0 0 frequent 9 5 5 9 6 anxiety_14 depression_15,high
+41 female phd employed 9.4 1.3 3 2 1 0 occasional 1 0 none 4 1 2 8 5 anxiety_11 depression_7,medium
+70 female phd student 5.7 4.6 5 3 1 0 none 0 0 none 4 2 6 2 6 anxiety_10 depression_5,medium
+53 male bachelor's employed 4.9 1.5 5 6 0 0 none 0 1 occasional 8 4 6 9 1 anxiety_17 depression_4,high
+57 female bachelor's student 8.7 2.5 2 3 0 0 regular 0 0 frequent 7 4 8 4 4 anxiety_4 depression_18,high
+41 male bachelor's retired 9.4 0.6 1 3 0 0 occasional 0 1 none 5 6 8 5 9 anxiety_15 depression_3,high
+20 male phd retired 6.5 1.2 8 6 0 0 none 0 0 none 6 6 1 5 4 anxiety_16 depression_17,high
+39 male high school employed 8.0 0.3 3 5 0 1 none 0 1 none 3 8 5 4 2 anxiety_13 depression_18,high
+70 male high school unemployed 8.5 0.5 1 9 0 0 none 0 1 none 6 9 2 6 6 anxiety_9 depression_18,high
+19 female bachelor's student 5.4 0.0 1 1 0 0 none 0 0 occasional 8 1 5 1 2 anxiety_11 depression_2,medium
+41 female other student 5.8 0.1 2 3 1 1 none 0 1 frequent 9 1 9 2 3 anxiety_11 depression_13,medium
+61 female high school employed 8.3 7.6 6 3 0 0 none 1 0 none 3 6 4 4 7 anxiety_6 depression_15,high
+47 male phd student 9.0 0.6 6 6 1 0 none 0 1 occasional 8 4 8 4 4 anxiety_1 depression_5,low
+55 female master's student 7.3 2.2 3 8 0 0 occasional 0 0 none 3 4 1 8 1 anxiety_6 depression_3,low
+19 female master's unemployed 5.2 3.7 4 3 0 0 none 0 0 none 2 1 8 9 9 anxiety_13 depression_5,medium
+38 male master's unemployed 9.5 1.6 2 3 1 0 occasional 0 0 none 5 9 6 4 6 anxiety_5 depression_5,low
+50 non-binary other employed 5.7 0.3 2 6 0 0 occasional 0 0 none 4 3 8 6 9 anxiety_15 depression_5,high
+29 other bachelor's unemployed 6.0 2.6 7 8 0 1 none 1 0 none 5 5 6 4 3 anxiety_18 depression_3,high
+39 male phd employed 7.0 1.8 1 6 0 0 occasional 0 1 none 6 1 3 4 5 anxiety_20 depression_3,high
+61 male other retired 8.8 2.6 7 3 0 0 occasional 0 0 occasional 3 8 8 9 9 anxiety_14 depression_20,high
+42 non-binary phd employed 7.8 2.9 1 4 1 0 none 0 0 occasional 1 3 5 4 6 anxiety_15 depression_18,high
+66 female phd retired 7.1 7.4 6 1 1 0 none 0 0 none 4 1 5 6 2 anxiety_5 depression_20,high
+44 male bachelor's employed 7.2 1.7 3 8 0 0 none 0 0 none 6 6 7 9 1 anxiety_4 depression_4,low
+59 female master's student 6.6 0.8 8 4 0 0 regular 1 0 none 2 1 6 3 9 anxiety_2 depression_1,low
+45 female bachelor's unemployed 7.3 2.1 6 6 0 0 occasional 0 1 frequent 2 3 9 7 1 anxiety_7 depression_16,high
+33 female other retired 2.7 0.1 2 3 0 0 none 0 0 none 1 5 7 7 5 anxiety_10 depression_8,medium
+32 female other employed 6.1 4.6 8 6 0 1 occasional 0 0 none 9 4 3 1 1 anxiety_16 depression_17,high
+64 female other unemployed 6.9 0.3 5 9 0 0 none 0 0 none 3 7 5 2 5 anxiety_10 depression_8,medium
+68 male bachelor's employed 4.8 0.8 8 9 0 1 none 0 0 none 2 6 9 5 5 anxiety_18 depression_7,high
+61 male phd unemployed 7.1 3.4 8 3 0 0 occasional 1 1 none 4 3 2 8 7 anxiety_17 depression_8,high
+72 female phd unemployed 6.2 1.8 6 3 0 0 none 0 0 occasional 6 8 1 6 7 anxiety_13 depression_12,medium
+69 non-binary high school employed 9.1 1.0 2 4 0 1 regular 1 0 occasional 1 8 8 7 1 anxiety_1 depression_16,high
+74 male other retired 8.9 1.3 8 7 0 0 occasional 0 0 none 9 2 8 3 9 anxiety_1 depression_12,medium
+20 female phd retired 5.8 3.9 6 3 1 0 occasional 0 0 none 9 7 2 6 1 anxiety_15 depression_19,high
+54 female high school student 6.3 0.8 6 8 1 0 none 0 0 none 8 1 8 9 5 anxiety_1 depression_10,medium
+68 female phd unemployed 6.4 4.1 8 8 0 0 regular 0 0 frequent 6 2 5 3 7 anxiety_6 depression_7,low
+24 female other student 5.8 0.2 1 6 0 0 regular 1 1 none 4 8 2 6 8 anxiety_13 depression_12,medium
+38 female master's student 6.8 3.0 2 4 1 1 none 0 0 none 2 1 7 7 2 anxiety_1 depression_20,high
+26 female other employed 5.4 3.8 9 5 1 0 none 0 0 none 8 2 7 5 1 anxiety_5 depression_5,low
+56 female bachelor's employed 4.8 0.4 8 2 1 1 none 1 0 none 7 1 3 8 4 anxiety_9 depression_16,high
+35 male phd employed 7.4 1.1 7 6 0 0 occasional 0 0 none 4 5 1 8 4 anxiety_17 depression_9,high
+21 female phd unemployed 7.4 0.4 7 3 1 0 occasional 1 0 none 3 7 4 6 6 anxiety_16 depression_7,high
+42 male bachelor's employed 5.3 2.5 5 6 0 0 none 0 1 none 6 6 2 7 1 anxiety_8 depression_20,high
+31 male bachelor's employed 7.8 1.5 2 5 1 1 regular 0 1 none 1 6 4 3 1 anxiety_17 depression_14,high
+67 female master's unemployed 5.6 2.0 6 2 1 1 none 1 0 none 2 6 8 7 3 anxiety_15 depression_11,high
+26 male phd unemployed 6.9 0.4 3 5 0 0 occasional 0 0 none 7 8 2 7 5 anxiety_1 depression_7,low
+43 male phd retired 7.7 0.5 4 5 1 0 none 1 0 none 3 5 1 4 6 anxiety_12 depression_10,medium
+70 female master's employed 6.4 0.1 2 9 0 0 none 0 0 none 1 7 3 4 5 anxiety_5 depression_9,medium
+19 male high school employed 7.2 0.8 2 8 1 0 none 1 1 none 2 3 7 3 5 anxiety_6 depression_4,low
+37 male master's employed 5.7 1.6 8 7 0 0 none 0 1 frequent 9 9 6 7 9 anxiety_1 depression_16,high
+45 female other retired 6.2 3.9 8 3 1 1 occasional 0 1 none 7 3 6 5 2 anxiety_1 depression_10,medium
+64 female phd employed 6.2 2.2 6 4 0 0 none 1 0 none 7 6 7 3 1 anxiety_10 depression_19,high
+24 male bachelor's retired 5.4 1.1 5 6 1 0 none 0 0 none 8 3 8 6 6 anxiety_10 depression_17,high
+61 female other student 6.2 6.1 8 3 0 0 none 0 1 none 8 1 3 6 9 anxiety_3 depression_9,medium
+25 female phd retired 4.2 2.5 4 9 0 0 none 1 1 none 9 1 3 6 7 anxiety_17 depression_13,high
+64 female master's student 5.8 5.3 4 8 0 0 occasional 0 1 occasional 2 3 8 2 8 anxiety_19 depression_1,high
+52 female other employed 6.1 1.5 5 6 1 0 occasional 1 0 none 8 4 7 7 5 anxiety_11 depression_2,medium
+31 other phd student 6.1 0.6 1 4 0 1 none 0 0 none 8 2 5 7 4 anxiety_18 depression_13,high
+34 female high school retired 6.1 0.1 1 7 0 0 none 0 0 occasional 5 9 4 4 6 anxiety_2 depression_9,medium
+53 female high school unemployed 6.4 2.6 2 3 0 0 none 0 0 frequent 5 8 6 6 3 anxiety_9 depression_7,medium
+67 female bachelor's student 7.2 0.3 8 8 1 0 regular 0 0 frequent 4 3 9 4 1 anxiety_17 depression_16,high
+57 male phd student 7.8 0.7 7 1 0 0 regular 0 1 occasional 5 7 6 4 4 anxiety_14 depression_19,high
+21 male high school employed 5.5 1.5 9 3 0 0 occasional 0 0 frequent 2 4 8 6 9 anxiety_4 depression_7,low
+19 female master's retired 4.7 1.7 5 5 0 1 regular 0 0 none 2 5 1 9 4 anxiety_17 depression_6,high
+23 female phd student 4.9 1.8 2 5 0 0 regular 0 1 none 5 4 6 7 1 anxiety_17 depression_18,high
+71 female master's student 5.8 0.4 7 2 0 1 regular 0 0 none 3 9 2 2 4 anxiety_12 depression_19,high
+59 male master's student 6.0 1.0 8 8 0 0 none 1 1 occasional 1 7 3 6 7 anxiety_20 depression_11,high
+21 female high school student 5.3 1.9 7 5 1 0 none 0 0 frequent 9 4 6 5 3 anxiety_18 depression_12,high
+71 male phd unemployed 4.6 7.0 7 7 1 1 none 0 0 none 2 8 2 6 6 anxiety_3 depression_10,medium
+46 female other retired 5.8 2.6 5 7 0 0 none 1 1 none 2 2 4 8 1 anxiety_11 depression_13,medium
+35 female high school employed 6.8 5.1 2 5 0 1 occasional 0 1 occasional 4 7 6 8 4 anxiety_18 depression_12,high
+43 female high school employed 7.4 2.9 6 8 0 0 none 1 0 frequent 2 1 5 3 3 anxiety_4 depression_10,medium
+61 female phd unemployed 5.7 1.8 4 9 0 0 none 0 1 none 7 8 6 9 1 anxiety_17 depression_20,high
+51 female phd retired 5.9 0.4 2 4 1 1 none 0 0 frequent 1 6 6 6 3 anxiety_18 depression_18,high
+27 male master's student 5.1 2.2 9 4 0 1 none 0 0 none 2 5 8 7 4 anxiety_5 depression_4,low
+53 female phd unemployed 6.5 2.0 7 8 0 0 none 0 0 none 5 9 9 9 5 anxiety_14 depression_5,medium
+31 male master's retired 5.2 1.8 6 1 0 0 regular 0 0 none 2 9 5 7 6 anxiety_10 depression_5,medium
+48 female high school student 7.4 1.3 5 4 1 0 occasional 1 1 none 9 3 6 9 2 anxiety_15 depression_12,high
+65 female bachelor's unemployed 3.8 1.5 3 6 0 1 occasional 0 1 none 4 9 6 1 2 anxiety_1 depression_3,low
+32 female other retired 6.0 0.8 4 4 0 0 none 0 1 occasional 9 9 6 1 6 anxiety_16 depression_8,high
+25 female high school employed 7.0 1.5 3 6 0 1 none 0 1 occasional 1 2 2 3 5 anxiety_11 depression_2,medium
+31 female phd employed 6.8 0.4 8 5 1 0 none 0 0 occasional 1 5 4 9 1 anxiety_20 depression_18,high
+40 non-binary other retired 10.5 3.3 3 9 1 0 regular 0 1 none 1 2 1 1 3 anxiety_6 depression_9,medium
+74 male bachelor's employed 7.0 0.4 7 9 0 0 none 1 1 none 4 1 1 1 5 anxiety_16 depression_13,high
+57 male bachelor's retired 5.0 0.2 7 4 0 0 none 0 1 none 9 7 1 5 2 anxiety_2 depression_7,low
+38 male master's student 6.4 1.1 7 4 1 1 occasional 0 1 none 8 4 7 8 1 anxiety_1 depression_10,medium
+33 male other retired 3.8 2.1 7 8 0 0 none 0 1 none 7 5 1 2 9 anxiety_9 depression_9,medium
+62 female master's student 6.4 1.2 2 4 0 1 none 1 0 none 1 4 6 4 5 anxiety_12 depression_15,high
+35 non-binary high school unemployed 5.3 0.6 3 2 0 0 none 1 1 none 3 6 2 6 2 anxiety_17 depression_5,high
+64 male other retired 7.9 1.6 9 2 0 0 none 0 1 occasional 9 2 6 1 4 anxiety_15 depression_12,high
+70 male high school unemployed 5.7 0.9 3 1 0 1 none 1 1 none 9 8 6 4 3 anxiety_19 depression_1,high
+41 male master's employed 6.3 5.4 2 5 1 0 none 0 0 frequent 5 4 3 4 7 anxiety_10 depression_12,medium
+43 female other student 5.5 5.1 9 6 0 0 occasional 1 0 none 6 8 8 9 1 anxiety_12 depression_6,medium
+42 female master's retired 9.1 1.4 9 9 0 0 regular 0 1 frequent 6 3 4 9 4 anxiety_14 depression_19,high
+62 male other unemployed 6.0 0.8 4 5 1 1 none 0 0 none 4 5 7 6 7 anxiety_9 depression_19,high
+58 non-binary master's student 9.2 2.7 9 6 0 1 regular 0 1 none 1 3 4 8 5 anxiety_13 depression_16,high
+46 female bachelor's student 7.7 0.1 3 6 0 0 none 0 0 none 5 7 1 4 4 anxiety_3 depression_19,high
+32 male master's employed 7.2 1.3 7 3 0 1 none 0 0 occasional 1 3 6 8 4 anxiety_14 depression_3,medium
+62 female bachelor's employed 7.1 0.8 7 4 1 0 none 0 0 none 1 8 5 3 2 anxiety_10 depression_10,medium
+18 female master's student 7.1 5.1 8 1 1 0 occasional 0 0 none 5 9 9 2 8 anxiety_16 depression_18,high
+42 male other student 3.6 0.0 4 4 1 1 none 1 0 occasional 5 2 9 6 4 anxiety_7 depression_13,medium
+24 male other retired 6.1 1.6 3 1 1 0 occasional 0 0 none 7 3 8 5 2 anxiety_4 depression_18,high
+26 male other student 7.8 2.7 3 5 0 1 occasional 0 0 none 2 7 7 8 9 anxiety_20 depression_3,high
+41 male phd retired 6.4 1.3 5 8 0 0 none 0 0 none 6 5 2 1 7 anxiety_11 depression_3,medium
+18 female high school student 4.4 0.2 1 8 1 0 occasional 1 0 none 2 7 8 3 3 anxiety_16 depression_12,high
+61 non-binary other employed 6.4 7.2 3 5 0 0 regular 1 0 none 5 2 3 7 7 anxiety_20 depression_20,high
+25 male bachelor's retired 9.1 1.5 6 2 0 0 none 0 0 none 4 4 6 4 1 anxiety_4 depression_7,low
+41 male other unemployed 8.4 1.9 3 6 0 1 none 0 1 none 5 1 7 5 1 anxiety_17 depression_8,high
+28 male phd employed 6.4 0.5 5 1 0 0 occasional 0 0 none 2 5 6 8 4 anxiety_13 depression_9,medium
+68 male bachelor's retired 7.9 1.3 9 7 1 0 occasional 0 0 occasional 8 8 5 1 4 anxiety_11 depression_14,medium
+34 female phd retired 6.0 1.1 2 4 0 0 none 0 1 none 8 1 4 1 4 anxiety_3 depression_5,low
+25 male bachelor's unemployed 3.9 0.2 2 5 0 0 none 1 0 none 6 7 2 7 9 anxiety_9 depression_19,high
+52 male master's retired 5.1 0.2 6 6 1 1 none 0 1 none 3 7 9 9 6 anxiety_6 depression_16,high
+52 male high school student 8.8 3.6 6 1 0 0 none 0 1 none 4 7 7 4 3 anxiety_11 depression_12,medium
+50 female high school unemployed 6.1 0.5 8 9 0 0 none 0 0 none 1 1 7 8 6 anxiety_16 depression_4,high
+22 male phd employed 6.1 0.4 2 4 0 1 regular 0 0 none 9 3 4 7 2 anxiety_19 depression_8,high
+59 female high school employed 6.1 1.4 9 8 1 0 occasional 0 0 none 5 2 5 2 2 anxiety_5 depression_7,low
+56 male phd student 9.4 2.9 2 5 1 1 none 0 0 frequent 8 5 6 5 7 anxiety_14 depression_15,high
+58 female phd employed 8.9 0.1 1 8 1 0 occasional 0 0 none 3 2 2 9 3 anxiety_17 depression_6,high
+45 female phd retired 9.8 1.7 2 1 1 0 regular 1 0 none 4 5 4 9 7 anxiety_3 depression_5,low
+24 male high school retired 6.3 0.3 7 8 0 1 none 0 1 none 4 5 4 3 3 anxiety_4 depression_14,medium
+26 male phd student 6.9 0.1 8 4 1 0 none 0 0 none 8 4 4 3 2 anxiety_16 depression_13,high
+25 female high school employed 4.2 0.1 5 2 1 0 none 1 0 occasional 9 7 7 2 4 anxiety_16 depression_10,high
+29 non-binary phd employed 8.7 3.6 6 6 0 0 occasional 0 1 none 3 6 7 7 4 anxiety_4 depression_18,high
+51 female other student 4.7 0.3 1 2 0 0 none 0 0 none 7 2 7 6 3 anxiety_19 depression_4,high
+50 female phd unemployed 6.8 0.1 6 5 1 0 regular 0 0 none 9 4 7 5 9 anxiety_17 depression_8,high
+65 non-binary bachelor's employed 4.9 1.2 8 2 1 1 none 0 0 none 2 7 2 7 6 anxiety_13 depression_11,medium
+72 female phd unemployed 5.6 3.7 3 3 1 0 none 0 0 none 4 9 5 4 5 anxiety_1 depression_17,high
+40 male master's employed 5.2 0.6 1 6 1 0 none 0 1 none 3 9 2 5 6 anxiety_12 depression_18,high
+41 non-binary phd employed 5.6 1.1 4 1 0 1 none 0 0 none 8 3 5 9 8 anxiety_4 depression_11,medium
+54 male bachelor's employed 5.7 0.1 1 6 0 0 occasional 0 0 none 4 1 6 9 5 anxiety_11 depression_16,high
+52 female bachelor's employed 5.7 1.2 8 3 0 0 regular 0 0 none 9 9 3 4 4 anxiety_5 depression_12,medium
+61 male high school retired 7.8 1.7 5 7 0 1 none 1 0 none 1 8 6 6 7 anxiety_2 depression_13,medium
+57 male other unemployed 4.8 1.7 1 2 1 1 regular 0 0 none 1 7 5 2 5 anxiety_17 depression_16,high
+39 male phd unemployed 6.8 0.8 8 6 0 0 regular 1 1 none 4 6 4 3 4 anxiety_8 depression_1,medium
+44 female high school employed 8.3 0.8 9 8 0 0 none 0 1 frequent 3 7 9 9 5 anxiety_6 depression_16,high
+52 male other employed 5.7 0.2 2 1 0 0 occasional 0 0 none 3 9 8 6 4 anxiety_9 depression_15,high
+18 male phd unemployed 5.4 0.9 9 9 0 0 none 0 0 frequent 2 6 7 8 8 anxiety_13 depression_6,medium
+52 male master's retired 6.2 0.2 8 5 0 0 none 0 1 none 2 3 1 5 8 anxiety_11 depression_12,medium
+54 female phd student 8.3 2.9 7 5 0 1 none 0 0 occasional 8 3 9 2 1 anxiety_16 depression_8,high
+64 non-binary bachelor's student 6.8 6.8 3 5 0 1 occasional 0 0 none 1 4 9 7 3 anxiety_16 depression_7,high
+31 female bachelor's unemployed 5.7 7.0 2 6 0 1 none 0 0 none 8 8 6 6 4 anxiety_2 depression_2,low
+20 female master's employed 7.2 4.0 7 2 1 0 regular 0 0 occasional 3 9 7 2 2 anxiety_10 depression_12,medium
+18 female high school employed 4.8 1.8 5 6 0 1 regular 1 0 occasional 2 8 3 6 5 anxiety_12 depression_14,medium
+22 female other retired 7.5 2.4 6 4 0 0 none 0 1 none 9 2 5 8 8 anxiety_8 depression_16,high
+43 male phd student 7.1 0.7 4 8 0 0 none 0 1 none 5 4 7 1 2 anxiety_11 depression_11,medium
+72 male bachelor's retired 6.0 2.0 2 9 0 0 none 0 0 none 5 4 1 4 9 anxiety_10 depression_20,high
+31 male high school student 5.2 1.2 9 9 0 0 none 1 0 frequent 6 2 1 1 7 anxiety_13 depression_9,medium
+56 male master's unemployed 5.2 1.3 3 8 1 1 none 1 1 none 4 8 5 2 6 anxiety_17 depression_10,high
+44 male bachelor's student 7.3 2.8 7 3 1 0 none 1 0 none 7 3 9 1 8 anxiety_7 depression_17,high
+26 female master's retired 8.3 0.7 8 4 0 0 none 0 1 occasional 7 2 7 6 2 anxiety_3 depression_12,medium
+32 male phd retired 5.5 0.8 2 1 0 1 none 0 0 occasional 9 7 1 6 5 anxiety_20 depression_6,high
+32 female other retired 7.2 5.2 6 9 1 0 none 0 0 none 6 1 5 1 4 anxiety_13 depression_19,high
+43 female bachelor's unemployed 3.4 0.1 8 5 1 1 none 0 0 none 1 6 8 4 8 anxiety_19 depression_11,high
+59 male bachelor's student 5.6 1.3 7 6 0 0 occasional 1 1 frequent 9 3 8 4 1 anxiety_7 depression_9,medium
+30 female phd student 6.5 4.9 3 3 0 0 regular 0 0 none 9 3 2 8 3 anxiety_9 depression_6,medium
+68 female high school retired 5.1 1.9 1 8 0 1 none 1 0 occasional 5 5 7 6 8 anxiety_19 depression_16,high
+49 male other student 5.1 1.6 6 7 0 0 none 0 0 none 7 3 5 2 5 anxiety_13 depression_20,high
+56 female bachelor's employed 5.5 0.6 8 1 0 0 none 1 1 none 1 4 9 5 4 anxiety_8 depression_16,high
+66 female other employed 6.9 0.8 6 5 0 0 none 0 1 none 4 3 3 4 6 anxiety_18 depression_6,high
+69 female bachelor's employed 6.2 3.8 5 9 0 0 none 0 1 none 4 7 1 4 5 anxiety_2 depression_5,low
+49 female other student 3.1 1.6 8 6 0 0 occasional 0 1 occasional 5 3 4 8 3 anxiety_18 depression_4,high
+21 female master's unemployed 3.3 1.4 2 8 1 0 regular 0 0 none 6 4 7 5 5 anxiety_18 depression_2,high
+47 female bachelor's unemployed 5.6 0.2 1 1 1 0 none 0 0 none 4 2 1 3 4 anxiety_11 depression_6,medium
+54 male other unemployed 7.2 0.0 1 7 0 1 occasional 0 0 none 6 2 2 4 1 anxiety_1 depression_9,medium
+40 male high school unemployed 2.4 6.6 4 3 1 0 none 0 0 none 7 9 5 1 1 anxiety_14 depression_17,high
+56 male master's employed 5.8 0.9 6 9 0 0 none 0 1 none 3 1 9 6 7 anxiety_16 depression_14,high
+62 female master's employed 5.7 1.8 9 6 1 0 none 0 1 none 9 1 1 4 4 anxiety_11 depression_7,medium
+32 male high school retired 8.6 0.2 1 5 0 1 none 0 0 none 8 1 4 6 1 anxiety_1 depression_19,high
+60 female other student 5.9 2.3 1 8 0 1 none 1 1 occasional 1 3 3 2 6 anxiety_7 depression_1,low
+46 female phd student 7.1 5.4 5 8 0 0 none 1 1 occasional 2 2 5 5 1 anxiety_16 depression_20,high
+53 female high school unemployed 6.7 1.7 5 3 0 1 none 0 0 none 2 3 5 9 8 anxiety_14 depression_15,high
+30 non-binary other employed 3.3 0.3 5 2 1 0 none 0 0 none 9 5 2 8 9 anxiety_15 depression_18,high
+49 female high school unemployed 7.7 1.7 6 2 0 0 occasional 0 0 none 9 9 5 3 3 anxiety_14 depression_3,medium
+24 female high school retired 6.8 2.9 8 5 0 0 regular 0 0 none 9 2 9 1 7 anxiety_11 depression_18,high
+68 male bachelor's student 7.3 1.0 3 7 0 0 none 0 0 occasional 1 1 5 3 5 anxiety_16 depression_2,high
+39 female other student 12.4 4.2 9 8 0 0 none 0 0 none 7 6 2 8 3 anxiety_19 depression_10,high
+45 male phd unemployed 3.4 2.1 1 8 0 0 none 0 0 none 3 3 7 3 5 anxiety_17 depression_11,high
+19 male bachelor's retired 9.1 4.6 4 8 0 1 regular 0 1 none 9 7 6 5 7 anxiety_6 depression_3,low
+59 female high school student 6.1 2.0 9 3 1 1 none 0 0 none 8 6 7 2 7 anxiety_11 depression_7,medium
+62 female high school retired 6.9 0.3 8 2 1 0 none 0 0 none 3 7 8 1 9 anxiety_17 depression_8,high
+74 male high school retired 6.4 0.7 9 4 1 0 none 0 1 none 1 5 5 5 8 anxiety_9 depression_19,high
+70 female other unemployed 5.9 0.5 1 1 0 0 none 0 0 none 9 1 2 5 4 anxiety_18 depression_18,high
+23 female other employed 5.6 4.8 9 3 1 0 none 0 0 frequent 1 3 7 6 5 anxiety_17 depression_13,high
+45 female bachelor's unemployed 7.0 2.9 3 9 0 0 regular 0 1 occasional 3 3 7 2 5 anxiety_12 depression_13,medium
+45 female phd employed 4.2 2.3 9 7 0 0 regular 0 0 occasional 6 7 8 9 2 anxiety_5 depression_19,high
+61 female bachelor's retired 7.6 0.7 1 7 0 0 none 1 1 frequent 6 3 7 2 7 anxiety_11 depression_12,medium
+61 other master's employed 5.9 0.4 1 1 1 1 none 0 0 none 4 5 7 2 7 anxiety_4 depression_17,high
+37 female high school retired 4.8 2.8 9 7 1 0 none 0 0 occasional 2 4 9 5 9 anxiety_4 depression_12,medium
+47 female high school student 5.8 1.3 6 7 1 0 none 0 0 none 6 4 8 9 9 anxiety_3 depression_13,medium
+28 non-binary high school student 8.4 0.5 4 4 1 0 regular 0 0 none 5 7 2 4 4 anxiety_17 depression_12,high
+72 non-binary bachelor's student 5.7 1.9 7 7 1 0 none 0 1 occasional 6 1 2 6 5 anxiety_7 depression_19,high
+45 male bachelor's unemployed 7.0 0.1 5 8 1 1 none 0 1 none 7 7 7 2 7 anxiety_4 depression_14,medium
+42 male high school unemployed 5.4 0.8 7 3 0 0 none 1 1 frequent 9 8 3 4 7 anxiety_13 depression_7,medium
+56 male bachelor's retired 7.6 1.3 8 2 0 1 regular 0 1 none 7 3 1 9 8 anxiety_12 depression_13,medium
+50 male other student 7.5 0.3 8 7 0 1 occasional 1 0 occasional 4 3 9 2 8 anxiety_1 depression_6,low
+18 female other unemployed 9.3 8.4 1 5 0 0 none 0 1 none 5 4 3 1 2 anxiety_19 depression_19,high
+74 female bachelor's student 6.2 0.5 8 5 0 0 none 1 1 none 6 6 1 4 9 anxiety_20 depression_19,high
+44 female high school unemployed 7.5 0.3 6 5 0 1 none 0 1 none 9 7 6 4 4 anxiety_18 depression_4,high
+74 male bachelor's employed 6.6 0.5 4 7 0 1 regular 1 1 occasional 5 1 4 1 1 anxiety_11 depression_19,high
+69 female bachelor's employed 8.4 2.9 8 9 1 0 none 0 0 none 5 4 1 4 1 anxiety_20 depression_9,high
+30 female bachelor's student 5.4 1.1 3 8 1 1 none 0 0 none 7 7 4 3 5 anxiety_3 depression_16,high
+58 female master's retired 7.6 1.7 4 6 0 1 none 0 1 none 2 2 8 2 7 anxiety_17 depression_4,high
+20 non-binary other unemployed 6.2 0.0 6 7 0 0 occasional 1 0 none 3 1 7 4 5 anxiety_12 depression_6,medium
+56 female phd unemployed 6.4 0.1 7 9 0 0 none 1 0 none 2 1 1 8 3 anxiety_10 depression_8,medium
+23 male phd employed 6.6 1.2 4 6 0 1 none 0 1 none 2 6 9 7 7 anxiety_8 depression_16,high
+25 female master's employed 6.9 3.4 4 1 1 0 none 0 0 occasional 3 5 6 9 1 anxiety_15 depression_5,high
+44 male bachelor's retired 6.3 4.3 7 4 0 0 occasional 0 0 none 6 1 2 8 1 anxiety_5 depression_10,medium
+26 male master's retired 6.8 0.2 6 8 0 0 occasional 0 0 none 5 3 3 1 2 anxiety_4 depression_13,medium
+54 female master's retired 8.9 1.5 8 7 1 0 regular 0 1 none 5 7 7 2 1 anxiety_20 depression_14,high
+50 male high school student 8.0 4.9 1 3 1 0 none 0 0 none 2 9 3 2 9 anxiety_19 depression_7,high
+68 female other employed 7.8 1.0 7 3 0 1 none 1 1 none 2 9 3 8 4 anxiety_4 depression_20,high
+59 male phd student 5.8 3.5 7 3 1 0 regular 0 0 occasional 1 6 5 4 7 anxiety_15 depression_6,high
+61 female bachelor's employed 5.2 0.3 7 1 0 0 none 0 0 none 3 3 3 9 5 anxiety_17 depression_7,high
+41 male phd employed 7.9 5.5 7 1 0 0 occasional 0 0 none 7 1 3 2 7 anxiety_12 depression_5,medium
+32 non-binary phd unemployed 7.8 2.8 8 6 0 0 occasional 0 1 none 5 3 5 4 7 anxiety_3 depression_18,high
+71 female other employed 8.7 5.7 9 1 0 0 none 0 0 none 7 2 5 1 1 anxiety_10 depression_12,medium
+49 male phd employed 5.6 2.3 9 5 0 0 none 0 1 none 9 5 9 3 1 anxiety_15 depression_6,high
+49 female phd student 6.2 0.9 2 4 0 0 occasional 0 1 none 6 8 1 6 3 anxiety_10 depression_1,medium
+41 other master's employed 4.0 5.6 7 5 0 0 regular 1 1 occasional 2 5 1 9 2 anxiety_18 depression_4,high
+58 female other student 5.9 0.6 7 7 1 0 none 1 1 none 1 1 9 1 7 anxiety_1 depression_19,high
+69 male high school retired 8.0 0.8 4 6 0 0 none 0 0 none 1 3 5 5 3 anxiety_3 depression_12,medium
+66 female bachelor's employed 5.8 2.4 9 9 0 1 none 0 0 none 9 5 4 2 7 anxiety_12 depression_15,high
+66 female phd employed 7.5 2.9 8 6 1 0 none 0 1 none 6 7 2 7 9 anxiety_1 depression_3,low
+69 female bachelor's student 6.2 5.3 1 9 0 0 none 0 1 frequent 6 5 9 4 1 anxiety_3 depression_20,high
+29 female high school retired 7.0 0.5 2 4 1 0 none 0 1 none 4 5 6 5 3 anxiety_3 depression_8,medium
+56 male bachelor's unemployed 4.8 3.2 2 1 0 0 regular 0 1 frequent 2 7 9 8 6 anxiety_5 depression_11,medium
+19 male high school retired 6.6 2.7 8 1 0 0 occasional 0 1 none 3 8 5 2 9 anxiety_19 depression_16,high
+20 female master's student 2.0 0.1 1 7 0 0 occasional 1 0 none 3 8 4 3 5 anxiety_1 depression_9,medium
+66 male phd retired 6.2 1.0 4 3 0 0 none 0 1 none 8 7 7 5 3 anxiety_4 depression_3,low
+54 male high school student 4.1 0.7 5 2 0 1 none 0 1 none 6 3 5 4 8 anxiety_4 depression_5,low
+66 non-binary bachelor's student 8.3 0.7 9 6 0 1 regular 1 1 none 7 2 8 5 5 anxiety_17 depression_20,high
+73 female phd unemployed 7.7 8.1 7 6 0 0 none 0 0 none 9 1 8 3 6 anxiety_14 depression_14,high
+34 female master's employed 7.2 2.1 8 7 0 0 none 0 1 none 1 6 2 9 2 anxiety_18 depression_15,high
+66 female phd student 8.8 2.5 9 5 0 0 none 0 1 none 2 9 5 8 4 anxiety_1 depression_6,low
+19 female high school student 5.1 7.5 7 8 0 1 regular 1 0 none 9 3 8 6 1 anxiety_16 depression_4,high
+19 female master's unemployed 9.1 0.9 5 7 0 1 regular 0 1 none 5 5 3 1 4 anxiety_3 depression_8,medium
+45 female bachelor's student 7.9 3.2 5 2 0 0 none 1 0 occasional 4 9 7 4 1 anxiety_9 depression_19,high
+71 male master's employed 6.1 1.1 6 1 0 0 regular 0 1 none 1 9 3 7 4 anxiety_4 depression_5,low
+40 male master's unemployed 8.2 4.1 5 9 0 0 none 0 0 occasional 9 7 6 5 2 anxiety_5 depression_13,medium
+54 female other employed 4.8 0.4 9 5 1 0 none 0 0 none 9 4 2 4 6 anxiety_11 depression_16,high
+49 female master's employed 5.3 5.9 3 5 0 0 regular 0 0 none 4 2 6 9 6 anxiety_9 depression_1,medium
+50 male master's unemployed 5.6 0.5 3 4 1 0 regular 0 1 none 9 2 6 8 8 anxiety_3 depression_13,medium
+18 male phd student 5.7 0.8 7 2 0 0 none 0 0 none 1 4 8 3 9 anxiety_6 depression_11,medium
+36 male bachelor's employed 4.9 2.8 7 5 0 1 none 0 1 none 5 1 5 6 8 anxiety_11 depression_8,medium
+19 male phd employed 8.3 1.0 6 2 0 1 regular 0 1 none 1 4 1 4 1 anxiety_9 depression_8,medium
+70 female phd employed 6.1 1.9 3 7 1 0 occasional 1 1 none 4 6 8 7 3 anxiety_15 depression_14,high
+61 male high school employed 7.0 1.2 7 9 0 0 regular 0 0 none 5 6 9 1 6 anxiety_3 depression_13,medium
+43 female phd unemployed 5.6 2.7 5 9 0 1 none 1 1 occasional 3 7 1 1 1 anxiety_1 depression_3,low
+49 female other unemployed 3.8 0.5 7 6 0 0 regular 0 1 none 2 5 5 6 8 anxiety_20 depression_4,high
+23 female other retired 6.9 0.1 2 1 0 0 regular 0 0 none 6 9 6 7 6 anxiety_19 depression_20,high
+49 female high school retired 3.6 0.7 6 6 0 0 none 0 0 none 3 2 4 9 1 anxiety_14 depression_15,high
+72 male bachelor's employed 6.4 1.3 8 5 0 0 regular 0 0 occasional 1 2 2 7 2 anxiety_17 depression_15,high
+21 female bachelor's student 4.4 0.4 1 4 0 0 none 0 1 none 5 4 5 9 6 anxiety_14 depression_13,medium
+72 male phd employed 9.5 0.9 4 6 0 0 none 0 0 none 2 4 4 9 8 anxiety_17 depression_9,high
+28 male phd student 7.9 1.0 1 6 0 0 occasional 0 0 frequent 2 4 7 8 5 anxiety_14 depression_10,medium
+73 non-binary phd employed 6.7 0.1 1 6 1 0 none 1 1 occasional 4 1 6 7 1 anxiety_12 depression_12,medium
+34 male bachelor's retired 8.4 1.8 8 2 1 0 none 0 0 none 4 4 3 3 2 anxiety_16 depression_14,high
+55 male master's retired 5.2 4.3 7 7 0 0 regular 0 1 none 4 5 9 3 4 anxiety_1 depression_1,low
+41 female other student 7.3 0.3 1 4 0 1 none 0 1 occasional 7 9 4 5 4 anxiety_13 depression_14,medium
+22 male master's employed 6.8 1.8 2 9 1 0 none 0 0 occasional 1 3 5 7 7 anxiety_6 depression_14,medium
+69 female master's student 6.9 2.2 4 2 0 0 regular 0 1 none 8 3 3 7 2 anxiety_17 depression_8,high
+51 male bachelor's retired 8.4 1.1 1 5 0 0 none 0 0 none 9 5 8 1 7 anxiety_12 depression_16,high
+23 non-binary master's employed 7.6 2.4 3 4 1 0 none 0 0 none 6 6 7 8 7 anxiety_19 depression_14,high
+39 female high school employed 6.9 1.1 8 9 0 0 none 0 1 none 4 3 7 1 7 anxiety_6 depression_1,low
+28 female phd student 4.0 1.4 8 4 0 0 none 0 0 none 6 1 8 4 3 anxiety_7 depression_16,high
+65 non-binary high school unemployed 5.1 0.0 8 8 1 0 occasional 0 1 none 7 8 7 2 6 anxiety_1 depression_18,high
+33 male other student 6.3 2.4 6 8 0 0 regular 0 0 frequent 6 1 3 5 6 anxiety_1 depression_7,low
+50 non-binary phd retired 6.6 2.2 6 6 1 0 none 0 0 occasional 1 2 3 6 4 anxiety_5 depression_15,high
+26 male master's retired 4.8 0.1 5 6 1 0 regular 0 1 none 5 3 2 4 1 anxiety_6 depression_17,high
+23 female other retired 10.1 0.9 9 8 1 0 none 0 0 none 8 6 1 4 9 anxiety_16 depression_19,high
+33 male phd retired 8.8 7.7 4 9 0 0 none 0 1 none 8 4 5 7 2 anxiety_16 depression_13,high
+46 female master's retired 7.4 1.1 7 5 0 0 occasional 0 0 none 9 4 4 4 9 anxiety_14 depression_9,medium
+20 male high school unemployed 6.6 1.4 1 1 0 0 occasional 0 1 none 4 9 2 2 8 anxiety_1 depression_15,high
+37 female phd employed 6.2 4.8 9 1 0 0 none 0 0 none 6 6 1 4 1 anxiety_13 depression_3,medium
+53 female master's student 5.1 2.5 7 2 0 0 none 0 0 none 7 2 3 7 7 anxiety_20 depression_1,high
+36 non-binary high school student 6.6 1.7 9 5 0 0 none 0 0 none 5 7 6 1 3 anxiety_10 depression_16,high
+43 male other retired 6.9 3.2 7 4 0 0 none 0 0 occasional 8 3 2 4 9 anxiety_10 depression_8,medium
+20 female other student 4.6 4.0 2 1 0 0 none 0 1 none 3 9 7 6 5 anxiety_9 depression_13,medium
+36 female other retired 7.0 1.2 6 4 0 0 occasional 0 0 none 8 6 7 8 3 anxiety_13 depression_8,medium
+37 male other unemployed 6.3 1.3 4 4 1 0 none 0 0 occasional 5 8 3 8 8 anxiety_3 depression_17,high
+49 male bachelor's unemployed 3.6 1.0 3 4 1 1 occasional 0 0 none 1 1 1 9 3 anxiety_18 depression_14,high
+24 male phd employed 5.2 6.8 2 1 1 1 none 0 1 none 6 2 9 5 7 anxiety_20 depression_7,high
+69 female phd unemployed 5.9 2.4 6 9 0 0 none 0 1 none 2 6 5 2 7 anxiety_2 depression_15,high
+58 female bachelor's unemployed 9.3 0.2 8 3 1 0 none 0 0 frequent 7 3 2 3 7 anxiety_17 depression_16,high
+50 female master's employed 7.3 4.0 6 4 1 0 none 0 0 none 9 1 8 2 1 anxiety_19 depression_19,high
+57 male master's student 4.5 1.3 9 5 0 0 regular 0 0 none 3 6 4 9 5 anxiety_13 depression_6,medium
+56 male other retired 7.2 0.1 5 7 0 0 none 0 1 none 4 5 7 6 1 anxiety_13 depression_1,medium
+35 male high school retired 4.2 1.6 2 6 0 0 none 0 0 none 4 9 5 1 7 anxiety_1 depression_12,medium
+57 non-binary master's student 8.1 1.1 8 5 0 1 regular 1 0 none 4 6 3 3 8 anxiety_2 depression_18,high
+18 male high school employed 5.8 4.2 9 8 0 0 occasional 0 1 none 3 5 8 7 7 anxiety_1 depression_16,high
+28 male phd student 6.4 0.5 4 1 0 0 none 0 1 frequent 5 1 2 7 1 anxiety_5 depression_12,medium
+45 male high school unemployed 8.5 3.5 6 7 1 0 none 0 0 frequent 9 1 1 5 3 anxiety_3 depression_20,high
+74 female phd employed 4.6 1.6 8 6 0 0 occasional 1 1 none 8 1 5 3 3 anxiety_7 depression_13,medium
+42 non-binary bachelor's employed 4.4 0.1 9 5 0 1 regular 1 0 none 2 7 4 7 7 anxiety_13 depression_8,medium
+67 female bachelor's employed 5.6 7.1 5 7 1 1 regular 0 1 none 9 6 7 5 4 anxiety_18 depression_1,high
+40 female other retired 8.1 1.4 6 3 0 1 none 1 0 occasional 2 5 9 6 3 anxiety_7 depression_7,medium
+48 female master's student 4.2 0.7 4 1 1 0 regular 0 0 none 7 4 6 3 6 anxiety_1 depression_15,high
+47 male other employed 2.3 1.3 5 9 0 0 none 0 1 none 5 8 1 6 6 anxiety_5 depression_13,medium
+59 non-binary phd employed 5.8 3.9 7 2 1 0 none 0 0 occasional 7 8 8 7 5 anxiety_17 depression_13,high
+52 female other employed 7.3 0.7 9 3 0 0 regular 0 0 occasional 5 5 2 8 6 anxiety_8 depression_9,medium
+24 female high school student 8.3 0.4 6 8 0 0 none 0 0 none 6 4 4 2 3 anxiety_15 depression_15,high
+33 female phd retired 5.8 0.3 6 9 0 0 none 0 1 frequent 8 2 3 2 5 anxiety_20 depression_4,high
+43 female bachelor's unemployed 5.9 0.7 8 3 1 0 none 0 0 frequent 1 7 6 6 9 anxiety_4 depression_13,medium
+65 female master's retired 8.2 3.0 4 6 1 0 none 0 1 none 1 5 2 8 4 anxiety_2 depression_12,medium
+74 other phd employed 3.7 1.3 3 7 0 0 occasional 1 0 none 5 3 5 5 2 anxiety_5 depression_5,low
+69 non-binary phd retired 5.9 0.5 7 1 1 0 occasional 0 0 frequent 1 9 9 1 5 anxiety_1 depression_7,low
+66 female high school retired 6.8 0.4 5 7 0 0 none 0 0 none 3 9 3 1 3 anxiety_5 depression_8,medium
+19 female master's unemployed 7.2 0.8 2 4 0 0 none 0 0 none 9 8 2 9 3 anxiety_6 depression_5,low
+18 male bachelor's student 5.7 5.6 2 5 1 0 regular 0 1 none 7 1 2 4 4 anxiety_2 depression_9,medium
+65 female phd student 6.6 0.8 6 8 0 0 regular 0 1 occasional 6 3 9 1 4 anxiety_1 depression_14,medium
+29 male phd retired 2.8 8.9 8 4 0 0 none 1 0 occasional 8 2 6 8 5 anxiety_4 depression_12,medium
+22 female high school retired 5.5 1.3 1 4 1 1 regular 1 0 none 8 4 2 2 7 anxiety_7 depression_4,low
+54 other other student 7.2 0.4 6 8 1 0 occasional 1 1 frequent 6 2 3 2 4 anxiety_1 depression_20,high
+49 female bachelor's student 5.0 4.4 2 5 1 0 none 0 1 occasional 4 8 1 1 7 anxiety_1 depression_8,medium
+72 female master's unemployed 6.6 1.2 2 6 1 0 none 0 1 occasional 4 1 2 1 9 anxiety_8 depression_17,high
+26 male phd employed 7.2 2.5 7 5 0 1 none 0 1 none 4 4 2 9 3 anxiety_20 depression_8,high
+58 male phd retired 6.0 8.2 1 1 1 0 occasional 0 0 none 6 5 2 1 5 anxiety_16 depression_1,high
+52 female bachelor's student 6.8 0.1 6 7 0 0 none 0 1 none 1 4 7 6 4 anxiety_13 depression_20,high
+36 male other retired 5.1 0.2 7 6 1 0 none 0 0 none 2 8 3 7 9 anxiety_18 depression_2,high
+65 male phd retired 6.2 2.5 8 2 0 0 none 1 0 none 6 2 4 4 5 anxiety_20 depression_4,high
+33 male bachelor's student 7.4 0.7 7 7 0 0 regular 0 1 occasional 1 9 2 5 2 anxiety_10 depression_1,medium
+20 female high school unemployed 6.7 0.4 6 6 0 0 none 0 1 none 9 2 5 4 1 anxiety_12 depression_7,medium
+37 female other retired 5.6 0.1 9 5 0 1 regular 0 1 occasional 6 2 9 4 7 anxiety_1 depression_1,low
+41 male master's unemployed 6.8 0.0 3 8 0 1 regular 0 0 none 7 2 9 1 1 anxiety_10 depression_9,medium
+71 female phd student 7.6 3.0 6 5 1 0 none 1 0 none 1 8 7 6 8 anxiety_9 depression_3,medium
+73 female bachelor's employed 3.4 0.3 4 2 1 0 none 0 0 none 8 3 8 7 9 anxiety_3 depression_12,medium
+50 female high school employed 8.2 1.3 2 6 0 0 none 0 1 none 5 8 5 7 7 anxiety_19 depression_19,high
+41 female master's retired 6.0 1.9 1 1 1 1 regular 0 0 none 5 7 5 8 9 anxiety_9 depression_15,high
+69 male bachelor's student 7.1 1.1 1 5 0 0 none 0 1 occasional 6 4 3 7 6 anxiety_10 depression_16,high
+28 female bachelor's unemployed 8.3 0.1 3 6 0 1 none 0 0 none 7 7 6 6 7 anxiety_19 depression_10,high
+66 female master's retired 4.4 3.1 4 7 0 0 none 1 1 none 7 8 1 8 3 anxiety_16 depression_6,high
+25 female high school student 5.4 0.0 2 2 1 0 none 0 1 none 5 6 3 3 9 anxiety_18 depression_17,high
+53 female high school student 6.1 2.9 1 1 1 1 regular 0 0 none 1 6 2 9 3 anxiety_14 depression_17,high
+55 male other unemployed 5.3 4.5 4 6 0 0 occasional 0 0 none 9 3 7 3 6 anxiety_3 depression_19,high
+57 male phd retired 9.1 1.1 7 3 0 0 regular 0 1 none 6 5 9 4 4 anxiety_2 depression_18,high
+37 female master's student 5.2 1.5 6 5 0 0 none 0 0 none 9 2 4 6 9 anxiety_1 depression_11,medium
+52 female master's student 5.7 1.3 6 2 0 0 none 0 1 occasional 4 5 7 8 1 anxiety_18 depression_7,high
+65 female master's student 6.8 1.0 9 1 0 0 regular 0 1 none 2 5 8 3 9 anxiety_9 depression_10,medium
+42 female high school unemployed 4.7 4.4 2 1 0 0 none 1 0 occasional 3 7 2 6 4 anxiety_13 depression_7,medium
+52 female phd retired 5.9 4.5 4 4 0 0 regular 0 1 none 4 4 7 5 5 anxiety_2 depression_5,low
+42 female other retired 7.0 0.8 5 2 1 1 none 1 0 frequent 8 6 3 5 1 anxiety_7 depression_12,medium
+46 male bachelor's retired 6.0 1.9 1 1 0 1 none 1 1 none 3 9 8 5 1 anxiety_16 depression_16,high
+35 female bachelor's retired 6.4 5.2 8 6 0 0 occasional 0 0 none 8 4 6 9 6 anxiety_19 depression_18,high
+63 male master's employed 5.7 6.5 8 4 0 0 regular 0 1 none 6 6 3 7 1 anxiety_15 depression_3,high
+35 female phd employed 4.2 1.4 6 7 1 0 regular 1 0 frequent 4 9 8 9 2 anxiety_11 depression_20,high
+19 other high school retired 7.0 1.2 5 6 1 0 none 1 0 none 7 1 3 9 3 anxiety_1 depression_15,high
+71 male phd unemployed 9.1 0.7 8 5 1 0 none 0 0 none 5 8 9 6 7 anxiety_7 depression_5,low
+52 male phd employed 6.5 6.4 3 2 0 1 none 0 1 none 5 1 3 6 2 anxiety_20 depression_13,high
+33 male high school student 6.8 0.3 3 5 1 1 occasional 1 0 none 9 4 1 4 5 anxiety_8 depression_19,high
+58 non-binary master's employed 7.5 1.7 2 9 0 0 occasional 0 1 none 3 3 2 8 9 anxiety_10 depression_12,medium
+53 male phd student 4.6 0.7 5 9 0 0 none 1 0 none 4 4 4 2 8 anxiety_5 depression_5,low
+50 male bachelor's retired 9.1 0.7 3 2 0 0 regular 0 1 none 5 7 2 5 8 anxiety_9 depression_6,medium
+21 male high school employed 6.8 1.0 3 7 0 0 occasional 0 1 none 1 9 4 1 2 anxiety_1 depression_7,low
+50 male other unemployed 8.9 13.4 6 4 1 0 regular 0 0 none 7 9 4 2 1 anxiety_2 depression_10,medium
+31 male master's employed 5.4 0.1 8 3 1 0 none 0 0 none 8 1 4 1 9 anxiety_19 depression_16,high
+38 female high school employed 9.2 1.7 2 1 0 1 none 0 0 none 6 1 1 6 4 anxiety_14 depression_8,medium
+65 female other employed 7.7 0.2 4 3 0 0 regular 0 0 frequent 9 9 9 2 9 anxiety_20 depression_9,high
+37 male other retired 7.3 0.3 7 9 0 1 none 0 0 none 3 4 7 4 7 anxiety_10 depression_4,medium
+73 male phd unemployed 6.9 1.2 1 9 0 0 regular 1 1 occasional 2 3 2 5 6 anxiety_9 depression_8,medium
+25 male phd employed 6.1 1.4 1 7 0 0 regular 0 0 none 5 9 3 7 9 anxiety_10 depression_7,medium
+24 male phd unemployed 8.3 0.6 7 3 1 1 occasional 0 1 frequent 9 5 8 1 4 anxiety_6 depression_15,high
+20 female high school retired 6.7 0.8 7 3 1 1 none 0 1 none 1 6 7 5 1 anxiety_17 depression_3,high
+34 female high school student 3.5 0.2 1 4 0 0 none 0 0 none 1 1 4 4 5 anxiety_6 depression_17,high
+50 male master's employed 4.8 0.7 1 7 1 0 none 0 1 none 3 1 4 7 6 anxiety_4 depression_11,medium
+65 female phd unemployed 6.2 6.8 4 7 0 1 none 0 0 occasional 3 7 9 7 6 anxiety_20 depression_9,high
+29 male other unemployed 7.0 5.8 5 2 0 0 none 0 1 none 5 8 5 8 1 anxiety_3 depression_5,low
+68 female bachelor's retired 6.4 0.8 5 5 0 0 none 0 0 none 4 8 5 4 7 anxiety_19 depression_10,high
+39 female master's employed 8.3 1.7 4 7 0 0 none 0 1 none 6 7 7 4 8 anxiety_18 depression_15,high
+72 female high school student 3.6 4.8 8 7 1 1 none 0 1 none 8 9 1 5 5 anxiety_4 depression_14,medium
+39 male master's unemployed 6.7 0.0 7 6 0 1 none 0 0 none 8 1 3 5 2 anxiety_8 depression_4,medium
+63 non-binary master's employed 3.8 3.3 9 8 0 1 none 1 1 none 4 2 2 3 2 anxiety_17 depression_20,high
+47 male master's student 7.6 5.9 7 3 0 0 none 1 0 none 1 3 6 5 5 anxiety_5 depression_2,low
+55 male master's unemployed 6.4 0.2 1 1 1 0 occasional 1 0 none 7 5 6 5 7 anxiety_13 depression_12,medium
+55 male bachelor's unemployed 7.1 0.4 7 3 0 0 none 1 1 occasional 6 4 1 8 7 anxiety_1 depression_1,low
+62 male phd student 5.2 6.5 1 2 1 1 none 0 0 none 5 4 6 7 4 anxiety_13 depression_20,high
+68 non-binary other student 8.4 1.5 7 2 1 0 occasional 0 1 none 4 8 2 8 3 anxiety_4 depression_5,low
+71 female master's retired 8.1 0.0 8 2 0 0 regular 0 0 occasional 6 8 4 5 9 anxiety_14 depression_6,medium
+25 male master's employed 7.4 0.6 9 5 0 0 none 1 1 none 8 7 6 2 7 anxiety_3 depression_11,medium
+44 female master's employed 6.3 1.2 3 1 1 0 occasional 1 0 none 6 1 3 8 2 anxiety_5 depression_8,medium
+44 other phd retired 7.4 2.4 4 4 0 1 regular 1 0 occasional 3 4 3 9 1 anxiety_7 depression_7,medium
+51 female high school unemployed 5.4 2.6 4 5 1 0 regular 0 0 none 9 1 3 2 2 anxiety_1 depression_4,low
+38 female high school student 7.8 10.8 9 2 0 1 none 0 0 none 3 5 4 1 3 anxiety_12 depression_6,medium
+47 non-binary bachelor's student 9.0 0.7 7 5 0 0 occasional 0 0 frequent 4 3 9 6 5 anxiety_11 depression_16,high
+50 other high school student 8.1 1.5 3 4 1 1 none 0 0 frequent 5 3 4 3 3 anxiety_8 depression_20,high
+45 female master's unemployed 5.4 1.5 5 8 1 1 none 0 0 none 2 4 4 1 9 anxiety_6 depression_15,high
+64 male master's student 7.0 1.0 7 1 1 0 regular 0 0 none 2 2 4 6 4 anxiety_2 depression_14,medium
+50 male master's student 4.6 0.4 8 5 0 1 none 1 0 none 6 7 7 8 7 anxiety_19 depression_12,high
+22 female bachelor's retired 7.4 7.6 1 1 1 0 regular 0 0 none 2 4 5 9 4 anxiety_20 depression_12,high
+65 male master's unemployed 7.2 3.8 2 4 1 1 none 1 0 none 1 5 2 6 3 anxiety_20 depression_16,high
+36 female high school employed 3.7 1.4 7 8 1 1 regular 0 1 none 8 2 7 6 1 anxiety_14 depression_15,high
+21 male phd retired 4.8 1.8 2 1 0 1 none 1 0 frequent 1 6 3 1 9 anxiety_1 depression_13,medium
+52 male phd retired 6.1 0.5 7 2 0 0 none 1 0 occasional 6 9 1 5 1 anxiety_10 depression_11,medium
+66 male other employed 6.0 1.6 9 1 1 0 none 1 0 none 1 8 9 3 1 anxiety_16 depression_17,high
+34 male high school retired 4.7 2.4 2 7 0 0 none 0 1 none 8 8 5 7 1 anxiety_4 depression_15,high
+61 non-binary master's unemployed 7.1 1.4 7 2 0 0 none 1 0 none 5 2 1 9 5 anxiety_11 depression_14,medium
+45 female phd student 6.9 9.3 4 1 0 1 regular 0 1 none 3 4 1 6 7 anxiety_16 depression_10,high
+47 female high school unemployed 6.2 1.9 2 6 0 1 none 0 0 none 5 8 1 5 7 anxiety_20 depression_12,high
+46 female phd employed 5.4 0.9 7 6 0 1 occasional 0 0 occasional 1 1 9 7 1 anxiety_1 depression_16,high
+63 male master's employed 8.1 3.0 5 2 0 0 none 1 1 none 1 8 8 9 6 anxiety_16 depression_15,high
+70 female phd retired 9.0 0.4 1 1 1 1 none 0 0 occasional 4 3 6 5 9 anxiety_19 depression_10,high
+23 female other unemployed 5.8 1.0 5 3 0 1 regular 1 0 none 9 8 6 5 6 anxiety_9 depression_4,medium
+52 female other unemployed 5.6 0.9 3 5 0 1 none 0 1 none 9 6 6 4 4 anxiety_9 depression_9,medium
+58 male phd employed 7.2 1.1 7 6 0 0 occasional 0 1 none 1 7 4 5 9 anxiety_9 depression_20,high
+54 female high school unemployed 6.0 3.0 6 3 0 0 occasional 1 1 none 3 2 5 7 3 anxiety_17 depression_9,high
+41 female high school employed 6.3 1.3 8 9 0 0 none 0 1 frequent 4 1 3 3 4 anxiety_12 depression_20,high
+46 other high school unemployed 7.6 3.2 5 5 1 0 regular 1 1 occasional 2 6 3 4 4 anxiety_13 depression_11,medium
+66 female phd unemployed 3.6 1.7 2 2 0 0 occasional 0 1 none 7 3 7 9 4 anxiety_8 depression_11,medium
+63 female high school unemployed 8.5 0.8 9 6 1 1 none 0 0 none 3 4 5 2 6 anxiety_16 depression_7,high
+70 female master's employed 6.6 3.3 8 8 0 0 regular 0 1 none 1 9 8 8 7 anxiety_18 depression_10,high
+48 female other retired 5.9 0.5 6 6 0 0 none 0 1 frequent 1 3 5 9 9 anxiety_1 depression_4,low
+52 male master's unemployed 6.4 0.5 7 4 0 0 none 0 0 occasional 3 2 4 5 3 anxiety_1 depression_5,low
+50 female high school employed 6.4 1.4 9 6 0 1 regular 0 0 none 6 2 3 7 8 anxiety_12 depression_5,medium
+69 female master's employed 3.9 0.6 7 8 1 1 occasional 0 0 none 4 2 2 6 8 anxiety_6 depression_11,medium
+38 female high school unemployed 8.7 0.0 3 8 1 1 regular 0 1 none 1 6 3 1 1 anxiety_9 depression_9,medium
+49 male phd unemployed 6.6 2.1 6 2 0 0 occasional 0 0 none 7 2 7 8 5 anxiety_5 depression_16,high
+40 male master's retired 7.2 1.4 7 8 0 0 regular 0 1 none 2 7 8 9 5 anxiety_16 depression_9,high
+50 female phd employed 7.9 1.2 2 6 0 1 regular 0 0 none 5 7 5 1 8 anxiety_18 depression_4,high
+20 male phd employed 5.0 6.8 3 2 0 0 none 1 1 frequent 8 7 1 8 8 anxiety_17 depression_2,high
+35 female bachelor's student 7.2 1.7 4 1 1 0 none 0 0 none 7 2 3 3 2 anxiety_18 depression_14,high
+42 male high school employed 6.1 4.0 6 6 0 0 none 0 1 none 8 7 4 6 3 anxiety_1 depression_3,low
+59 male other retired 7.8 0.3 1 7 1 0 occasional 0 1 occasional 6 8 4 8 2 anxiety_19 depression_18,high
+48 non-binary high school student 3.3 1.7 9 5 0 0 none 0 1 none 7 8 1 5 1 anxiety_8 depression_6,medium
+71 female other student 6.4 4.0 5 8 0 0 none 0 1 none 9 2 9 8 2 anxiety_3 depression_11,medium
+20 male high school student 5.6 1.7 7 9 0 0 none 0 1 none 6 5 4 7 6 anxiety_5 depression_18,high
+57 male phd unemployed 7.1 2.5 9 4 0 0 regular 1 0 none 9 6 2 7 1 anxiety_8 depression_12,medium
+63 male master's unemployed 7.2 0.9 9 7 1 0 occasional 0 0 none 2 9 9 7 6 anxiety_19 depression_5,high
+41 female master's employed 5.4 0.2 1 8 0 0 none 0 1 none 2 6 4 9 1 anxiety_18 depression_9,high
+67 male bachelor's student 5.4 1.2 1 6 1 0 none 0 0 occasional 2 6 4 6 2 anxiety_18 depression_20,high
+49 female other retired 6.3 1.0 3 2 0 0 none 0 0 none 6 6 6 6 8 anxiety_1 depression_18,high
+64 non-binary other unemployed 5.2 4.0 6 7 1 0 none 0 0 occasional 2 9 8 9 6 anxiety_15 depression_19,high
+39 male other retired 7.8 0.6 2 9 0 0 none 0 0 none 3 7 5 6 9 anxiety_18 depression_3,high
+40 female phd retired 5.9 6.8 1 5 1 0 regular 0 0 occasional 8 1 8 7 1 anxiety_7 depression_9,medium
+19 other other unemployed 2.1 6.3 1 2 1 0 regular 0 1 none 8 1 1 7 5 anxiety_16 depression_4,high
+44 male master's unemployed 5.9 0.6 5 4 1 0 none 1 0 none 4 4 4 2 7 anxiety_16 depression_17,high
+59 female phd unemployed 4.9 0.9 4 3 0 1 none 0 0 none 9 2 1 8 9 anxiety_15 depression_17,high
+19 female high school unemployed 4.1 4.5 1 4 1 0 none 0 0 none 8 3 3 6 9 anxiety_6 depression_2,low
+43 non-binary other student 4.6 6.8 4 7 0 0 none 0 1 none 1 7 7 4 4 anxiety_9 depression_9,medium
+34 female other student 6.7 1.2 3 8 0 0 none 0 1 occasional 8 7 1 7 4 anxiety_7 depression_9,medium
+57 female high school student 8.5 0.8 2 1 0 1 none 0 1 none 1 3 5 8 4 anxiety_14 depression_5,medium
+50 female other student 7.0 1.5 9 8 0 0 none 0 0 none 4 2 1 1 3 anxiety_11 depression_15,high
+26 female high school employed 5.6 2.3 1 5 1 0 occasional 0 1 none 6 1 6 4 8 anxiety_16 depression_15,high
+60 female phd student 7.2 0.6 7 7 0 0 occasional 0 1 occasional 7 9 9 4 5 anxiety_6 depression_3,low
+71 female master's unemployed 5.8 2.7 4 1 0 1 occasional 0 1 none 4 3 3 9 7 anxiety_16 depression_19,high
+65 female high school retired 5.5 0.1 5 2 0 1 none 0 1 frequent 8 9 6 6 6 anxiety_20 depression_3,high
+56 male bachelor's student 4.8 0.1 5 1 0 0 regular 0 0 frequent 8 4 4 4 9 anxiety_16 depression_6,high
+46 male high school employed 3.9 1.0 1 5 0 0 regular 0 0 none 9 6 6 1 3 anxiety_12 depression_4,medium
+59 male other unemployed 5.9 0.9 6 6 0 0 none 0 0 none 6 7 2 8 6 anxiety_17 depression_13,high
+72 male phd retired 6.7 0.8 9 9 0 1 none 0 0 occasional 4 6 4 9 3 anxiety_5 depression_13,medium
+43 male phd retired 6.4 1.4 2 8 0 0 none 0 1 none 2 1 7 5 2 anxiety_13 depression_11,medium
+52 non-binary high school student 5.9 0.8 7 7 1 0 none 0 1 none 7 6 6 5 3 anxiety_8 depression_5,medium
+67 male master's retired 5.1 0.4 6 5 1 1 none 0 1 frequent 3 6 9 8 2 anxiety_5 depression_1,low
+42 female bachelor's student 7.4 0.7 5 3 1 1 none 0 0 frequent 3 5 7 8 2 anxiety_12 depression_9,medium
+41 male phd student 4.5 7.4 4 9 0 1 none 0 0 frequent 3 3 1 5 7 anxiety_9 depression_17,high
+30 female other unemployed 7.7 1.1 4 5 0 1 none 0 0 none 4 3 6 4 3 anxiety_3 depression_1,low
+24 non-binary other unemployed 5.0 1.2 6 3 0 1 none 0 0 none 2 7 3 6 8 anxiety_3 depression_3,low
+74 female master's employed 5.4 1.7 4 3 0 0 regular 1 0 none 5 8 8 5 2 anxiety_1 depression_15,high
+53 female phd unemployed 4.3 8.2 5 3 0 1 none 0 1 none 3 3 1 8 7 anxiety_18 depression_10,high
+62 male high school unemployed 5.7 0.6 6 6 0 1 occasional 0 0 none 5 3 2 9 3 anxiety_12 depression_8,medium
+37 female other student 8.0 2.3 5 1 0 0 none 0 1 none 7 7 3 1 9 anxiety_9 depression_12,medium
+18 male master's unemployed 7.3 2.5 7 4 0 0 none 0 0 none 9 7 3 9 7 anxiety_9 depression_15,high
+25 non-binary phd student 8.0 1.9 9 8 1 1 none 0 1 occasional 2 9 7 9 9 anxiety_18 depression_9,high
+63 male phd student 7.3 0.2 7 3 0 0 none 1 0 occasional 9 6 8 6 2 anxiety_18 depression_10,high
+33 female phd unemployed 4.8 2.3 7 5 0 1 none 1 0 occasional 6 7 9 5 6 anxiety_7 depression_20,high
+31 female phd employed 6.0 0.1 4 2 0 0 none 0 1 none 6 1 7 7 5 anxiety_4 depression_9,medium
+29 male phd employed 5.3 1.8 1 2 0 0 none 0 1 none 3 7 8 8 2 anxiety_13 depression_15,high
+68 male other retired 8.5 2.7 8 7 0 0 occasional 0 0 occasional 9 2 6 9 4 anxiety_17 depression_1,high
+40 male master's retired 4.7 0.5 4 3 0 0 none 0 0 none 4 7 2 9 4 anxiety_2 depression_2,low
+32 male phd unemployed 7.8 3.7 1 5 0 0 occasional 0 0 none 5 3 1 3 8 anxiety_14 depression_19,high
+45 female bachelor's employed 7.8 0.1 5 3 1 0 none 0 1 none 3 9 3 8 7 anxiety_3 depression_14,medium
+51 male bachelor's student 9.2 3.7 8 6 1 0 occasional 0 1 none 5 5 9 1 5 anxiety_5 depression_8,medium
+19 male master's retired 5.9 1.2 4 3 0 0 none 0 0 none 8 7 7 7 9 anxiety_14 depression_6,medium
+49 male high school student 7.6 0.5 8 8 0 0 occasional 0 0 occasional 8 8 2 5 1 anxiety_3 depression_12,medium
+40 female high school retired 9.9 0.3 8 2 0 0 regular 1 1 frequent 8 2 1 2 4 anxiety_7 depression_15,high
+39 male high school unemployed 5.6 6.1 3 3 1 1 regular 0 0 none 6 1 2 2 5 anxiety_18 depression_14,high
+68 male bachelor's employed 4.2 0.2 9 8 0 0 none 1 1 none 1 7 3 8 8 anxiety_13 depression_1,medium
+42 male high school retired 3.7 0.4 3 8 0 0 regular 0 0 occasional 6 6 6 5 3 anxiety_10 depression_11,medium
+39 male other employed 7.6 0.9 1 1 0 0 none 0 0 none 7 6 9 3 5 anxiety_13 depression_3,medium
+39 female phd student 3.7 1.9 2 8 0 0 regular 0 0 none 9 2 8 1 3 anxiety_16 depression_19,high
+66 male bachelor's unemployed 5.9 1.6 6 2 1 0 none 0 0 frequent 8 3 9 7 7 anxiety_9 depression_18,high
+69 male master's employed 7.2 0.3 2 7 0 0 none 0 0 occasional 8 4 8 3 3 anxiety_2 depression_20,high
+59 female master's unemployed 6.8 0.7 6 6 0 1 none 1 1 frequent 7 3 7 7 7 anxiety_5 depression_2,low
+23 female phd employed 7.1 0.5 1 2 0 1 none 1 1 none 2 2 6 2 2 anxiety_17 depression_7,high
+32 male bachelor's student 6.8 0.5 1 5 0 1 occasional 0 1 none 1 3 8 4 7 anxiety_4 depression_8,medium
+71 female high school student 8.4 1.1 5 7 1 0 regular 0 1 occasional 2 6 6 2 9 anxiety_17 depression_19,high
+60 non-binary high school unemployed 5.1 2.4 9 8 1 0 occasional 0 0 none 6 9 2 4 5 anxiety_9 depression_15,high
+54 male other student 5.5 0.5 8 3 0 0 occasional 0 0 occasional 2 4 9 5 6 anxiety_20 depression_10,high
+50 female other retired 5.3 0.9 3 1 0 0 occasional 0 1 none 4 6 9 8 3 anxiety_2 depression_1,low
+25 female high school employed 7.7 1.0 3 7 0 1 none 0 0 occasional 3 1 3 2 5 anxiety_18 depression_6,high
+70 female master's student 7.9 7.5 1 5 0 0 none 0 0 none 6 6 9 3 5 anxiety_11 depression_13,medium
+61 male master's retired 7.2 6.2 3 5 0 0 none 0 0 none 8 3 2 5 3 anxiety_13 depression_14,medium
+61 male other unemployed 8.3 3.2 1 7 0 0 none 0 0 none 6 9 3 9 8 anxiety_8 depression_3,medium
+22 female phd retired 4.7 0.6 8 1 0 1 none 0 0 none 2 4 6 5 6 anxiety_1 depression_11,medium
+56 other high school unemployed 9.0 0.1 1 8 0 1 none 0 1 none 5 7 4 9 3 anxiety_17 depression_3,high
+21 female other unemployed 8.8 0.8 5 5 0 0 none 1 1 none 6 4 8 4 1 anxiety_12 depression_19,high
+23 male other employed 7.6 0.6 9 8 1 1 none 0 1 occasional 9 6 1 5 1 anxiety_4 depression_10,medium
+62 female high school employed 9.2 1.4 7 5 0 0 regular 1 1 none 6 7 6 9 2 anxiety_13 depression_15,high
+49 female high school retired 4.0 3.0 4 7 1 1 none 1 1 none 5 2 2 4 5 anxiety_9 depression_11,medium
+69 male master's employed 5.7 3.9 9 3 0 1 none 1 0 none 1 6 6 5 7 anxiety_7 depression_15,high
+47 male phd employed 5.4 3.7 9 2 0 1 none 0 0 frequent 5 8 1 5 1 anxiety_5 depression_13,medium
+64 female phd employed 7.6 0.9 2 6 1 0 none 0 1 none 5 6 2 4 1 anxiety_5 depression_5,low
+52 male high school retired 4.9 2.3 6 5 0 0 none 1 0 none 6 2 9 4 4 anxiety_17 depression_4,high
+72 female bachelor's student 7.6 0.8 4 9 1 0 none 0 0 occasional 7 4 6 5 6 anxiety_9 depression_13,medium
+57 male other employed 8.6 0.1 8 4 0 0 none 0 0 none 4 1 8 6 9 anxiety_6 depression_9,medium
+69 male other employed 7.5 2.4 7 3 0 1 none 1 0 none 7 7 7 7 1 anxiety_19 depression_17,high
+33 male high school retired 6.9 0.0 7 9 0 0 none 0 0 none 5 8 9 6 5 anxiety_16 depression_2,high
+30 female bachelor's student 5.0 1.1 9 8 0 0 none 1 0 occasional 6 2 9 1 9 anxiety_2 depression_5,low
+67 non-binary master's employed 5.2 0.8 5 6 0 1 occasional 0 0 none 4 5 4 2 8 anxiety_10 depression_16,high
+59 male high school unemployed 8.4 2.4 6 1 0 0 none 1 1 occasional 8 8 7 7 7 anxiety_16 depression_7,high
+47 female high school retired 7.7 2.9 1 1 0 0 none 0 0 occasional 9 8 5 3 2 anxiety_5 depression_1,low
+36 female other employed 6.4 0.7 6 6 0 0 none 0 1 none 2 5 7 2 9 anxiety_15 depression_12,high
+34 female high school employed 5.9 3.3 2 3 0 0 regular 0 0 occasional 4 8 4 6 8 anxiety_13 depression_11,medium
+73 male high school unemployed 3.5 0.7 6 3 0 0 none 1 0 none 8 6 1 4 9 anxiety_13 depression_12,medium
+36 female high school unemployed 4.9 1.2 9 6 0 1 occasional 1 0 none 8 5 4 5 9 anxiety_13 depression_19,high
+45 female other retired 9.4 2.6 8 3 0 0 occasional 1 0 none 9 4 3 6 9 anxiety_15 depression_12,high
+72 male master's retired 4.6 2.4 9 6 1 1 none 0 1 frequent 3 5 9 3 3 anxiety_14 depression_12,medium
+43 male master's unemployed 6.8 8.7 8 5 1 0 none 0 1 none 1 4 5 1 7 anxiety_8 depression_14,medium
+54 female high school retired 8.0 0.5 3 4 0 0 none 0 1 none 9 1 4 3 1 anxiety_11 depression_2,medium
+43 non-binary other unemployed 4.6 2.2 8 8 1 0 none 1 1 none 1 3 8 3 9 anxiety_18 depression_2,high
+70 male master's employed 6.8 1.9 6 2 0 0 none 0 0 none 3 8 5 6 9 anxiety_4 depression_4,low
+40 female master's unemployed 7.9 4.9 6 7 1 0 none 0 0 none 3 7 3 4 3 anxiety_10 depression_20,high
+26 non-binary master's unemployed 6.5 0.3 6 4 1 0 none 0 0 none 9 7 2 7 5 anxiety_1 depression_16,high
+29 female other student 10.8 2.8 3 2 1 0 none 1 0 none 1 3 8 2 8 anxiety_5 depression_10,medium
+70 non-binary other unemployed 4.0 1.7 1 7 0 0 regular 1 0 none 7 9 2 4 6 anxiety_13 depression_13,medium
+18 female high school unemployed 8.1 0.6 4 1 0 0 none 1 0 none 2 6 8 8 9 anxiety_1 depression_2,low
+18 male phd student 6.2 1.3 6 4 0 0 regular 0 0 none 7 8 5 6 3 anxiety_8 depression_3,medium
+64 male master's retired 7.7 0.8 2 9 1 1 regular 0 0 occasional 1 8 8 3 7 anxiety_3 depression_19,high
+51 male phd student 7.2 1.7 7 4 0 1 regular 0 0 frequent 8 3 5 2 6 anxiety_3 depression_6,low
+49 female other employed 5.4 4.4 7 3 1 0 regular 0 1 none 2 4 1 3 5 anxiety_7 depression_19,high
+71 female other student 6.8 1.7 4 2 0 0 none 1 1 none 3 6 2 1 4 anxiety_4 depression_20,high
+65 male other employed 3.7 2.0 4 3 1 1 none 0 1 frequent 8 2 6 1 5 anxiety_3 depression_19,high
+42 female phd retired 7.4 1.5 1 1 0 0 none 0 1 occasional 3 7 3 2 4 anxiety_15 depression_8,high
+57 female other student 6.9 0.1 2 8 0 1 none 0 0 none 1 2 8 3 3 anxiety_8 depression_14,medium
+62 female high school student 7.5 0.5 9 1 0 0 regular 0 0 none 9 5 5 9 7 anxiety_3 depression_10,medium
+70 female other retired 8.1 1.4 8 3 0 1 regular 1 0 none 8 4 3 8 6 anxiety_7 depression_3,low
+18 female bachelor's employed 7.1 0.7 8 3 0 0 none 0 1 none 4 9 7 9 4 anxiety_18 depression_6,high
+33 male phd student 6.7 0.4 9 2 1 1 none 0 1 none 8 2 8 7 9 anxiety_11 depression_15,high
+56 male bachelor's employed 5.2 1.4 7 5 0 0 none 0 0 frequent 5 7 4 7 1 anxiety_11 depression_18,high
+22 male other student 5.4 0.8 9 3 0 0 none 0 0 none 3 7 9 5 1 anxiety_17 depression_14,high
+39 male high school unemployed 8.3 0.6 2 3 1 0 none 0 1 none 1 7 6 7 9 anxiety_6 depression_19,high
+46 female master's student 8.7 1.2 6 8 0 0 none 0 0 occasional 5 1 1 4 7 anxiety_8 depression_10,medium
+72 female other retired 6.1 0.3 3 4 1 1 regular 0 1 occasional 6 8 5 5 2 anxiety_1 depression_15,high
+20 male high school retired 6.6 5.3 6 4 1 0 none 0 0 occasional 4 2 5 1 5 anxiety_10 depression_4,medium
+29 female phd employed 5.1 4.0 3 3 0 1 regular 0 0 frequent 7 5 7 4 4 anxiety_19 depression_2,high
+43 male bachelor's student 8.3 2.5 8 1 0 0 occasional 0 1 none 3 2 7 3 1 anxiety_3 depression_3,low
+33 non-binary bachelor's employed 7.5 0.2 4 8 0 1 regular 0 1 frequent 7 5 6 2 9 anxiety_4 depression_7,low
+68 non-binary bachelor's employed 9.4 3.0 6 1 1 0 none 1 1 occasional 1 7 8 2 6 anxiety_11 depression_16,high
+54 male phd unemployed 5.2 3.3 9 7 0 1 regular 0 0 none 7 6 2 8 6 anxiety_15 depression_10,high
+39 female high school unemployed 5.9 2.9 2 5 0 1 occasional 0 0 none 1 5 7 1 4 anxiety_1 depression_19,high
+74 male phd retired 6.8 0.2 2 4 1 0 none 0 1 none 1 4 7 8 2 anxiety_9 depression_17,high
+46 female bachelor's employed 7.5 2.1 7 4 0 1 none 0 0 frequent 2 8 4 9 8 anxiety_11 depression_19,high
+31 female other retired 6.2 3.6 2 8 1 1 regular 0 0 none 2 8 2 6 8 anxiety_19 depression_5,high
+45 male master's student 5.2 1.7 2 6 1 0 none 0 1 none 4 1 4 1 3 anxiety_13 depression_20,high
+22 female phd employed 7.8 2.1 4 1 0 0 none 0 0 none 1 2 4 7 7 anxiety_16 depression_13,high
+64 male phd employed 7.6 1.2 9 8 1 0 none 0 0 none 4 3 6 5 7 anxiety_4 depression_13,medium
+66 male high school student 5.1 1.5 8 2 1 1 occasional 0 1 none 2 1 7 9 5 anxiety_1 depression_11,medium
+47 female high school student 8.5 0.1 2 6 0 0 regular 1 1 none 4 3 3 7 5 anxiety_20 depression_11,high
+63 male phd retired 8.3 2.0 8 9 0 0 none 0 0 occasional 4 8 1 5 8 anxiety_13 depression_16,high
+69 female bachelor's retired 6.7 0.2 4 1 0 0 none 1 0 none 9 4 3 2 4 anxiety_1 depression_15,high
+22 male master's student 6.6 1.1 2 6 0 0 regular 0 1 none 9 7 9 4 1 anxiety_5 depression_17,high
+29 other high school retired 7.3 0.7 7 8 1 1 occasional 0 1 none 1 7 1 2 1 anxiety_5 depression_18,high
+33 male bachelor's student 5.2 1.6 6 2 0 1 regular 0 1 none 5 5 8 9 9 anxiety_14 depression_19,high
+43 female other employed 6.5 0.3 5 5 0 0 none 0 0 none 7 1 2 2 4 anxiety_14 depression_4,medium
+43 female high school employed 3.3 2.4 1 6 0 0 none 0 0 none 4 4 6 2 1 anxiety_8 depression_5,medium
+65 male bachelor's unemployed 7.8 3.2 2 5 0 0 none 0 1 none 5 7 3 2 2 anxiety_4 depression_7,low
+38 non-binary bachelor's employed 4.2 0.4 8 3 1 0 occasional 0 1 none 2 5 7 1 7 anxiety_7 depression_2,low
+56 female master's student 8.8 0.2 1 4 1 0 none 0 1 none 3 2 2 9 2 anxiety_20 depression_1,high
+53 female master's retired 6.0 0.3 3 7 0 0 none 0 0 none 7 8 4 8 1 anxiety_19 depression_12,high
+50 female other unemployed 6.2 4.2 2 4 0 0 none 1 0 none 7 2 9 2 9 anxiety_15 depression_10,high
+47 non-binary bachelor's retired 5.6 1.5 5 9 0 0 none 1 0 none 4 8 6 2 5 anxiety_4 depression_8,medium
+54 non-binary bachelor's student 6.1 1.3 4 2 0 1 regular 0 1 none 1 2 4 5 4 anxiety_19 depression_1,high
+40 female master's employed 8.6 0.2 7 5 0 0 none 1 1 occasional 1 5 2 4 4 anxiety_9 depression_12,medium
+27 female high school unemployed 2.8 2.1 5 8 0 1 occasional 1 0 occasional 4 4 9 2 1 anxiety_13 depression_2,medium
+71 male high school student 8.4 4.0 8 5 1 0 regular 0 0 none 4 1 4 8 3 anxiety_14 depression_10,medium
+22 male phd unemployed 7.0 3.5 4 8 0 0 none 0 0 none 6 8 9 8 1 anxiety_14 depression_17,high
+53 female master's unemployed 4.7 2.0 6 8 1 1 occasional 0 0 none 7 3 2 4 5 anxiety_10 depression_3,medium
+51 male phd employed 4.9 0.2 4 9 0 0 regular 0 1 none 9 4 7 4 5 anxiety_16 depression_7,high
+69 female master's student 9.0 0.2 2 6 0 0 regular 0 1 occasional 9 4 5 9 9 anxiety_5 depression_12,medium
+48 male other retired 5.1 0.1 1 4 1 0 none 0 0 frequent 5 5 8 4 8 anxiety_6 depression_8,medium
+27 male bachelor's unemployed 4.8 0.6 1 3 0 0 none 0 0 occasional 3 3 8 9 5 anxiety_2 depression_20,high
+36 female other unemployed 8.2 0.3 8 5 1 1 none 0 1 occasional 3 9 4 3 5 anxiety_13 depression_12,medium
+49 non-binary master's retired 7.0 0.6 4 6 0 0 occasional 1 0 occasional 6 4 4 2 7 anxiety_13 depression_3,medium
+18 male bachelor's student 5.1 1.0 5 3 0 0 occasional 0 0 none 1 4 8 8 2 anxiety_19 depression_17,high
+73 female high school unemployed 6.8 5.7 8 2 1 0 occasional 0 1 none 7 6 3 3 7 anxiety_18 depression_9,high
+22 female high school unemployed 5.0 1.9 7 7 0 0 none 1 1 occasional 3 8 7 2 1 anxiety_19 depression_10,high
+62 male phd unemployed 8.2 3.6 8 5 1 1 none 0 1 none 5 7 8 8 5 anxiety_1 depression_6,low
+21 female master's student 8.1 2.5 8 9 1 1 none 0 0 none 7 4 8 8 6 anxiety_8 depression_1,medium
+33 male master's student 7.3 0.2 6 3 0 0 none 1 0 none 7 4 4 5 1 anxiety_16 depression_12,high
+41 male high school retired 7.0 2.7 2 8 0 0 occasional 1 0 occasional 9 5 9 9 9 anxiety_2 depression_5,low
+33 non-binary other student 9.1 0.6 6 6 0 0 none 0 0 none 1 5 4 6 9 anxiety_8 depression_13,medium
+72 male bachelor's student 6.5 2.0 1 4 0 0 none 0 1 none 3 1 8 5 1 anxiety_6 depression_15,high
+19 female other employed 4.7 0.8 1 9 1 1 none 1 0 frequent 9 8 6 3 4 anxiety_16 depression_11,high
+66 female other retired 7.2 12.1 3 5 0 0 none 0 1 occasional 8 5 5 7 8 anxiety_11 depression_8,medium
+45 male high school unemployed 9.6 0.6 3 6 0 0 none 0 0 frequent 2 3 4 9 2 anxiety_17 depression_5,high
+49 female high school student 5.0 0.7 5 9 1 1 none 0 0 none 8 3 5 4 8 anxiety_19 depression_2,high
+44 non-binary high school unemployed 6.0 5.3 1 7 0 0 none 0 1 none 8 4 1 7 9 anxiety_11 depression_12,medium
+37 male phd unemployed 7.1 0.0 6 5 1 0 none 0 0 occasional 2 7 7 3 9 anxiety_8 depression_2,medium
+41 female other employed 6.4 2.4 7 2 0 0 none 0 0 none 8 5 8 2 1 anxiety_4 depression_16,high
+29 female master's student 5.0 2.6 3 4 1 1 occasional 1 0 none 3 1 9 1 9 anxiety_11 depression_3,medium
+67 female bachelor's retired 8.2 3.6 4 2 0 1 none 0 0 none 7 5 3 6 4 anxiety_8 depression_10,medium
+52 female phd student 10.0 7.3 3 3 0 0 occasional 0 0 none 9 5 9 5 8 anxiety_9 depression_19,high
+50 male master's unemployed 6.8 7.4 1 3 0 0 occasional 0 0 none 4 6 5 2 9 anxiety_2 depression_8,medium
+50 non-binary other retired 5.1 0.1 8 4 0 1 none 1 1 none 6 7 6 3 3 anxiety_16 depression_7,high
+68 non-binary high school student 4.2 3.5 2 6 1 0 regular 0 1 none 9 5 1 9 6 anxiety_6 depression_1,low
+60 female other unemployed 6.9 2.1 1 3 0 0 none 0 0 occasional 5 2 9 3 3 anxiety_19 depression_12,high
+54 female bachelor's unemployed 8.2 2.1 8 1 1 1 occasional 1 0 none 1 2 9 7 1 anxiety_8 depression_5,medium
+29 female phd employed 7.2 0.3 7 1 0 1 regular 0 1 none 3 4 6 1 6 anxiety_14 depression_16,high
+20 female phd employed 6.5 2.1 7 9 0 0 regular 0 0 none 9 1 8 7 5 anxiety_16 depression_4,high
+18 female bachelor's employed 5.6 8.1 4 9 0 0 none 1 1 none 3 7 4 9 3 anxiety_12 depression_17,high
+50 female master's unemployed 4.9 4.9 9 5 0 0 none 1 1 frequent 2 1 5 8 4 anxiety_5 depression_2,low
+57 female master's student 7.8 1.2 6 9 0 0 none 0 0 none 4 3 5 7 2 anxiety_19 depression_12,high
+27 female phd employed 7.9 0.1 2 7 0 1 occasional 1 1 occasional 5 7 7 8 4 anxiety_18 depression_1,high
+60 female phd student 4.2 0.9 1 9 1 0 occasional 0 1 none 7 6 7 4 4 anxiety_9 depression_12,medium
+61 male high school employed 8.9 3.5 1 7 0 1 none 0 1 none 7 7 7 2 3 anxiety_2 depression_12,medium
+46 male master's retired 7.4 2.4 9 9 0 0 none 1 0 none 9 5 5 9 6 anxiety_20 depression_12,high
+30 male bachelor's retired 8.6 1.2 4 2 0 0 occasional 1 0 none 8 8 4 3 1 anxiety_12 depression_19,high
+29 female master's employed 4.5 0.1 5 8 0 0 none 0 1 none 2 6 8 4 9 anxiety_2 depression_17,high
+48 female high school unemployed 4.5 1.1 3 7 1 1 regular 0 0 none 8 4 1 7 3 anxiety_10 depression_20,high
+63 female phd employed 6.3 1.3 4 6 0 0 occasional 0 1 none 8 1 1 2 3 anxiety_1 depression_11,medium
+19 female phd employed 7.3 5.3 8 5 0 0 none 0 0 occasional 5 2 6 8 3 anxiety_4 depression_13,medium
+68 female high school unemployed 9.2 2.0 4 4 0 0 occasional 0 0 occasional 3 6 2 8 7 anxiety_12 depression_8,medium
+67 male bachelor's retired 7.6 0.7 9 7 0 0 none 0 1 none 9 4 3 5 8 anxiety_9 depression_10,medium
+52 female phd student 6.1 1.5 9 3 0 0 none 0 1 none 7 3 4 9 2 anxiety_4 depression_8,medium
+40 female other employed 5.0 0.1 6 8 0 0 regular 0 1 none 1 7 2 8 1 anxiety_9 depression_20,high
+34 female phd unemployed 8.3 7.2 2 2 0 0 regular 0 1 frequent 8 7 7 1 5 anxiety_6 depression_8,medium
+43 male other employed 5.1 0.9 7 1 0 0 none 1 0 none 5 2 1 9 8 anxiety_1 depression_9,medium
+25 male high school unemployed 8.9 1.3 9 2 1 0 none 0 0 none 6 8 3 5 3 anxiety_10 depression_7,medium
+46 male high school student 6.1 0.9 6 9 0 0 none 0 1 none 9 1 2 9 6 anxiety_14 depression_14,high
+43 male phd student 8.9 2.3 3 5 1 0 none 1 0 none 8 7 9 9 3 anxiety_18 depression_2,high
+27 female master's retired 7.5 2.2 7 8 0 0 none 0 1 none 3 1 8 3 6 anxiety_6 depression_11,medium
+43 male other unemployed 6.3 2.5 5 3 1 0 none 0 0 none 5 3 3 8 4 anxiety_18 depression_8,high
+51 female bachelor's unemployed 5.7 0.6 1 7 0 1 none 0 0 occasional 4 3 5 7 7 anxiety_20 depression_13,high
+68 female phd retired 6.0 0.8 3 2 0 0 none 0 0 occasional 1 2 3 7 1 anxiety_16 depression_15,high
+58 male bachelor's retired 7.1 0.3 5 8 0 0 none 0 0 none 5 5 6 2 1 anxiety_15 depression_3,high
+24 male phd unemployed 6.6 2.1 7 7 0 0 regular 0 1 none 7 4 5 2 5 anxiety_16 depression_14,high
+21 male master's retired 5.6 0.1 3 5 0 1 occasional 0 1 none 1 6 2 2 9 anxiety_8 depression_15,high
+70 male master's student 6.3 1.8 6 4 0 0 none 0 1 frequent 4 2 8 2 5 anxiety_13 depression_2,medium
+67 male master's employed 6.6 4.1 5 1 0 0 none 0 0 occasional 6 4 6 4 4 anxiety_11 depression_19,high
+62 female master's student 3.3 4.4 1 5 0 0 none 0 0 none 9 7 3 7 8 anxiety_7 depression_12,medium
+28 male high school retired 7.2 1.2 6 9 0 0 none 1 0 none 8 1 1 2 5 anxiety_17 depression_20,high
+46 non-binary high school unemployed 5.0 1.2 8 4 1 1 none 0 0 none 2 3 5 5 1 anxiety_18 depression_4,high
+73 male other unemployed 4.8 0.2 1 9 0 1 regular 0 0 none 3 1 2 7 7 anxiety_19 depression_3,high
+53 female bachelor's student 4.0 2.2 2 2 0 0 occasional 0 0 none 5 2 2 9 4 anxiety_13 depression_5,medium
+42 female phd unemployed 3.8 3.4 4 4 0 1 occasional 0 0 frequent 7 9 9 8 5 anxiety_15 depression_3,high
+38 female phd retired 4.5 0.6 2 9 0 1 none 1 0 none 3 5 7 9 6 anxiety_1 depression_15,high
+74 female high school student 5.4 1.1 9 4 0 0 regular 0 0 none 7 4 6 7 7 anxiety_16 depression_19,high
+53 female phd unemployed 9.4 3.7 8 5 1 0 regular 1 0 occasional 5 4 1 3 2 anxiety_5 depression_2,low
+27 female high school employed 5.7 4.2 8 8 0 0 none 0 0 none 6 8 2 1 1 anxiety_3 depression_12,medium
+54 female other employed 6.8 0.6 4 1 0 0 none 1 0 frequent 6 3 7 7 3 anxiety_10 depression_5,medium
+26 female bachelor's retired 7.1 1.6 5 1 0 0 none 0 1 none 4 4 3 6 1 anxiety_19 depression_17,high
+41 male other unemployed 6.7 0.4 4 9 0 0 none 0 0 frequent 8 2 2 2 4 anxiety_5 depression_14,medium
+52 male master's retired 6.4 0.2 9 9 1 1 occasional 0 1 none 9 6 6 1 6 anxiety_7 depression_10,medium
+66 female master's student 4.7 4.8 2 4 1 1 none 0 0 none 2 9 8 4 5 anxiety_14 depression_3,medium
+52 female master's employed 8.7 3.4 8 2 0 0 none 0 1 none 9 4 8 4 4 anxiety_3 depression_4,low
+65 female other student 9.2 2.9 2 9 0 0 none 0 0 none 4 6 2 6 7 anxiety_13 depression_6,medium
+53 female phd unemployed 4.0 0.1 1 4 0 1 none 0 1 none 6 4 6 5 6 anxiety_13 depression_16,high
+35 other bachelor's retired 5.0 3.7 3 6 0 1 regular 1 0 frequent 7 2 5 9 3 anxiety_10 depression_7,medium
+66 male master's retired 6.1 1.2 9 1 0 1 none 0 1 occasional 4 6 7 8 9 anxiety_2 depression_15,high
+56 male master's retired 5.1 0.8 3 9 1 0 occasional 0 0 none 8 7 4 9 5 anxiety_6 depression_20,high
+49 male master's student 7.3 1.6 9 5 0 0 none 1 0 none 8 4 2 7 1 anxiety_8 depression_11,medium
+41 female bachelor's employed 5.4 0.2 7 3 0 0 none 1 1 occasional 1 7 3 9 6 anxiety_4 depression_1,low
+40 female master's student 9.7 2.8 1 4 0 1 none 0 0 occasional 8 8 9 3 5 anxiety_12 depression_5,medium
+49 male bachelor's student 8.3 1.7 5 1 1 0 occasional 0 1 none 3 3 8 9 8 anxiety_15 depression_13,high
+54 female master's unemployed 6.8 0.4 9 9 0 1 none 0 0 frequent 5 2 9 2 4 anxiety_8 depression_14,medium
+29 male other unemployed 8.0 0.4 3 8 1 0 none 0 0 none 8 5 5 9 1 anxiety_7 depression_9,medium
+66 female other unemployed 8.2 0.4 9 4 0 1 none 0 1 none 6 2 5 6 2 anxiety_14 depression_17,high
+72 female bachelor's employed 5.7 0.1 5 2 0 0 none 1 0 none 4 5 7 4 8 anxiety_19 depression_15,high
+30 male other employed 5.3 1.8 9 9 1 0 regular 0 0 occasional 4 6 7 2 8 anxiety_14 depression_7,medium
+40 female bachelor's unemployed 6.6 3.7 6 4 1 0 none 0 1 none 4 8 1 3 5 anxiety_13 depression_12,medium
+42 male other unemployed 7.8 0.0 9 9 0 0 none 1 1 none 6 6 5 5 6 anxiety_1 depression_6,low
+52 male other employed 6.7 0.1 7 3 0 0 none 0 1 none 7 4 8 9 2 anxiety_19 depression_16,high
+58 male bachelor's retired 4.1 1.7 7 7 1 0 regular 0 0 none 5 3 7 7 9 anxiety_1 depression_5,low
+47 male phd employed 5.3 3.4 8 7 0 0 none 0 0 none 8 2 2 3 6 anxiety_4 depression_9,medium
+34 male other employed 6.4 0.8 7 4 0 0 occasional 0 0 none 7 1 8 4 9 anxiety_10 depression_14,medium
+66 female master's employed 6.4 0.9 9 2 1 1 regular 0 0 none 8 2 2 2 3 anxiety_3 depression_8,medium
+37 female phd unemployed 9.5 1.8 9 9 0 0 none 0 1 none 4 2 1 8 6 anxiety_20 depression_14,high
+65 female bachelor's retired 4.4 0.6 6 4 0 0 none 1 0 occasional 8 5 3 6 5 anxiety_9 depression_12,medium
+42 male phd employed 7.3 0.1 7 8 0 1 none 0 0 none 6 9 3 3 9 anxiety_3 depression_10,medium
+39 female high school unemployed 8.7 2.7 2 2 0 0 regular 0 0 occasional 3 1 6 5 1 anxiety_6 depression_20,high
+30 male high school student 9.9 2.0 9 8 0 1 none 0 1 none 8 4 3 5 9 anxiety_6 depression_20,high
+36 male other student 5.9 1.7 1 5 0 0 none 0 1 none 7 7 7 1 5 anxiety_12 depression_13,medium
+66 female other employed 7.2 2.7 1 7 0 0 occasional 0 1 none 5 3 8 5 1 anxiety_1 depression_19,high
+53 male master's student 7.4 2.2 3 7 0 0 none 0 0 none 4 8 3 6 8 anxiety_16 depression_15,high
+29 female phd retired 6.8 0.5 6 9 0 0 none 0 1 none 1 3 9 2 7 anxiety_5 depression_8,medium
+58 female high school student 6.4 0.9 5 3 0 0 none 0 1 occasional 3 8 1 3 6 anxiety_9 depression_10,medium
+36 male other student 7.2 0.3 2 4 1 0 none 0 0 frequent 2 2 3 5 2 anxiety_10 depression_3,medium
+29 male phd retired 2.7 0.3 9 4 0 0 none 0 0 none 8 5 3 3 5 anxiety_13 depression_3,medium
+26 male other employed 7.5 2.3 4 5 1 0 none 0 0 none 8 4 7 5 3 anxiety_15 depression_5,high
+24 female other employed 6.7 3.9 4 6 0 0 regular 0 0 frequent 5 9 5 5 2 anxiety_12 depression_16,high
+45 male high school retired 6.2 6.6 5 3 1 0 none 0 1 none 5 3 4 8 1 anxiety_5 depression_17,high
+31 male high school retired 9.6 2.0 8 4 0 0 regular 0 0 none 4 5 2 9 9 anxiety_5 depression_6,low
+48 male other retired 5.5 0.4 4 3 0 0 occasional 1 0 frequent 1 9 7 8 2 anxiety_18 depression_20,high
+69 female bachelor's student 5.9 0.2 5 2 1 0 none 0 1 frequent 1 6 3 3 1 anxiety_12 depression_20,high
+36 male other retired 9.5 3.4 4 9 1 0 occasional 0 1 none 6 2 7 1 7 anxiety_3 depression_16,high
+64 male other unemployed 5.3 1.7 6 1 0 0 none 0 1 none 4 1 7 3 9 anxiety_7 depression_2,low
+33 female master's student 5.7 1.9 3 2 1 0 regular 0 0 none 4 1 2 1 6 anxiety_17 depression_20,high
+70 non-binary master's employed 6.3 3.0 8 8 0 0 regular 0 0 occasional 3 7 7 9 8 anxiety_19 depression_15,high
+22 male master's employed 7.8 2.4 6 7 1 0 none 0 0 frequent 9 2 6 3 7 anxiety_18 depression_18,high
+52 male bachelor's employed 6.8 3.6 5 1 0 0 none 0 0 none 3 7 4 8 9 anxiety_1 depression_1,low
+29 male bachelor's student 4.6 0.1 2 5 0 0 none 0 0 occasional 8 1 5 6 7 anxiety_5 depression_19,high
+42 female other unemployed 5.7 2.8 7 6 0 0 none 0 0 occasional 2 4 8 3 6 anxiety_2 depression_12,medium
+69 male master's retired 5.6 3.8 2 5 0 0 none 1 0 none 4 4 5 9 1 anxiety_1 depression_8,medium
+38 female bachelor's retired 6.4 0.7 1 4 1 0 none 0 0 occasional 1 5 3 8 9 anxiety_7 depression_6,low
+53 female high school employed 7.1 2.0 7 1 0 0 occasional 0 0 none 5 1 2 3 5 anxiety_11 depression_12,medium
+70 female other employed 7.1 0.8 5 7 0 1 none 1 1 none 2 7 6 7 2 anxiety_11 depression_7,medium
+40 male phd student 3.8 6.3 1 9 0 1 regular 1 1 none 1 2 6 5 8 anxiety_18 depression_18,high
+33 female other unemployed 8.1 0.1 4 6 0 0 regular 0 0 occasional 1 2 7 2 4 anxiety_17 depression_14,high
+74 female phd retired 6.9 1.7 4 3 0 0 none 0 0 none 2 8 8 8 3 anxiety_2 depression_8,medium
+56 female master's student 8.6 0.4 7 4 0 0 regular 0 0 none 5 9 4 1 1 anxiety_7 depression_20,high
+62 male phd retired 7.2 2.5 9 5 1 1 none 1 0 occasional 9 6 8 4 5 anxiety_7 depression_14,medium
+70 other master's employed 8.2 0.4 2 1 0 0 none 0 0 none 6 1 1 4 3 anxiety_10 depression_5,medium
+59 male high school retired 7.2 0.5 1 5 0 1 occasional 1 1 frequent 4 1 6 5 4 anxiety_3 depression_9,medium
+56 male phd unemployed 8.5 1.4 2 1 1 0 none 0 1 none 3 7 6 4 9 anxiety_12 depression_8,medium
+31 male other unemployed 7.3 4.9 7 9 0 0 none 0 1 none 8 8 3 1 7 anxiety_3 depression_2,low
+48 female master's employed 6.4 0.5 6 7 1 0 regular 1 1 none 3 3 9 7 5 anxiety_11 depression_16,high
+22 male other unemployed 9.9 0.3 4 3 1 0 regular 0 1 frequent 1 9 5 2 8 anxiety_12 depression_13,medium
+52 male bachelor's unemployed 7.8 2.8 1 9 0 0 occasional 0 0 none 4 4 1 3 6 anxiety_4 depression_7,low
+40 male master's student 7.4 1.4 1 2 0 0 occasional 0 1 none 5 4 7 5 2 anxiety_16 depression_16,high
+46 male phd retired 4.6 4.9 5 7 0 0 none 0 0 occasional 5 3 3 8 7 anxiety_20 depression_7,high
+60 female master's employed 4.6 0.3 1 9 0 1 none 0 1 none 5 8 4 8 1 anxiety_18 depression_14,high
+28 female other employed 6.9 2.1 7 6 1 0 occasional 0 0 frequent 8 9 6 2 3 anxiety_4 depression_14,medium
+35 male high school employed 6.7 0.5 1 5 0 0 none 0 0 occasional 8 1 8 9 1 anxiety_6 depression_12,medium
+64 female master's employed 5.6 0.3 1 7 0 0 none 0 1 none 4 2 4 6 1 anxiety_15 depression_1,high
+29 female phd employed 6.7 2.3 2 6 0 0 none 0 0 none 9 1 9 9 5 anxiety_1 depression_1,low
+26 male bachelor's unemployed 8.9 1.8 3 5 0 0 occasional 1 0 none 1 4 8 4 6 anxiety_3 depression_12,medium
+27 male high school student 7.5 2.8 1 2 0 0 none 0 0 none 5 7 6 3 3 anxiety_5 depression_20,high
+61 non-binary bachelor's employed 4.8 0.7 9 8 1 0 occasional 0 0 occasional 5 7 7 5 3 anxiety_17 depression_15,high
+34 female master's student 6.3 1.2 8 7 0 0 none 0 1 frequent 5 6 8 5 3 anxiety_14 depression_4,medium
+55 male other student 5.3 1.0 5 6 0 0 none 0 1 none 8 5 2 4 1 anxiety_9 depression_7,medium
+24 female other unemployed 5.9 8.3 2 5 0 0 none 1 0 none 9 4 5 7 5 anxiety_3 depression_16,high
+63 male phd employed 5.9 0.7 5 5 1 1 none 1 0 none 3 8 7 8 1 anxiety_13 depression_3,medium
+30 female other unemployed 5.8 0.7 6 9 0 0 regular 0 1 none 9 7 8 5 3 anxiety_3 depression_7,low
+57 male high school employed 4.6 0.9 1 1 1 0 none 0 0 none 8 1 5 9 6 anxiety_11 depression_6,medium
+59 male other unemployed 6.3 1.7 4 9 0 0 none 1 0 none 3 6 3 7 6 anxiety_2 depression_16,high
+26 male phd student 5.7 0.6 9 6 1 1 none 1 0 none 2 2 6 7 3 anxiety_15 depression_8,high
+67 non-binary master's employed 2.1 4.9 2 4 0 0 none 1 1 none 4 4 5 8 9 anxiety_13 depression_6,medium
+44 female master's retired 9.6 0.6 5 7 0 0 none 0 0 occasional 2 5 8 4 8 anxiety_19 depression_10,high
+19 male other student 8.1 4.5 1 9 0 0 none 1 0 none 4 8 9 6 3 anxiety_16 depression_16,high
+22 male bachelor's retired 5.9 0.2 4 5 0 0 regular 0 0 occasional 5 6 9 5 5 anxiety_18 depression_11,high
+46 female master's student 6.5 2.1 4 5 0 1 occasional 0 0 none 2 2 6 1 5 anxiety_7 depression_13,medium
+54 male other unemployed 4.7 4.8 6 8 0 0 none 0 0 occasional 8 5 4 9 5 anxiety_13 depression_6,medium
+55 male phd employed 9.0 0.4 9 7 0 1 none 0 0 none 1 5 4 2 3 anxiety_4 depression_1,low
+36 non-binary other student 9.3 6.9 3 8 0 0 none 0 0 occasional 3 6 9 6 5 anxiety_9 depression_19,high
+25 male master's unemployed 6.7 1.2 9 2 1 0 none 1 0 occasional 7 1 4 8 5 anxiety_10 depression_12,medium
+65 female phd employed 8.0 5.8 6 9 0 1 occasional 0 0 none 1 8 8 3 4 anxiety_9 depression_6,medium
+62 non-binary other employed 6.8 2.3 7 3 1 0 regular 0 1 none 2 3 9 5 4 anxiety_7 depression_18,high
+18 male high school student 4.5 0.7 2 6 0 0 none 0 1 frequent 3 5 5 7 2 anxiety_15 depression_13,high
+39 male phd employed 5.9 0.4 6 6 0 0 regular 0 0 occasional 2 7 6 4 9 anxiety_8 depression_7,medium
+69 male high school student 6.7 0.7 6 2 0 0 none 0 0 frequent 2 3 3 5 7 anxiety_19 depression_13,high
+34 female bachelor's employed 5.8 0.2 2 7 0 0 none 1 0 occasional 6 6 5 1 1 anxiety_11 depression_8,medium
+24 female phd retired 6.2 0.3 2 9 1 1 none 0 1 none 7 5 5 4 5 anxiety_5 depression_17,high
+42 female high school unemployed 6.4 0.2 2 1 0 1 none 0 1 none 6 7 2 7 2 anxiety_2 depression_9,medium
+62 male master's retired 6.4 1.1 1 8 1 0 regular 0 0 none 6 3 6 7 6 anxiety_10 depression_20,high
+21 female master's student 6.6 3.2 5 2 1 0 none 1 1 frequent 9 2 9 4 7 anxiety_16 depression_13,high
+53 non-binary bachelor's retired 4.9 0.3 8 1 0 0 none 0 1 none 8 4 7 6 2 anxiety_13 depression_2,medium
+23 female phd student 5.4 0.3 2 8 1 0 regular 0 1 none 8 3 8 5 6 anxiety_8 depression_4,medium
+48 non-binary phd employed 4.6 2.1 5 2 0 0 regular 0 0 occasional 6 4 2 1 3 anxiety_9 depression_2,medium
+36 female phd employed 8.0 0.4 8 6 1 0 occasional 0 0 occasional 5 7 9 8 9 anxiety_11 depression_4,medium
+61 female bachelor's student 3.3 0.2 5 6 1 0 regular 1 0 none 9 5 3 7 4 anxiety_11 depression_18,high
+71 female phd retired 8.2 0.4 2 5 0 0 none 0 1 none 2 4 5 5 3 anxiety_16 depression_5,high
+56 male master's employed 8.6 5.1 3 8 1 0 regular 0 1 none 7 6 7 7 3 anxiety_10 depression_19,high
+44 male high school unemployed 6.0 3.4 6 3 0 0 occasional 1 0 none 6 7 4 3 2 anxiety_12 depression_10,medium
+27 female master's employed 2.6 0.9 5 4 0 1 regular 0 0 occasional 7 5 7 8 9 anxiety_6 depression_18,high
+43 male master's unemployed 6.0 2.1 4 7 0 0 occasional 0 0 none 4 7 8 5 8 anxiety_12 depression_10,medium
+36 female high school retired 6.4 1.5 4 7 0 0 none 0 0 occasional 9 3 4 2 5 anxiety_10 depression_5,medium
+56 other master's unemployed 5.0 2.3 5 8 0 0 occasional 0 0 occasional 7 7 5 2 9 anxiety_18 depression_17,high
+20 female bachelor's unemployed 5.7 2.3 2 2 1 0 none 0 0 none 2 3 3 4 2 anxiety_18 depression_13,high
+62 male high school unemployed 8.8 2.0 9 2 0 0 none 0 0 none 4 6 5 7 6 anxiety_4 depression_17,high
+30 male master's unemployed 7.5 0.6 2 4 0 0 none 1 1 none 5 8 8 4 7 anxiety_9 depression_9,medium
+67 male other employed 5.1 0.1 2 9 0 1 regular 0 0 none 2 6 3 9 6 anxiety_7 depression_12,medium
+45 female master's unemployed 4.1 1.2 9 9 0 0 none 0 0 none 8 3 5 2 3 anxiety_18 depression_14,high
+37 female bachelor's employed 6.0 4.4 3 4 1 0 none 0 0 occasional 1 5 1 6 9 anxiety_8 depression_14,medium
+45 non-binary phd unemployed 6.2 1.7 7 9 1 0 none 0 1 none 3 9 2 4 8 anxiety_11 depression_8,medium
+25 male master's student 7.2 3.6 4 3 1 1 regular 0 0 occasional 1 8 3 6 8 anxiety_7 depression_5,low
+58 non-binary phd retired 5.7 9.6 6 5 0 1 none 0 1 none 5 6 1 9 8 anxiety_9 depression_19,high
+56 female other unemployed 7.3 0.4 4 9 0 1 occasional 0 0 none 8 9 9 9 9 anxiety_8 depression_14,medium
+18 male master's student 9.4 2.4 7 6 1 0 regular 0 1 frequent 7 2 9 9 1 anxiety_3 depression_9,medium
+20 female high school unemployed 7.7 2.2 1 3 1 1 none 0 1 none 9 9 5 9 8 anxiety_17 depression_7,high
+30 male phd unemployed 6.4 7.8 3 9 0 0 none 0 0 none 2 6 4 3 2 anxiety_2 depression_8,medium
+45 male other unemployed 6.2 8.5 3 6 0 0 occasional 0 1 none 8 9 5 9 4 anxiety_15 depression_14,high
+74 female high school student 6.0 2.3 1 4 1 1 regular 0 0 none 8 4 4 3 1 anxiety_14 depression_14,high
+66 male high school retired 8.3 0.6 6 4 1 1 occasional 0 0 occasional 6 5 5 3 6 anxiety_18 depression_11,high
+42 female high school student 5.6 3.2 9 8 0 0 none 0 0 none 3 2 7 5 1 anxiety_16 depression_14,high
+73 female high school retired 6.6 0.2 8 7 1 0 regular 0 0 none 2 3 8 6 5 anxiety_20 depression_8,high
+50 female master's unemployed 6.6 3.0 7 1 0 0 none 1 1 none 8 1 2 9 9 anxiety_4 depression_3,low
+55 male master's employed 5.7 4.8 8 6 0 0 none 0 1 frequent 6 4 4 1 1 anxiety_20 depression_18,high
+70 female master's unemployed 4.4 1.0 6 8 0 0 regular 1 0 none 4 2 8 8 9 anxiety_6 depression_3,low
+23 female other retired 7.0 2.0 9 3 0 1 none 0 0 none 5 2 7 4 4 anxiety_6 depression_13,medium
+61 female other student 6.4 1.1 3 9 0 0 occasional 0 0 none 5 1 9 7 3 anxiety_11 depression_12,medium
+62 male other unemployed 7.3 1.2 9 2 0 1 none 0 1 none 9 2 5 6 8 anxiety_17 depression_15,high
+49 male bachelor's student 5.7 0.7 4 6 0 1 regular 0 0 none 9 4 6 6 6 anxiety_3 depression_18,high
+62 female other student 8.3 2.9 7 1 1 0 none 0 1 none 8 6 8 7 7 anxiety_13 depression_5,medium
+64 male master's student 5.2 5.5 9 2 1 1 none 0 0 none 8 7 5 4 9 anxiety_3 depression_7,low
+38 female master's unemployed 9.1 5.7 2 5 0 0 regular 1 0 none 2 7 9 6 5 anxiety_16 depression_11,high
+33 female bachelor's student 3.9 0.4 2 1 0 0 none 0 1 none 3 7 4 3 2 anxiety_15 depression_11,high
+71 female bachelor's student 7.2 4.2 9 8 1 0 none 0 0 frequent 8 4 8 5 3 anxiety_11 depression_15,high
+38 female other unemployed 7.2 2.7 3 1 0 0 regular 0 0 occasional 5 5 3 2 3 anxiety_18 depression_10,high
+28 non-binary phd student 5.3 0.6 9 9 1 1 none 1 0 none 7 3 5 3 4 anxiety_15 depression_15,high
+54 female bachelor's unemployed 7.1 0.1 5 3 1 1 regular 1 0 none 8 1 8 9 7 anxiety_5 depression_13,medium
+53 non-binary high school retired 8.4 0.6 6 2 0 0 none 0 1 none 6 8 7 6 6 anxiety_16 depression_14,high
+52 female master's retired 3.2 4.9 2 1 1 1 none 0 0 occasional 5 7 1 3 3 anxiety_16 depression_17,high
+36 male high school retired 7.3 2.0 8 9 1 0 occasional 0 0 none 8 9 4 2 7 anxiety_17 depression_13,high
+37 male master's student 2.8 2.6 9 4 0 1 occasional 0 0 occasional 1 4 2 5 4 anxiety_9 depression_10,medium
+74 female master's employed 5.1 0.6 2 1 0 0 none 0 0 none 1 5 2 5 8 anxiety_3 depression_1,low
+35 male bachelor's employed 8.9 2.5 6 1 0 0 none 0 1 none 1 5 7 1 7 anxiety_20 depression_1,high
+64 female bachelor's student 5.6 0.1 6 7 0 0 regular 0 1 frequent 3 7 3 3 7 anxiety_13 depression_15,high
+58 male high school employed 4.7 0.9 8 2 0 0 none 0 1 occasional 6 9 3 7 9 anxiety_3 depression_16,high
+66 female master's unemployed 6.2 2.0 5 7 0 0 none 0 0 occasional 6 8 6 9 8 anxiety_7 depression_12,medium
+31 female high school employed 9.6 0.3 9 7 0 1 none 0 0 none 5 7 6 5 1 anxiety_6 depression_6,low
+32 female phd student 3.8 3.5 1 9 1 0 none 1 0 none 7 1 1 4 7 anxiety_9 depression_6,medium
+48 female high school student 4.9 0.5 9 7 0 1 none 0 1 none 5 6 1 3 3 anxiety_12 depression_12,medium
+18 female other unemployed 8.7 2.1 7 1 0 0 none 0 0 none 2 9 6 9 4 anxiety_15 depression_15,high
+70 male high school retired 9.3 1.0 4 8 0 0 none 0 0 none 4 7 7 7 6 anxiety_20 depression_4,high
+71 female other student 6.3 1.8 3 8 0 0 none 0 1 none 1 1 9 7 5 anxiety_3 depression_4,low
+71 male other unemployed 4.6 0.2 6 4 0 0 none 0 0 none 7 9 4 8 8 anxiety_10 depression_2,medium
+20 non-binary other employed 9.6 0.0 1 8 0 0 occasional 0 0 none 4 3 6 1 2 anxiety_1 depression_12,medium
+33 female phd employed 8.9 4.8 3 4 0 0 none 0 0 occasional 4 9 3 4 5 anxiety_19 depression_7,high
+40 male high school unemployed 7.5 0.6 2 8 1 0 regular 1 0 frequent 4 4 4 5 5 anxiety_19 depression_20,high
+74 male high school unemployed 5.3 3.4 9 5 1 0 occasional 0 0 none 3 9 9 5 3 anxiety_13 depression_9,medium
+28 female phd student 6.4 14.7 3 4 0 1 none 0 0 none 8 8 1 1 5 anxiety_12 depression_9,medium
+29 male master's employed 6.3 0.5 2 6 0 0 occasional 0 0 none 4 7 5 3 4 anxiety_1 depression_8,medium
+27 male bachelor's unemployed 7.0 0.6 4 2 0 0 none 0 0 frequent 8 4 7 2 5 anxiety_19 depression_14,high
+49 female high school employed 8.7 2.2 2 2 1 0 occasional 0 1 none 9 9 3 7 9 anxiety_16 depression_1,high
+33 female bachelor's unemployed 7.8 6.7 1 2 0 1 regular 0 0 occasional 1 4 2 5 7 anxiety_15 depression_12,high
+25 female phd employed 4.9 4.9 6 9 1 1 none 0 1 occasional 4 1 2 3 1 anxiety_16 depression_2,high
+55 non-binary master's retired 8.6 1.4 8 3 0 0 occasional 0 0 none 6 6 1 8 3 anxiety_11 depression_13,medium
+29 female master's student 7.0 3.2 2 4 0 0 none 1 0 none 8 4 5 1 9 anxiety_6 depression_4,low
+41 female master's employed 7.5 0.3 9 8 0 0 none 0 1 frequent 6 3 3 1 4 anxiety_11 depression_20,high
+45 male phd retired 8.7 7.6 3 4 1 0 regular 1 0 none 6 5 7 6 4 anxiety_3 depression_18,high
+70 female other employed 4.8 6.7 8 7 1 0 none 0 0 none 4 3 1 1 6 anxiety_15 depression_19,high
+25 male other employed 6.4 0.4 8 5 0 1 none 1 1 frequent 9 9 9 4 3 anxiety_1 depression_16,high
+45 non-binary bachelor's retired 5.7 0.7 3 9 0 0 none 0 0 none 7 6 2 6 3 anxiety_7 depression_14,medium
+53 female other employed 4.1 0.2 3 4 0 0 occasional 0 0 occasional 6 3 8 1 9 anxiety_1 depression_8,medium
+43 female other employed 7.0 0.6 6 3 0 1 none 0 0 frequent 1 5 4 9 5 anxiety_17 depression_12,high
+25 male master's student 10.3 3.4 1 2 1 0 regular 0 1 occasional 2 8 6 4 7 anxiety_9 depression_9,medium
+67 female master's retired 3.7 1.0 4 1 1 0 none 0 1 none 6 8 9 9 5 anxiety_13 depression_6,medium
+45 female bachelor's retired 6.5 0.2 1 6 1 0 none 0 0 none 1 6 7 9 6 anxiety_11 depression_18,high
+45 male high school unemployed 7.5 0.8 3 2 1 0 occasional 0 0 none 5 5 8 6 8 anxiety_20 depression_2,high
+54 male bachelor's employed 6.7 8.0 9 8 0 1 none 1 0 occasional 1 5 7 7 8 anxiety_6 depression_8,medium
+58 female bachelor's student 6.3 2.0 5 6 1 0 occasional 0 0 occasional 3 1 2 1 2 anxiety_1 depression_14,medium
+53 male phd employed 4.6 1.1 5 5 1 0 none 0 0 none 7 2 9 5 9 anxiety_7 depression_6,low
+44 non-binary phd employed 6.8 0.4 4 2 0 0 none 0 0 none 5 4 1 3 6 anxiety_12 depression_10,medium
+71 male bachelor's unemployed 5.4 8.6 3 7 1 1 none 1 0 none 1 6 2 6 7 anxiety_20 depression_8,high
+34 male bachelor's employed 3.2 3.4 5 2 0 0 regular 0 0 occasional 1 7 3 4 3 anxiety_19 depression_17,high
+26 female bachelor's student 8.3 0.7 4 5 1 0 none 0 1 occasional 8 1 3 9 4 anxiety_17 depression_12,high
+50 male other student 7.9 0.1 8 2 0 1 occasional 0 0 frequent 9 8 4 7 6 anxiety_4 depression_17,high
+70 female phd unemployed 6.6 0.1 4 2 0 0 none 0 0 occasional 7 1 5 4 7 anxiety_3 depression_13,medium
+37 male bachelor's employed 6.8 0.3 8 7 0 0 none 0 0 occasional 3 9 6 6 6 anxiety_1 depression_19,high
+30 male master's student 8.1 1.7 6 9 0 0 none 0 1 occasional 6 4 1 2 5 anxiety_18 depression_12,high
+45 female master's employed 6.8 5.3 5 5 0 0 regular 0 1 none 3 7 8 3 2 anxiety_15 depression_16,high
+65 female other employed 7.9 1.4 4 7 0 0 occasional 0 1 none 4 6 6 7 7 anxiety_8 depression_5,medium
+46 female other employed 6.1 3.7 4 4 0 0 occasional 0 0 frequent 4 9 9 4 5 anxiety_1 depression_16,high
+30 female high school unemployed 8.5 1.2 4 2 0 0 none 0 1 none 3 2 5 7 9 anxiety_20 depression_6,high
+63 female high school employed 7.0 2.5 9 3 1 0 none 0 0 none 6 7 7 9 4 anxiety_14 depression_11,medium
+52 male high school student 6.8 2.6 4 2 1 0 none 1 0 none 5 5 4 5 2 anxiety_4 depression_17,high
+23 male other employed 4.6 0.4 9 5 0 0 regular 1 0 none 9 7 6 1 7 anxiety_5 depression_14,medium
+35 non-binary other student 6.9 0.9 6 6 1 0 none 0 1 none 9 1 6 5 7 anxiety_13 depression_6,medium
+68 female other employed 5.3 2.0 7 7 0 1 none 0 1 none 3 9 4 6 1 anxiety_15 depression_11,high
+22 female master's student 5.5 0.1 3 3 1 0 none 0 1 none 9 1 6 2 5 anxiety_6 depression_12,medium
+64 male other student 5.3 0.9 8 4 0 1 none 0 1 none 3 5 8 8 3 anxiety_1 depression_13,medium
+42 male master's employed 4.9 1.5 3 8 0 0 none 0 0 none 4 8 5 2 9 anxiety_19 depression_4,high
+19 female high school employed 9.7 11.2 1 4 0 0 regular 0 0 occasional 1 1 2 9 9 anxiety_13 depression_7,medium
+27 female high school student 8.5 1.3 5 7 0 0 none 1 0 none 5 7 9 2 7 anxiety_6 depression_2,low
+73 female high school retired 9.4 3.4 2 6 1 1 regular 1 1 none 9 2 4 3 9 anxiety_15 depression_6,high
+47 female bachelor's unemployed 4.7 1.1 6 7 1 1 regular 0 0 none 2 7 4 8 2 anxiety_16 depression_6,high
+67 female bachelor's retired 6.6 3.2 9 1 0 0 none 0 1 none 4 7 7 6 8 anxiety_16 depression_18,high
+62 male phd retired 4.6 1.8 1 3 0 1 none 1 0 none 2 9 6 1 1 anxiety_10 depression_20,high
+22 male phd employed 5.5 4.4 4 6 1 0 none 1 0 occasional 8 6 4 4 3 anxiety_9 depression_8,medium
+72 male phd unemployed 5.1 1.1 1 3 1 0 regular 1 0 occasional 9 4 6 5 8 anxiety_9 depression_8,medium
+73 male bachelor's retired 8.4 1.9 1 7 0 1 none 0 0 none 3 7 3 3 8 anxiety_17 depression_8,high
+50 female bachelor's employed 5.9 2.0 8 9 0 1 none 0 1 none 9 7 7 1 8 anxiety_17 depression_8,high
+71 female phd retired 8.1 1.1 2 3 0 1 none 0 0 none 6 4 6 3 7 anxiety_17 depression_1,high
+18 female phd retired 7.4 0.3 1 1 0 0 none 0 0 frequent 6 2 3 9 2 anxiety_12 depression_2,medium
+35 male other employed 10.0 0.2 8 6 0 0 none 0 0 frequent 7 9 1 2 3 anxiety_13 depression_12,medium
+49 male phd employed 4.3 0.0 4 1 0 0 none 0 0 none 5 8 5 1 9 anxiety_12 depression_15,high
+64 male other employed 8.4 4.1 3 1 1 0 occasional 1 0 none 6 5 2 7 2 anxiety_14 depression_4,medium
+66 male master's unemployed 8.2 0.5 4 8 0 1 regular 1 0 occasional 1 5 7 7 7 anxiety_10 depression_3,medium
+28 female bachelor's retired 5.0 0.5 5 9 1 0 none 0 1 occasional 3 1 7 5 1 anxiety_19 depression_14,high
+38 male phd employed 8.0 2.7 1 2 1 0 none 1 0 none 9 9 4 2 3 anxiety_2 depression_8,medium
+43 female bachelor's student 7.0 0.8 1 9 1 0 regular 0 0 frequent 5 8 6 1 1 anxiety_4 depression_13,medium
+42 male bachelor's retired 6.2 1.4 3 5 0 0 none 1 0 none 5 5 1 5 6 anxiety_19 depression_19,high
+39 male bachelor's student 5.3 0.4 6 8 1 0 regular 0 0 none 8 6 2 4 4 anxiety_7 depression_5,low
+44 male master's unemployed 5.4 6.4 1 7 0 0 none 0 0 occasional 2 8 6 9 1 anxiety_15 depression_13,high
+66 female high school employed 9.6 3.8 2 7 0 1 occasional 0 0 none 7 6 2 5 5 anxiety_15 depression_20,high
+30 female phd student 6.5 4.0 7 4 0 0 none 0 0 occasional 9 4 4 2 4 anxiety_6 depression_1,low
+50 male high school unemployed 7.7 1.0 1 2 0 1 none 0 1 none 7 3 4 4 2 anxiety_3 depression_16,high
+51 male high school employed 5.3 2.9 7 5 1 0 regular 0 0 none 5 7 9 9 7 anxiety_6 depression_2,low
+58 female high school student 5.3 0.3 4 3 1 0 none 1 1 none 6 2 7 8 8 anxiety_16 depression_7,high
+52 male bachelor's student 8.1 0.0 6 9 0 0 none 0 1 none 4 7 7 3 4 anxiety_2 depression_6,low
+18 male other unemployed 4.5 0.0 8 6 0 1 none 0 0 none 7 1 1 8 9 anxiety_7 depression_5,low
+38 female bachelor's employed 5.9 1.8 9 1 0 0 regular 0 0 frequent 1 5 5 2 3 anxiety_11 depression_4,medium
+65 female bachelor's employed 6.6 1.2 6 3 0 0 none 0 0 none 4 9 3 3 6 anxiety_7 depression_2,low
+72 male high school student 6.7 1.5 9 4 1 0 regular 0 0 occasional 3 1 3 5 7 anxiety_4 depression_10,medium
+23 non-binary bachelor's student 6.2 0.0 4 9 0 0 none 0 1 none 4 8 6 8 7 anxiety_20 depression_5,high
+45 female high school student 7.1 1.1 6 6 1 1 none 0 1 occasional 1 9 4 1 6 anxiety_7 depression_18,high
+34 male other employed 7.5 2.5 8 4 0 1 occasional 0 0 none 2 9 8 4 9 anxiety_4 depression_10,medium
+22 female phd unemployed 7.6 1.2 9 1 0 0 none 0 0 none 9 8 4 1 1 anxiety_12 depression_15,high
+48 female high school unemployed 5.0 2.6 3 8 0 0 none 0 0 none 7 4 8 1 9 anxiety_5 depression_9,medium
+22 male other employed 6.1 0.5 2 2 0 1 none 0 0 none 6 7 4 5 9 anxiety_19 depression_11,high
+55 male phd retired 8.3 3.4 6 8 0 0 none 1 1 none 2 1 3 6 4 anxiety_5 depression_17,high
+20 male master's unemployed 7.8 1.8 4 6 1 0 occasional 0 0 none 1 7 5 1 5 anxiety_19 depression_9,high
+70 female high school student 4.4 0.5 1 8 1 0 none 0 0 frequent 2 6 5 6 3 anxiety_3 depression_16,high
+40 male high school retired 7.0 0.5 8 6 0 0 none 1 1 occasional 7 5 1 5 7 anxiety_11 depression_6,medium
+54 female master's retired 3.5 2.0 9 5 0 0 none 0 0 frequent 2 1 8 4 2 anxiety_7 depression_11,medium
+70 female master's unemployed 6.6 3.5 9 5 0 1 none 0 0 none 3 8 8 5 8 anxiety_17 depression_17,high
+54 male high school retired 9.3 1.1 2 8 0 0 none 1 0 frequent 8 1 8 8 9 anxiety_9 depression_4,medium
+27 female master's retired 5.1 0.6 9 7 0 0 regular 0 0 occasional 7 1 4 9 6 anxiety_9 depression_15,high
+27 male bachelor's unemployed 5.2 4.0 7 8 0 1 regular 0 1 none 9 3 9 2 9 anxiety_10 depression_1,medium
+36 female phd unemployed 7.6 2.2 5 8 1 0 none 1 1 none 4 8 3 6 6 anxiety_13 depression_20,high
+34 female phd retired 4.2 1.2 7 7 1 0 none 1 0 none 7 8 7 3 3 anxiety_15 depression_1,high
+38 male phd student 5.6 1.3 9 2 1 0 regular 0 1 none 1 7 6 2 3 anxiety_5 depression_9,medium
+31 female bachelor's employed 7.4 0.5 8 9 0 0 none 0 0 none 2 5 9 1 2 anxiety_3 depression_12,medium
+26 male master's retired 5.5 2.0 6 7 1 1 none 1 1 none 7 8 4 4 5 anxiety_8 depression_4,medium
+63 male other retired 6.1 0.9 4 6 0 1 occasional 0 1 occasional 2 2 4 8 4 anxiety_20 depression_13,high
+18 male master's student 7.6 10.9 1 9 0 0 none 0 0 none 6 8 6 3 6 anxiety_10 depression_7,medium
+68 male high school retired 7.1 1.3 6 1 1 0 none 0 1 none 9 2 8 5 5 anxiety_13 depression_8,medium
+62 other phd retired 6.9 1.3 3 2 0 0 regular 0 0 occasional 5 5 3 5 6 anxiety_3 depression_13,medium
+30 male master's employed 6.0 1.7 6 1 0 1 occasional 1 0 occasional 7 4 8 5 4 anxiety_8 depression_11,medium
+21 male other employed 7.1 5.0 6 3 1 0 none 1 1 frequent 1 1 8 9 3 anxiety_9 depression_9,medium
+18 female high school employed 6.3 3.2 4 5 1 0 none 1 1 none 8 5 7 8 1 anxiety_12 depression_16,high
+66 male bachelor's unemployed 7.2 1.2 2 1 1 0 none 1 1 none 9 7 7 8 5 anxiety_11 depression_10,medium
+57 non-binary bachelor's unemployed 5.8 2.5 9 4 0 0 occasional 0 1 none 5 1 5 1 6 anxiety_2 depression_11,medium
+49 female other employed 6.2 1.8 2 8 0 0 none 0 0 none 6 2 2 1 5 anxiety_18 depression_12,high
+51 female high school employed 5.0 1.4 3 6 1 0 none 0 0 none 8 9 2 2 5 anxiety_9 depression_14,medium
+45 male phd unemployed 6.4 0.4 1 1 0 1 regular 0 1 none 4 5 8 8 6 anxiety_2 depression_19,high
+48 male master's student 5.3 1.2 7 1 0 0 none 0 0 frequent 2 7 6 1 4 anxiety_2 depression_12,medium
+25 male high school retired 4.8 0.6 1 3 0 1 none 0 1 none 8 2 8 4 4 anxiety_3 depression_18,high
+56 female bachelor's retired 6.9 4.9 9 8 0 0 none 1 0 none 2 7 3 9 8 anxiety_16 depression_17,high
+43 male other employed 6.8 0.8 1 8 0 0 none 0 1 none 5 7 1 2 8 anxiety_19 depression_3,high
+51 male other student 7.7 6.1 5 3 0 1 none 0 0 occasional 6 7 6 3 3 anxiety_4 depression_1,low
+71 other master's unemployed 5.9 1.5 7 7 0 0 regular 0 1 none 5 5 2 6 7 anxiety_18 depression_19,high
+71 female other employed 7.1 2.0 3 3 0 1 regular 0 0 none 6 9 9 3 5 anxiety_20 depression_4,high
+20 male other student 7.3 1.6 9 4 0 1 none 0 1 none 6 2 5 4 5 anxiety_18 depression_16,high
+67 male high school student 7.2 0.3 8 9 0 0 none 1 0 none 3 4 5 9 3 anxiety_10 depression_12,medium
+29 non-binary phd student 5.3 0.9 3 4 1 0 none 0 0 none 3 2 8 9 2 anxiety_11 depression_13,medium
+18 male master's unemployed 6.7 0.2 5 3 0 0 none 0 1 none 9 8 6 5 3 anxiety_17 depression_17,high
+71 female high school unemployed 7.0 2.0 7 5 0 0 none 0 1 none 3 1 3 7 7 anxiety_20 depression_8,high
+61 female phd retired 6.5 1.2 4 7 1 0 regular 0 1 occasional 3 9 9 9 3 anxiety_16 depression_13,high
+22 male high school retired 3.4 3.0 5 5 0 0 none 1 0 none 2 5 4 8 2 anxiety_20 depression_20,high
+47 female high school student 6.7 0.5 3 4 0 0 none 1 0 occasional 7 3 4 7 4 anxiety_13 depression_5,medium
+47 male other student 9.8 0.4 9 8 0 0 none 1 0 none 4 4 2 8 5 anxiety_2 depression_18,high
+74 male phd unemployed 6.0 1.0 9 4 1 0 none 0 0 none 1 1 3 5 7 anxiety_2 depression_15,high
+34 female master's retired 5.4 5.2 7 2 1 1 none 0 1 none 6 3 4 5 1 anxiety_14 depression_12,medium
+65 female master's student 7.1 2.5 2 6 1 0 none 0 0 none 5 8 7 5 8 anxiety_4 depression_17,high
+64 female phd retired 7.0 1.1 7 2 1 0 none 0 0 none 2 2 3 1 3 anxiety_17 depression_15,high
+40 female other retired 8.3 1.5 7 3 0 0 occasional 1 0 none 6 2 8 6 6 anxiety_13 depression_2,medium
+32 male bachelor's student 4.6 0.2 5 1 0 1 none 0 0 occasional 1 9 8 5 4 anxiety_4 depression_6,low
+54 male high school unemployed 7.6 8.3 9 5 0 1 none 1 0 occasional 3 5 2 8 5 anxiety_3 depression_17,high
+38 male other student 7.4 2.2 3 9 0 0 none 0 0 occasional 4 5 4 8 6 anxiety_12 depression_16,high
+31 male phd student 6.3 0.7 4 2 1 1 regular 0 0 none 3 1 8 2 2 anxiety_8 depression_17,high
+19 male high school retired 7.0 1.8 1 7 0 0 none 0 0 none 6 6 1 6 3 anxiety_2 depression_20,high
+28 male master's student 8.0 0.2 6 5 0 1 none 0 1 none 4 8 1 6 8 anxiety_6 depression_9,medium
+68 male bachelor's unemployed 7.8 6.8 4 2 1 0 none 0 0 none 1 6 4 3 8 anxiety_10 depression_5,medium
+56 male master's student 4.8 0.4 1 8 0 0 occasional 0 0 none 5 7 2 1 1 anxiety_12 depression_1,medium
+55 female phd unemployed 7.7 2.1 2 6 0 0 none 0 1 none 5 4 1 7 8 anxiety_10 depression_6,medium
+51 female high school unemployed 6.4 0.6 3 4 0 0 none 0 1 occasional 9 2 8 5 2 anxiety_10 depression_14,medium
+55 male phd retired 6.6 2.5 9 4 0 1 none 0 1 none 8 1 2 5 8 anxiety_3 depression_17,high
+67 non-binary high school employed 6.6 3.0 8 2 0 0 none 0 1 none 8 6 4 8 5 anxiety_20 depression_19,high
+51 female other employed 6.3 2.2 7 3 0 1 none 0 0 none 5 9 3 5 1 anxiety_10 depression_1,medium
+35 male bachelor's retired 8.3 1.9 4 7 0 0 none 0 1 none 8 5 2 5 8 anxiety_9 depression_1,medium
+47 female other student 6.4 4.5 1 3 1 0 regular 0 0 frequent 7 2 8 1 5 anxiety_20 depression_13,high
+32 female other retired 4.8 0.2 8 5 1 0 occasional 0 0 none 1 1 3 2 1 anxiety_19 depression_14,high
+44 female phd unemployed 5.9 0.8 4 6 0 0 none 0 1 frequent 7 3 9 5 4 anxiety_14 depression_6,medium
+68 male bachelor's employed 6.8 0.6 3 6 0 1 none 0 0 none 8 4 5 7 1 anxiety_2 depression_6,low
+51 female high school retired 8.3 8.8 9 4 1 0 none 0 1 none 3 7 9 3 9 anxiety_5 depression_1,low
+69 male high school student 7.4 1.0 4 6 1 0 none 0 1 occasional 9 9 3 1 2 anxiety_20 depression_14,high
+74 female master's retired 5.2 2.6 4 3 0 0 regular 0 0 none 8 8 5 2 8 anxiety_8 depression_3,medium
+55 female high school employed 10.2 2.3 9 7 0 0 regular 1 1 none 2 9 6 3 4 anxiety_7 depression_10,medium
+50 female phd retired 6.9 0.5 2 7 1 1 none 0 0 none 6 7 9 9 9 anxiety_6 depression_19,high
+41 female other retired 8.4 0.5 5 4 0 0 none 0 0 none 4 8 8 8 2 anxiety_11 depression_19,high
+32 female other employed 6.3 0.7 4 2 0 1 none 1 1 occasional 3 8 2 4 3 anxiety_12 depression_19,high
+47 male other unemployed 7.3 1.1 9 7 0 0 occasional 0 0 occasional 6 1 2 8 2 anxiety_18 depression_4,high
+72 male bachelor's unemployed 7.8 0.5 5 3 0 0 occasional 0 1 occasional 9 9 5 9 5 anxiety_19 depression_20,high
+59 female high school employed 8.3 0.0 9 1 0 1 regular 0 0 none 2 2 5 3 1 anxiety_10 depression_19,high
+68 male phd retired 8.1 4.2 9 2 0 0 occasional 0 0 none 5 7 5 6 3 anxiety_14 depression_10,medium
+34 male bachelor's employed 7.8 6.7 2 9 1 0 none 0 1 none 6 5 4 8 1 anxiety_3 depression_2,low
+22 male master's unemployed 6.0 0.8 9 8 0 0 occasional 0 0 occasional 4 4 8 7 8 anxiety_18 depression_4,high
+46 male phd student 5.6 0.8 3 6 0 0 occasional 0 0 frequent 7 1 5 9 4 anxiety_15 depression_6,high
+21 non-binary phd retired 7.0 0.0 4 6 0 1 none 0 0 none 2 1 1 7 3 anxiety_6 depression_7,low
+27 female phd unemployed 7.9 2.3 1 1 1 0 none 0 1 none 7 3 5 1 8 anxiety_10 depression_16,high
+73 non-binary other retired 6.2 3.5 1 2 0 1 occasional 0 0 none 2 1 1 9 9 anxiety_12 depression_7,medium
+34 female phd employed 8.1 0.3 1 4 0 0 none 0 1 none 1 8 4 5 8 anxiety_7 depression_18,high
+27 female high school student 8.7 0.3 9 3 0 0 occasional 0 0 none 5 3 1 6 6 anxiety_17 depression_20,high
+34 male phd employed 5.1 3.1 8 1 1 0 occasional 0 1 none 2 2 6 2 3 anxiety_1 depression_19,high
+37 female other student 5.2 1.9 5 8 0 0 occasional 0 1 none 8 6 6 2 8 anxiety_18 depression_9,high
+41 male phd retired 6.3 0.1 5 7 0 1 occasional 1 0 occasional 8 4 1 4 5 anxiety_15 depression_20,high
+22 female master's retired 7.0 1.9 9 4 0 0 none 0 0 occasional 1 4 8 4 5 anxiety_19 depression_10,high
+51 female master's employed 5.7 0.7 3 9 1 0 occasional 0 1 frequent 4 2 4 5 9 anxiety_1 depression_13,medium
+23 male other student 8.5 0.9 3 4 0 1 none 1 1 none 9 2 2 7 1 anxiety_5 depression_18,high
+70 non-binary high school student 7.1 2.9 7 1 1 1 none 0 0 none 5 6 1 1 7 anxiety_15 depression_16,high
+19 female high school retired 6.6 3.3 9 1 1 0 none 0 1 none 6 5 3 4 8 anxiety_3 depression_17,high
+30 female bachelor's employed 4.3 1.0 6 1 1 1 none 0 1 none 3 9 7 9 3 anxiety_1 depression_13,medium
+60 male other student 4.5 5.9 2 1 0 0 none 0 1 none 5 4 8 8 8 anxiety_8 depression_12,medium
+60 female phd retired 6.9 1.0 1 4 1 0 regular 1 1 occasional 1 5 5 3 1 anxiety_12 depression_10,medium
+65 female other unemployed 3.3 3.0 2 1 0 0 none 0 0 none 8 1 7 6 8 anxiety_19 depression_1,high
+28 male bachelor's employed 8.0 1.3 1 2 0 0 none 0 1 frequent 6 2 2 9 7 anxiety_12 depression_8,medium
+68 male other unemployed 6.3 4.6 9 4 1 0 none 0 0 occasional 2 3 4 8 4 anxiety_13 depression_18,high
+64 female other employed 11.4 4.8 8 7 0 0 none 1 0 occasional 4 5 6 7 7 anxiety_1 depression_2,low
+74 male bachelor's retired 10.0 0.2 7 2 0 0 occasional 0 0 occasional 4 5 5 7 7 anxiety_19 depression_16,high
+40 female high school student 6.2 5.5 3 8 0 1 none 0 0 none 9 4 6 1 1 anxiety_6 depression_12,medium
+72 non-binary phd student 6.3 3.5 8 7 0 1 occasional 0 0 occasional 9 3 2 5 3 anxiety_8 depression_9,medium
+33 female bachelor's student 8.0 3.1 2 9 0 1 occasional 0 0 none 5 9 7 7 7 anxiety_4 depression_3,low
+48 male master's employed 9.1 0.4 2 6 1 0 none 0 0 occasional 3 1 8 2 5 anxiety_5 depression_4,low
+28 female high school retired 4.0 3.3 3 4 1 0 regular 0 1 none 1 6 9 6 9 anxiety_7 depression_2,low
+71 male master's unemployed 3.8 3.8 7 6 0 0 none 0 0 none 6 7 6 2 7 anxiety_4 depression_8,medium
+33 male high school retired 5.6 0.7 1 4 0 0 none 0 0 none 8 4 7 3 3 anxiety_20 depression_10,high
+25 female phd unemployed 7.4 6.1 8 7 1 0 regular 0 0 none 1 3 1 1 1 anxiety_4 depression_16,high
+21 male phd employed 7.2 0.1 7 9 0 0 regular 0 0 none 1 8 9 3 5 anxiety_15 depression_11,high
+57 male other employed 8.1 0.3 4 3 0 0 none 0 0 none 7 9 6 7 5 anxiety_5 depression_18,high
+21 female master's unemployed 4.7 1.5 5 3 0 0 none 0 0 occasional 7 1 4 5 7 anxiety_9 depression_14,medium
+73 male high school unemployed 3.0 1.7 1 2 0 0 none 0 1 none 2 9 9 4 1 anxiety_2 depression_8,medium
+42 male phd unemployed 7.8 2.1 4 1 0 0 none 0 1 none 3 7 1 8 2 anxiety_7 depression_15,high
+20 female bachelor's retired 5.3 0.0 1 1 0 0 regular 0 1 none 2 1 2 8 6 anxiety_17 depression_17,high
+49 female phd unemployed 3.5 6.5 1 3 0 0 none 0 0 none 6 7 3 1 8 anxiety_16 depression_18,high
+20 female bachelor's employed 6.7 0.1 1 7 0 0 none 0 0 none 8 5 1 9 4 anxiety_17 depression_6,high
+44 male high school employed 7.7 0.3 7 9 0 0 regular 1 0 occasional 8 7 2 9 3 anxiety_20 depression_14,high
+46 male phd student 6.3 0.0 7 2 1 0 none 0 1 none 1 9 2 2 3 anxiety_2 depression_3,low
+49 male phd unemployed 5.8 1.7 4 7 1 0 none 0 0 none 9 8 7 2 3 anxiety_11 depression_7,medium
+67 male high school retired 6.3 5.4 2 1 0 1 regular 1 0 none 8 6 6 8 2 anxiety_2 depression_15,high
+68 female phd retired 5.9 2.2 3 2 0 1 regular 0 0 none 9 2 9 6 1 anxiety_1 depression_16,high
+36 male bachelor's retired 4.5 3.5 8 6 1 0 regular 0 0 none 9 8 5 3 5 anxiety_2 depression_16,high
+38 male phd student 5.4 0.0 8 5 0 0 none 0 1 occasional 6 4 9 2 5 anxiety_9 depression_8,medium
+22 female master's employed 7.3 1.6 6 8 1 0 occasional 0 1 none 3 8 9 5 5 anxiety_2 depression_7,low
+35 female other retired 7.0 1.2 9 2 0 0 none 1 1 none 1 7 2 8 4 anxiety_15 depression_6,high
+45 female bachelor's employed 6.8 1.4 9 1 1 0 none 0 0 none 8 4 9 6 3 anxiety_10 depression_2,medium
+59 male master's student 5.0 0.1 4 7 0 0 regular 0 1 none 3 8 3 3 3 anxiety_15 depression_13,high
+39 male high school unemployed 6.2 2.3 1 6 0 0 none 1 1 occasional 7 2 3 9 2 anxiety_10 depression_12,medium
+38 male bachelor's unemployed 3.2 1.4 1 8 1 1 occasional 1 1 none 6 9 9 8 5 anxiety_17 depression_15,high
+23 male other unemployed 6.8 2.9 5 8 0 1 none 0 0 none 3 6 7 6 4 anxiety_9 depression_9,medium
+18 female other retired 8.6 1.3 2 2 0 0 none 0 0 occasional 6 7 8 1 6 anxiety_18 depression_2,high
+22 female high school unemployed 4.3 0.3 6 8 0 0 occasional 0 1 none 3 1 7 2 2 anxiety_4 depression_17,high
+58 female high school retired 5.6 2.1 7 6 1 0 none 0 0 occasional 9 3 9 4 2 anxiety_9 depression_5,medium
+29 female bachelor's student 7.0 0.4 1 9 0 0 occasional 0 1 none 1 5 8 2 8 anxiety_16 depression_11,high
+43 male phd student 8.4 4.1 6 7 0 1 none 0 1 none 8 7 4 3 6 anxiety_4 depression_19,high
+63 female high school retired 5.8 1.9 8 2 0 0 regular 0 0 occasional 5 1 2 8 3 anxiety_16 depression_7,high
+51 male phd employed 5.5 0.3 5 8 0 0 none 0 0 occasional 4 9 5 9 5 anxiety_19 depression_2,high
+66 female master's unemployed 3.5 6.6 7 9 0 1 none 0 0 none 1 5 2 6 3 anxiety_1 depression_16,high
+31 female other unemployed 6.7 1.5 6 7 0 1 none 0 1 occasional 9 3 4 4 2 anxiety_6 depression_12,medium
+43 male phd unemployed 9.6 0.2 4 4 0 1 regular 0 1 none 9 7 2 2 3 anxiety_10 depression_15,high
+62 male other retired 6.9 2.0 7 9 0 0 occasional 0 0 none 5 8 5 7 1 anxiety_16 depression_1,high
+44 non-binary phd student 6.5 0.6 9 4 0 0 occasional 0 0 none 9 3 6 7 7 anxiety_4 depression_13,medium
+26 male master's unemployed 7.0 3.3 7 4 0 0 none 0 0 none 9 7 1 9 6 anxiety_13 depression_6,medium
+43 male high school student 6.5 3.4 5 9 0 0 none 0 1 occasional 7 7 8 5 5 anxiety_16 depression_13,high
+74 male master's unemployed 5.3 7.7 7 8 0 1 none 1 0 none 8 4 2 4 6 anxiety_20 depression_18,high
+64 female high school unemployed 7.7 1.4 3 4 1 0 none 0 0 none 1 9 5 6 8 anxiety_6 depression_3,low
+74 female high school retired 6.8 1.2 2 8 0 1 none 0 1 occasional 4 1 8 2 3 anxiety_11 depression_1,medium
+39 female other employed 6.5 2.8 5 8 1 0 regular 0 0 none 4 1 5 2 3 anxiety_3 depression_15,high
+64 male master's retired 5.0 0.3 4 7 0 1 occasional 0 0 none 9 5 3 9 5 anxiety_20 depression_13,high
+73 female phd unemployed 8.5 1.6 5 6 0 0 none 0 0 none 3 3 6 7 5 anxiety_10 depression_5,medium
+47 male master's unemployed 7.5 1.6 8 8 0 1 none 0 0 none 1 9 1 7 1 anxiety_1 depression_13,medium
+60 female other employed 5.7 0.2 4 7 0 0 occasional 0 0 occasional 5 5 1 5 4 anxiety_20 depression_5,high
+65 female high school student 8.0 1.1 9 5 1 0 none 0 1 none 7 7 8 7 9 anxiety_11 depression_19,high
+34 male other student 5.8 3.8 7 4 1 1 none 0 1 none 4 1 7 9 8 anxiety_12 depression_18,high
+43 male bachelor's unemployed 5.3 3.9 7 2 1 0 none 0 1 occasional 9 2 3 5 3 anxiety_14 depression_10,medium
+53 male bachelor's student 5.4 0.2 8 8 0 0 none 0 1 none 6 4 8 9 5 anxiety_8 depression_8,medium
+18 male phd unemployed 3.8 0.2 6 9 0 1 occasional 0 0 none 6 9 8 1 5 anxiety_11 depression_15,high
+25 male other employed 7.2 0.6 8 4 0 0 none 0 0 occasional 3 5 1 3 7 anxiety_4 depression_20,high
+66 female phd employed 3.8 4.2 3 4 1 0 none 0 0 none 5 5 7 7 8 anxiety_7 depression_4,low
+52 female phd unemployed 4.7 0.3 1 5 0 0 none 0 1 none 6 9 2 4 9 anxiety_10 depression_2,medium
+69 male bachelor's employed 3.4 2.5 6 2 0 1 occasional 1 1 none 4 8 2 2 7 anxiety_19 depression_6,high
+32 male phd retired 6.4 0.2 1 7 0 0 none 1 0 none 3 2 2 3 2 anxiety_4 depression_3,low
+64 male bachelor's retired 6.3 2.0 9 5 0 0 none 0 0 none 5 7 5 7 8 anxiety_2 depression_7,low
+73 female high school employed 6.0 0.9 2 6 1 0 regular 0 0 none 7 1 7 8 8 anxiety_18 depression_10,high
+39 male other unemployed 4.9 3.1 2 4 0 0 regular 0 0 occasional 6 9 4 9 2 anxiety_14 depression_6,medium
+31 female phd unemployed 4.7 0.5 7 8 0 0 regular 1 1 none 2 3 4 6 6 anxiety_16 depression_16,high
+43 female bachelor's employed 7.2 2.0 2 8 0 0 regular 0 0 none 1 2 9 9 1 anxiety_11 depression_2,medium
+45 female master's student 5.7 0.5 8 5 1 0 none 0 1 occasional 5 4 9 4 7 anxiety_10 depression_17,high
+40 female phd retired 7.0 2.5 6 6 0 0 none 0 0 none 5 4 7 5 2 anxiety_17 depression_13,high
+31 male high school student 5.2 4.1 7 3 1 0 none 0 1 occasional 6 3 4 1 5 anxiety_14 depression_1,medium
+41 non-binary high school unemployed 6.8 0.3 7 1 0 0 none 0 1 none 3 2 8 9 7 anxiety_4 depression_6,low
+19 male master's unemployed 8.5 4.0 6 9 1 0 regular 0 1 none 1 5 3 9 9 anxiety_19 depression_5,high
+62 male bachelor's student 7.4 1.8 9 9 1 0 occasional 0 0 frequent 4 4 3 9 1 anxiety_2 depression_13,medium
+43 female phd employed 5.9 0.3 9 3 0 0 occasional 0 0 none 4 5 7 3 9 anxiety_7 depression_18,high
+31 non-binary bachelor's student 6.9 1.1 7 4 0 0 none 1 0 frequent 2 8 9 8 5 anxiety_9 depression_12,medium
+73 female high school student 6.1 0.4 9 7 0 0 regular 0 0 none 8 2 4 3 6 anxiety_19 depression_7,high
+68 male bachelor's retired 6.5 2.4 3 2 0 0 regular 1 1 none 6 9 4 6 8 anxiety_16 depression_15,high
+24 male high school retired 6.0 2.8 3 3 1 0 none 0 1 none 3 1 1 5 2 anxiety_16 depression_3,high
+20 non-binary bachelor's student 6.3 0.2 1 6 0 0 regular 0 0 none 1 8 1 8 7 anxiety_18 depression_16,high
+64 male master's student 6.8 1.4 5 8 0 0 none 0 0 occasional 3 5 3 3 4 anxiety_11 depression_1,medium
+40 female other unemployed 5.0 3.4 4 1 0 0 none 0 0 none 8 2 7 1 9 anxiety_7 depression_16,high
+63 female master's retired 5.0 5.5 2 4 0 1 occasional 0 1 occasional 4 8 9 9 6 anxiety_9 depression_12,medium
+60 female master's retired 4.4 1.4 9 1 1 0 occasional 0 1 none 3 5 4 9 7 anxiety_4 depression_19,high
+64 male other unemployed 4.1 6.0 3 2 0 0 none 0 0 none 4 3 2 3 6 anxiety_13 depression_8,medium
+62 female other employed 4.7 1.5 8 8 1 0 none 1 0 none 4 7 6 2 8 anxiety_4 depression_12,medium
+35 male phd retired 6.7 1.0 6 6 1 0 regular 0 1 none 2 4 6 4 6 anxiety_19 depression_15,high
+55 female phd retired 5.2 3.8 5 9 0 0 occasional 0 1 none 4 6 9 8 7 anxiety_2 depression_2,low
+52 female master's employed 7.3 1.4 1 2 0 0 occasional 0 0 none 9 8 4 6 8 anxiety_9 depression_17,high
+68 female master's retired 6.6 1.3 4 3 1 1 none 0 1 none 4 1 8 1 1 anxiety_12 depression_7,medium
+32 male high school retired 3.5 1.3 3 9 0 0 none 0 1 occasional 1 2 3 8 4 anxiety_2 depression_13,medium
+42 other high school employed 7.5 3.8 1 9 0 0 none 0 0 occasional 1 8 2 5 6 anxiety_6 depression_1,low
+72 male phd employed 7.7 3.6 5 6 0 0 none 0 0 none 1 7 9 6 1 anxiety_5 depression_6,low
+54 male phd student 5.0 1.0 6 3 0 0 none 0 0 none 5 9 6 5 4 anxiety_5 depression_13,medium
+45 male high school unemployed 7.1 0.8 2 5 1 0 none 0 0 none 6 2 8 5 6 anxiety_20 depression_11,high
+27 female high school unemployed 5.2 1.4 3 2 0 0 none 0 0 none 6 8 9 3 7 anxiety_5 depression_10,medium
+56 female bachelor's employed 6.6 1.7 6 7 0 0 none 1 0 none 6 6 1 4 6 anxiety_4 depression_16,high
+74 female bachelor's employed 4.6 0.5 4 8 1 0 regular 1 0 none 9 1 1 5 4 anxiety_9 depression_20,high
+34 male high school retired 3.8 3.2 9 6 1 1 none 0 0 occasional 1 4 5 2 7 anxiety_10 depression_17,high
+56 male bachelor's student 5.9 1.3 5 8 0 0 none 0 0 none 6 2 9 6 2 anxiety_16 depression_17,high
+39 female other student 6.3 0.8 4 2 1 1 none 0 0 none 8 7 7 2 6 anxiety_10 depression_4,medium
+43 male phd employed 5.9 0.2 2 3 0 0 none 0 1 none 8 9 7 4 5 anxiety_10 depression_5,medium
+61 female phd retired 4.7 0.5 6 7 1 0 none 1 1 frequent 3 6 2 1 2 anxiety_19 depression_14,high
+42 other high school retired 5.9 6.0 2 1 0 1 regular 0 0 none 5 4 3 4 9 anxiety_10 depression_20,high
+34 non-binary master's unemployed 6.9 0.7 7 7 0 0 occasional 0 0 occasional 4 5 4 7 7 anxiety_6 depression_10,medium
+30 non-binary high school unemployed 6.4 0.4 3 6 1 1 none 0 1 frequent 1 1 2 8 3 anxiety_17 depression_14,high
+37 female bachelor's retired 6.8 1.2 9 8 0 0 none 0 0 occasional 9 4 9 2 7 anxiety_5 depression_1,low
+42 male master's unemployed 5.5 0.7 5 7 1 0 none 0 1 frequent 5 3 5 3 6 anxiety_6 depression_11,medium
+21 male bachelor's employed 8.3 0.1 8 4 0 0 occasional 0 0 none 2 9 7 1 7 anxiety_15 depression_18,high
+27 female other retired 4.7 0.8 6 3 1 0 none 0 1 none 2 6 9 7 4 anxiety_19 depression_16,high
+20 female bachelor's unemployed 7.2 1.6 8 3 1 1 none 1 0 none 7 4 5 4 8 anxiety_18 depression_18,high
+58 male other student 8.3 1.6 3 4 0 1 regular 0 1 none 4 3 6 8 8 anxiety_4 depression_8,medium
+62 male other retired 7.2 0.9 3 9 1 0 occasional 0 1 none 1 4 4 5 7 anxiety_8 depression_10,medium
+35 male bachelor's retired 6.2 1.2 5 9 0 0 regular 0 1 none 5 8 8 9 7 anxiety_16 depression_10,high
+64 female bachelor's student 5.7 6.7 3 2 1 0 regular 0 1 none 2 5 1 6 8 anxiety_19 depression_5,high
+53 female other employed 8.1 0.9 8 5 0 0 regular 0 0 occasional 7 1 1 2 1 anxiety_20 depression_10,high
+64 female master's student 4.4 0.6 8 1 1 0 none 0 0 none 9 5 5 1 6 anxiety_3 depression_18,high
+39 male other retired 5.0 0.6 2 4 0 0 none 0 0 none 1 8 9 1 2 anxiety_10 depression_6,medium
+51 non-binary phd employed 5.9 1.2 4 2 0 0 occasional 0 0 frequent 2 4 2 9 1 anxiety_2 depression_3,low
+64 female other unemployed 8.4 2.9 1 8 0 0 occasional 0 0 none 6 2 3 1 7 anxiety_4 depression_8,medium
+25 male master's unemployed 7.1 0.5 4 4 0 1 regular 0 1 occasional 8 3 8 3 6 anxiety_6 depression_9,medium
+57 male phd unemployed 5.0 2.5 4 5 1 1 none 0 1 occasional 7 9 5 2 5 anxiety_11 depression_5,medium
+66 male high school retired 6.0 0.0 9 4 0 1 none 1 0 none 9 7 3 4 5 anxiety_14 depression_2,medium
+61 male high school student 5.6 1.1 3 5 0 1 none 0 0 none 2 3 6 1 9 anxiety_16 depression_2,high
+36 non-binary master's employed 5.4 3.0 2 5 0 0 none 0 0 none 9 5 6 1 9 anxiety_19 depression_7,high
+59 female other unemployed 8.0 0.8 9 5 0 0 none 0 1 occasional 4 3 5 4 6 anxiety_2 depression_17,high
+58 female bachelor's employed 4.4 1.7 9 3 0 0 occasional 0 0 none 3 4 5 4 3 anxiety_17 depression_10,high
+54 male master's retired 8.9 0.5 1 7 1 1 none 0 1 none 7 8 6 7 7 anxiety_9 depression_12,medium
+23 male phd unemployed 7.7 2.7 6 3 1 1 occasional 0 1 occasional 5 3 2 8 4 anxiety_17 depression_2,high
+69 female phd retired 8.1 0.1 8 2 0 0 occasional 1 1 none 5 3 6 8 5 anxiety_15 depression_10,high
+43 male high school student 5.8 3.8 3 3 0 1 none 1 0 occasional 2 8 2 8 7 anxiety_7 depression_20,high
+51 female phd retired 6.3 0.4 9 3 0 0 none 0 0 occasional 6 7 3 9 7 anxiety_19 depression_1,high
+73 non-binary master's retired 4.4 4.1 2 8 0 0 occasional 0 1 occasional 6 7 2 1 8 anxiety_3 depression_4,low
+62 female phd student 5.7 0.9 6 4 0 0 occasional 0 1 occasional 4 2 1 9 1 anxiety_1 depression_13,medium
+23 female master's employed 7.2 2.6 1 3 1 0 regular 0 1 none 5 7 1 8 5 anxiety_4 depression_12,medium
+54 male bachelor's student 8.4 0.8 7 5 0 0 regular 0 0 frequent 7 3 9 1 9 anxiety_18 depression_11,high
+74 male high school student 4.8 4.7 3 4 1 0 regular 0 1 none 8 7 4 7 7 anxiety_8 depression_10,medium
+50 male phd retired 6.0 0.3 7 9 0 0 none 0 0 none 6 4 5 9 2 anxiety_19 depression_15,high
+70 female master's employed 6.3 0.4 4 8 0 0 regular 0 1 none 5 8 7 4 1 anxiety_6 depression_5,low
+39 male other unemployed 4.4 1.4 9 7 0 0 regular 0 1 frequent 3 8 2 9 8 anxiety_1 depression_17,high
+38 male high school student 7.4 0.2 5 8 0 0 regular 0 1 occasional 7 6 9 1 9 anxiety_8 depression_5,medium
+23 female bachelor's employed 5.4 0.4 3 5 0 0 none 0 1 occasional 8 3 4 9 5 anxiety_1 depression_2,low
+23 male master's student 6.2 5.8 8 4 1 0 regular 0 0 none 3 6 1 6 6 anxiety_19 depression_9,high
+72 male bachelor's student 5.8 7.5 6 7 0 0 none 0 1 occasional 5 6 8 4 2 anxiety_11 depression_6,medium
+65 male bachelor's student 5.3 0.9 2 1 1 1 occasional 0 1 occasional 2 3 4 5 5 anxiety_15 depression_18,high
+21 non-binary phd student 6.5 5.1 3 6 0 0 none 0 0 none 4 4 7 7 4 anxiety_11 depression_14,medium
+47 female phd retired 6.2 1.6 8 8 0 0 none 0 1 none 4 2 3 4 8 anxiety_19 depression_19,high
+28 female master's employed 5.9 0.6 7 7 0 1 none 0 0 none 8 1 9 8 8 anxiety_10 depression_14,medium
+47 male other employed 5.4 2.4 6 2 0 1 none 0 1 none 3 2 5 3 5 anxiety_12 depression_8,medium
+48 other master's employed 7.0 2.2 1 7 0 1 none 0 0 none 5 7 5 2 8 anxiety_1 depression_17,high
+41 female other student 9.0 9.0 9 6 0 0 regular 0 1 none 5 5 3 1 6 anxiety_7 depression_3,low
+72 male bachelor's retired 6.7 0.6 3 5 0 0 none 0 0 none 2 9 9 6 6 anxiety_17 depression_10,high
+26 female high school student 8.0 2.2 5 4 0 0 none 1 0 none 9 3 3 2 4 anxiety_10 depression_17,high
+72 male master's student 4.4 0.1 7 1 0 0 none 0 0 none 4 2 2 8 3 anxiety_6 depression_11,medium
+20 female master's employed 6.7 0.2 7 2 0 1 none 1 0 none 9 4 9 4 9 anxiety_17 depression_8,high
+68 female other student 4.9 0.0 3 7 0 0 none 1 1 frequent 9 2 9 9 5 anxiety_18 depression_1,high
+48 male bachelor's unemployed 4.3 15.1 4 3 1 0 none 0 0 none 2 7 4 4 4 anxiety_5 depression_13,medium
+57 non-binary bachelor's student 5.4 3.2 7 5 0 0 none 0 1 none 9 6 4 4 6 anxiety_18 depression_4,high
+54 female other unemployed 8.3 3.1 8 8 1 0 occasional 0 1 none 9 8 6 8 4 anxiety_17 depression_7,high
+53 female bachelor's student 7.9 1.4 2 8 0 0 none 0 1 none 2 5 9 8 6 anxiety_16 depression_14,high
+41 male phd retired 6.9 0.7 9 6 1 0 none 0 1 frequent 6 2 8 5 8 anxiety_8 depression_5,medium
+48 male high school retired 4.2 0.3 7 5 0 1 none 1 0 none 9 4 3 3 8 anxiety_13 depression_11,medium
+23 male master's employed 6.2 0.7 8 2 1 1 regular 0 0 none 4 1 6 2 6 anxiety_16 depression_17,high
+19 female high school student 7.0 0.9 6 9 0 0 none 0 0 frequent 2 2 7 9 1 anxiety_11 depression_5,medium
+37 male master's unemployed 6.8 2.8 6 1 1 0 none 0 0 none 7 4 6 9 1 anxiety_6 depression_20,high
+45 female phd unemployed 3.7 1.6 9 2 0 0 none 1 1 none 9 6 3 5 3 anxiety_3 depression_3,low
+28 female bachelor's student 5.2 0.2 4 1 0 0 none 0 0 none 6 4 9 8 2 anxiety_1 depression_5,low
+21 male other unemployed 6.4 0.0 5 4 0 1 none 0 1 none 4 4 4 7 1 anxiety_18 depression_15,high
+32 female phd retired 7.3 0.2 9 4 0 0 none 0 0 frequent 1 2 2 3 1 anxiety_5 depression_19,high
+23 male high school unemployed 3.2 1.1 1 5 0 0 none 0 1 none 4 9 9 5 6 anxiety_13 depression_16,high
+71 non-binary other employed 6.3 5.4 4 5 0 0 none 0 0 frequent 3 8 3 9 7 anxiety_10 depression_8,medium
+66 female bachelor's retired 6.7 2.0 7 8 0 0 none 1 0 frequent 7 8 6 4 8 anxiety_5 depression_13,medium
+47 male phd retired 7.8 3.2 9 3 1 0 occasional 0 1 none 5 5 5 3 3 anxiety_14 depression_16,high
+73 male other retired 7.5 1.3 6 6 0 0 regular 1 0 none 3 3 2 7 1 anxiety_17 depression_3,high
+55 male phd student 7.4 0.9 8 3 1 0 none 0 1 none 2 6 1 8 5 anxiety_1 depression_1,low
+68 female phd student 5.3 0.2 9 2 0 0 occasional 1 0 none 2 9 9 5 8 anxiety_2 depression_9,medium
+74 female bachelor's retired 3.6 4.2 4 8 0 0 regular 0 0 none 5 8 3 8 4 anxiety_7 depression_9,medium
+19 female master's student 5.9 3.1 1 1 1 1 regular 0 1 none 8 7 7 5 2 anxiety_10 depression_17,high
+32 male other unemployed 8.0 0.4 8 9 1 0 none 1 0 none 8 8 9 9 9 anxiety_20 depression_2,high
+28 male bachelor's student 8.6 1.4 2 7 1 0 occasional 0 1 frequent 5 4 9 7 9 anxiety_7 depression_9,medium
+25 male phd student 7.6 1.3 1 4 0 0 none 0 0 none 2 6 6 5 3 anxiety_16 depression_19,high
+43 female bachelor's retired 7.1 2.0 7 3 0 0 none 0 1 none 4 5 8 9 7 anxiety_5 depression_13,medium
+68 female master's employed 7.1 5.8 9 6 0 1 none 0 0 occasional 7 2 9 5 1 anxiety_12 depression_5,medium
+62 male other employed 5.7 1.7 9 9 0 1 none 0 0 none 6 8 3 8 8 anxiety_17 depression_9,high
+61 male master's employed 6.3 1.6 3 9 0 0 none 0 0 none 7 3 6 4 8 anxiety_16 depression_13,high
+22 female high school unemployed 9.0 0.1 6 4 1 0 none 0 0 none 5 5 5 9 3 anxiety_20 depression_1,high
+23 female other student 5.1 0.1 7 5 1 0 occasional 0 0 none 2 8 7 6 5 anxiety_16 depression_15,high
+43 female master's employed 8.9 0.4 9 9 0 0 none 0 1 none 8 9 7 6 4 anxiety_19 depression_4,high
+71 female phd retired 6.0 0.1 2 2 0 0 none 0 1 none 2 9 9 3 7 anxiety_15 depression_4,high
+21 male other employed 8.5 2.7 8 2 1 1 none 0 0 none 8 5 1 3 7 anxiety_12 depression_20,high
+36 male other employed 4.4 2.6 7 5 0 0 none 1 0 frequent 7 2 6 4 8 anxiety_10 depression_10,medium

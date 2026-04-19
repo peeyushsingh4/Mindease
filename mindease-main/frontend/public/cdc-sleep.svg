@@ -1,0 +1,19 @@
+<svg width="512" height="320" viewBox="0 0 512 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cdcBg" x1="0" y1="0" x2="512" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B5AA2"/>
+      <stop offset="1" stop-color="#0EA5E9"/>
+    </linearGradient>
+    <linearGradient id="cdcGlow" x1="64" y1="40" x2="448" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="512" height="320" rx="28" fill="url(#cdcBg)"/>
+  <path d="M62 76C150 28 238 28 326 76C386 109 426 158 450 222" stroke="url(#cdcGlow)" stroke-width="28" stroke-linecap="round"/>
+  <path d="M72 234C168 270 264 270 360 234" stroke="rgba(255,255,255,0.25)" stroke-width="18" stroke-linecap="round"/>
+  <g>
+    <text x="64" y="194" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="108" font-weight="800" fill="white" letter-spacing="2">CDC</text>
+    <text x="66" y="238" font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="26" font-weight="700" fill="rgba(255,255,255,0.85)" letter-spacing="3">SLEEP HEALTH</text>
+  </g>
+</svg>

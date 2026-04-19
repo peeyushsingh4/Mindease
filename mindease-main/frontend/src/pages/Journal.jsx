@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import api from '../api';
+import api, { getApiErrorMessage } from '../api';
 
 const Journal = () => {
   const [content, setContent] = useState('');
@@ -58,7 +58,7 @@ const Journal = () => {
       fetchEntries();
     } catch (err) {
       console.error(err);
-      alert('Error saving journal');
+      alert(getApiErrorMessage(err, 'Error saving journal'));
     }
   };
 

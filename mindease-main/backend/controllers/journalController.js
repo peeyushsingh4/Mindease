@@ -9,12 +9,18 @@ exports.addEntry = async (req, res) => {
   try {
     const { content, prompt } = req.body;
 
+    if (!content || typeof content !== 'string' || !content.trim()) {
+      return res.status(400).json({ success: false, error: 'Journal content is required' });
+    }
+
     const payload = {
       user: req.user.id,
-      content,
-      prompt,
+      content: content.trim(),
       createdAt: nowIso()
     };
+    if (typeof prompt === 'string' && prompt.trim()) {
+      payload.prompt = prompt.trim();
+    }
     const docRef = await getDb().collection('journals').add(payload);
     const journal = { _id: docRef.id, id: docRef.id, ...payload };
 

@@ -3,17 +3,17 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import {
   Home, MessageCircle, Users, BookOpen, ClipboardList,
-  Calendar, Heart, Activity, Moon, Sun, LogOut, Settings
+  Calendar, Heart, Activity, Moon, Sun, LogOut, Settings, Music
 } from 'lucide-react';
 
 const BrainLogo = ({ size = 26 }) => (
   <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 4C13.5 4 11.5 5.5 10.5 7.5C9.8 7.2 9 7 8.2 7C5.8 7 4 8.8 4 11.2C4 11.8 4.1 12.4 4.4 12.9C3 13.7 2 15.2 2 17C2 19.5 3.8 21.5 6.2 21.9C6.5 24.2 8.5 26 11 26L21 26C23.5 26 25.5 24.2 25.8 21.9C28.2 21.5 30 19.5 30 17C30 15.2 29 13.7 27.6 12.9C27.9 12.4 28 11.8 28 11.2C28 8.8 26.2 7 23.8 7C23 7 22.2 7.2 21.5 7.5C20.5 5.5 18.5 4 16 4Z"
-      stroke="#457B9D" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(168,218,220,0.2)" />
+      stroke="#5482a1" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(168,218,220,0.22)" />
     <path d="M16 6 L16 26" stroke="#A8DADC" strokeWidth="1" strokeDasharray="2 2.5" />
-    <path d="M10 11 Q13.5 15 10 19" stroke="#457B9D" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <path d="M22 11 Q18.5 15 22 19" stroke="#457B9D" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <circle cx="16" cy="16" r="2.5" fill="#457B9D" opacity="0.7" />
+    <path d="M10 11 Q13.5 15 10 19" stroke="#5482a1" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <path d="M22 11 Q18.5 15 22 19" stroke="#5482a1" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <circle cx="16" cy="16" r="2.5" fill="#5482a1" opacity="0.75" />
   </svg>
 );
 
@@ -37,6 +37,7 @@ const Sidebar = () => {
   if (!user) return null;
 
   const isAdminOrCounsellor = user.role === 'admin' || user.role === 'counsellor';
+  const musicUrl = 'https://music-stream-gray.vercel.app/';
 
   return (
     <div className="sidebar">
@@ -49,6 +50,15 @@ const Sidebar = () => {
         <NavLink to="/chat"         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}><MessageCircle size={20}/> AI Support Chat</NavLink>
         <NavLink to="/mood"         className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}><Activity size={20}/>      Mood Tracker</NavLink>
         <NavLink to="/forum"        className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}><Users size={20}/>         Peer Forum</NavLink>
+        <a
+          href={musicUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="nav-link"
+          style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
+        >
+          <Music size={20}/> Instrumental Music
+        </a>
         <NavLink to="/resource-hub" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}><BookOpen size={20}/>      Resource Hub</NavLink>
         <NavLink to="/screening"    className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}><ClipboardList size={20}/> Mental Screening</NavLink>
         <NavLink to="/appointments" className={({ isActive }) => isActive ? 'nav-link active' : 'nav-link'}><Calendar size={20}/>      Counselling</NavLink>

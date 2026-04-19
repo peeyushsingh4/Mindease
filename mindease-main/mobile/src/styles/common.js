@@ -1,13 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export const colors = {
-  primary: '#457B9D',
-  primaryDark: '#1D3557',
-  background: '#F1FAEE',
+  primary: '#5482a1',
+  primaryDark: '#1d3557',
+  background: '#f2f9f2',
   card: '#FFFFFF',
-  textPrimary: '#1D3557',
-  textMuted: '#5B7891',
-  border: '#DDE8EE',
+  textPrimary: '#1e3a5f',
+  textMuted: '#607d8b',
+  border: 'rgba(84, 130, 161, 0.18)',
   success: '#16A34A',
   warning: '#F59E0B',
   danger: '#DC2626',

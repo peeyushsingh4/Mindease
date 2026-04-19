@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { RefreshControl, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
+import { Linking, RefreshControl, SafeAreaView, ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import api from '../api/client';
+import { WEB_APP_ORIGIN } from '../config/constants';
 import { useAuth } from '../context/AuthContext';
 import { colors, commonStyles } from '../styles/common';
 
@@ -96,6 +97,23 @@ const DashboardScreen = ({ navigation }) => {
           <TouchableOpacity style={[commonStyles.button, commonStyles.buttonSecondary]} onPress={() => navigation.navigate('Appointments')}>
             <Text style={[commonStyles.buttonText, commonStyles.buttonSecondaryText]}>Manage Appointments</Text>
           </TouchableOpacity>
+
+          {WEB_APP_ORIGIN ? (
+            <>
+              <TouchableOpacity
+                style={[commonStyles.button, commonStyles.buttonSecondary]}
+                onPress={() => Linking.openURL(`${WEB_APP_ORIGIN}/forum`)}
+              >
+                <Text style={[commonStyles.buttonText, commonStyles.buttonSecondaryText]}>Peer forum (web)</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[commonStyles.button, commonStyles.buttonSecondary]}
+                onPress={() => Linking.openURL(`${WEB_APP_ORIGIN}/resource-hub`)}
+              >
+                <Text style={[commonStyles.buttonText, commonStyles.buttonSecondaryText]}>Resource hub (web)</Text>
+              </TouchableOpacity>
+            </>
+          ) : null}
         </View>
       </ScrollView>
     </SafeAreaView>

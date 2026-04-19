@@ -1,5 +1,7 @@
 import axios from 'axios';
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api').replace(/\/$/, '');
+// Default to 5001 because backend/.env uses PORT=5001 in this repo.
+// Can be overridden via VITE_API_BASE_URL (recommended for deployments).
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api').replace(/\/$/, '');
 const AUTH_UNAUTHORIZED_EVENT = 'auth:unauthorized';
 const REFRESH_STORAGE_KEY = 'refreshToken';
 
@@ -55,7 +57,7 @@ api.interceptors.response.use(
             return api(originalRequest);
           }
         }
-      } catch (refreshErr) {
+      } catch {
         // Fall through to unauthorized handling below.
       }
     }

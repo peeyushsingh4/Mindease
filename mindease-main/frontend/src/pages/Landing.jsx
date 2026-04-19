@@ -45,14 +45,14 @@ const CrisisModal = ({ onClose }) => {
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem' }}>
-              <div style={{ width: '36px', height: '36px', background: 'linear-gradient(135deg,#457B9D,#1D3557)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ width: '36px', height: '36px', background: 'linear-gradient(135deg,#5482a1,#1D3557)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <PhoneCall size={18} color="white" />
               </div>
               <h2 style={{ fontSize: '1.4rem', fontWeight: '800', color: '#1D3557', margin: 0, letterSpacing: '-0.02em' }}>Crisis Helplines</h2>
             </div>
             <p style={{ color: '#4a6580', fontSize: '0.88rem', margin: 0 }}>You are not alone. Reach out — someone is always there.</p>
           </div>
-          <button onClick={onClose} style={{ background: '#F1FAEE', border: 'none', borderRadius: '10px', padding: '0.5rem', cursor: 'pointer', color: '#457B9D', display: 'flex' }}>
+          <button onClick={onClose} style={{ background: '#f2f9f2', border: 'none', borderRadius: '10px', padding: '0.5rem', cursor: 'pointer', color: '#5482a1', display: 'flex' }}>
             <X size={20} />
           </button>
         </div>
@@ -66,16 +66,16 @@ const CrisisModal = ({ onClose }) => {
             <h3 style={{ fontSize: '0.82rem', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.06em', color: '#8ea8be', marginBottom: '0.9rem' }}>{section.country}</h3>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {section.lines.map(line => (
-                <div key={line.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#F1FAEE', borderRadius: '12px', padding: '0.9rem 1.1rem', border: '1px solid rgba(69,123,157,0.1)' }}>
+                <div key={line.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#f2f9f2', borderRadius: '12px', padding: '0.9rem 1.1rem', border: '1px solid rgba(69,123,157,0.1)' }}>
                   <div>
                     <div style={{ fontWeight: '700', color: '#1D3557', fontSize: '0.92rem' }}>{line.name}</div>
                     <div style={{ color: '#8ea8be', fontSize: '0.8rem' }}>{line.desc}</div>
                   </div>
                   <a
                     href={line.number.startsWith('Text') || line.number.includes('.org') ? '#' : `tel:${line.number.replace(/[^0-9+]/g,'')}`}
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: '#457B9D', color: 'white', padding: '0.5rem 1rem', borderRadius: '9px', fontSize: '0.85rem', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap', transition: 'background 0.2s' }}
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: '#5482a1', color: 'white', padding: '0.5rem 1rem', borderRadius: '9px', fontSize: '0.85rem', fontWeight: '700', textDecoration: 'none', whiteSpace: 'nowrap', transition: 'background 0.2s' }}
                     onMouseEnter={e => e.currentTarget.style.background = '#1D3557'}
-                    onMouseLeave={e => e.currentTarget.style.background = '#457B9D'}
+                    onMouseLeave={e => e.currentTarget.style.background = '#5482a1'}
                   >
                     <Phone size={13} />
                     {line.number}
@@ -88,7 +88,7 @@ const CrisisModal = ({ onClose }) => {
 
         <button
           onClick={onClose}
-          style={{ width: '100%', padding: '0.85rem', background: 'linear-gradient(135deg,#457B9D,#1D3557)', color: 'white', border: 'none', borderRadius: '12px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer' }}
+          style={{ width: '100%', padding: '0.85rem', background: 'linear-gradient(135deg,#5482a1,#1D3557)', color: 'white', border: 'none', borderRadius: '12px', fontWeight: '700', fontSize: '1rem', cursor: 'pointer' }}
         >
           Close
         </button>
@@ -102,15 +102,15 @@ const BrainLogo = ({ size = 36 }) => (
   <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M16 4C13.5 4 11.5 5.5 10.5 7.5C9.8 7.2 9 7 8.2 7C5.8 7 4 8.8 4 11.2C4 11.8 4.1 12.4 4.4 12.9C3 13.7 2 15.2 2 17C2 19.5 3.8 21.5 6.2 21.9C6.5 24.2 8.5 26 11 26L21 26C23.5 26 25.5 24.2 25.8 21.9C28.2 21.5 30 19.5 30 17C30 15.2 29 13.7 27.6 12.9C27.9 12.4 28 11.8 28 11.2C28 8.8 26.2 7 23.8 7C23 7 22.2 7.2 21.5 7.5C20.5 5.5 18.5 4 16 4Z"
-      stroke="#457B9D"
+      stroke="#5482a1"
       strokeWidth="1.5"
       strokeLinejoin="round"
       fill="rgba(168,218,220,0.25)"
     />
     <path d="M16 6 L16 26" stroke="#A8DADC" strokeWidth="1" strokeDasharray="2 2.5" />
-    <path d="M10 11 Q13.5 15 10 19" stroke="#457B9D" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <path d="M22 11 Q18.5 15 22 19" stroke="#457B9D" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-    <circle cx="16" cy="16" r="2.5" fill="#457B9D" opacity="0.7" />
+    <path d="M10 11 Q13.5 15 10 19" stroke="#5482a1" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <path d="M22 11 Q18.5 15 22 19" stroke="#5482a1" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+    <circle cx="16" cy="16" r="2.5" fill="#5482a1" opacity="0.7" />
   </svg>
 );
 
@@ -216,7 +216,7 @@ const Landing = () => {
       {/* ===== HERO SECTION ===== */}
       <section
         style={{
-          background: 'linear-gradient(160deg, #F1FAEE 0%, #d4ecee 40%, #e8f5f7 70%, #F1FAEE 100%)',
+          background: 'linear-gradient(160deg, #f2f9f2 0%, #d4ecee 40%, #e8f5f7 70%, #f2f9f2 100%)',
           padding: '6rem 5% 8rem',
           position: 'relative',
           overflow: 'hidden',
@@ -401,7 +401,7 @@ const Landing = () => {
           style={{
             width: '100%',
             maxWidth: '1000px',
-            background: 'linear-gradient(135deg, #457B9D 0%, #1D3557 60%, #2a4a6b 100%)',
+            background: 'linear-gradient(135deg, #5482a1 0%, #1D3557 60%, #2a4a6b 100%)',
             borderRadius: '32px',
             padding: '4.5rem 3rem',
             textAlign: 'center',

@@ -1,29 +1,102 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import api from '../api';
+import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import { Send, Bot, Phone, AlertTriangle, X, ShieldCheck } from 'lucide-react';
 import { AuthContext } from '../context/AuthContext';
+import { firebaseAuth } from '../lib/firebaseClient';
+
+const sanitizeGuardianPhoneInput = (value) => String(value || '').replace(/\D/g, '').slice(0, 10);
+const isValidGuardianPhone = (value) => sanitizeGuardianPhoneInput(value).length === 10;
 
 // ─── Guardian Setup Modal ─────────────────────────────────────────────────────
-const GuardianModal = ({ onSave, isAnonymous }) => {
+const GuardianModal = ({ onSave, isAnonymous, verifyGuardianWithFirebase }) => {
   const [guardianName, setGuardianName] = useState('');
   const [guardianPhone, setGuardianPhone] = useState('');
   const [guardianRelation, setGuardianRelation] = useState('');
   const [saving, setSaving] = useState(false);
+  const [otpCode, setOtpCode] = useState('');
+  const [otpRequested, setOtpRequested] = useState(false);
+  const [verifying, setVerifying] = useState(false);
+  const [confirmationResult, setConfirmationResult] = useState(null);
   const [error, setError] = useState('');
+  const recaptchaVerifierRef = useRef(null);
+  const recaptchaContainerIdRef = useRef(
+    `guardian-recaptcha-${Math.random().toString(36).slice(2)}`
+  );
 
-  const handleSave = async () => {
+  useEffect(() => {
+    if (!recaptchaVerifierRef.current) {
+      recaptchaVerifierRef.current = new RecaptchaVerifier(
+        firebaseAuth,
+        recaptchaContainerIdRef.current,
+        { size: 'invisible' }
+      );
+      recaptchaVerifierRef.current.render().catch(() => {});
+    }
+    return () => {
+      recaptchaVerifierRef.current?.clear();
+      recaptchaVerifierRef.current = null;
+      const el = document.getElementById(recaptchaContainerIdRef.current);
+      if (el) el.innerHTML = '';
+    };
+  }, []);
+
+  const handleRequestOtp = async () => {
     if (!guardianName.trim() || !guardianPhone.trim()) {
       setError('Please fill in at least the guardian name and phone number.');
       return;
     }
+    if (!isValidGuardianPhone(guardianPhone)) {
+      setError('Emergency contact number must be exactly 10 digits with numbers only.');
+      return;
+    }
     setSaving(true);
+    setError('');
     try {
-      await api.put('/auth/guardian', { guardianName, guardianPhone, guardianRelation });
-      onSave({ guardianName, guardianPhone, guardianRelation });
+      await api.put('/auth/guardian', {
+        guardianName: guardianName.trim(),
+        guardianPhone: sanitizeGuardianPhoneInput(guardianPhone),
+        guardianRelation: guardianRelation.trim()
+      });
+      const confirmation = await signInWithPhoneNumber(
+        firebaseAuth,
+        `+91${sanitizeGuardianPhoneInput(guardianPhone)}`,
+        recaptchaVerifierRef.current
+      );
+      setConfirmationResult(confirmation);
+      setOtpRequested(true);
     } catch (err) {
-      setError('Failed to save. Please try again.');
+      setError(err?.message || 'Could not send OTP. Please try again.');
     } finally {
       setSaving(false);
+    }
+  };
+
+  const handleVerifyOtp = async () => {
+    if (!confirmationResult) {
+      setError('Please request OTP first.');
+      return;
+    }
+    if (!/^\d{6}$/.test(otpCode.trim())) {
+      setError('Enter the 6-digit OTP.');
+      return;
+    }
+    setVerifying(true);
+    setError('');
+    try {
+      const credential = await confirmationResult.confirm(otpCode.trim());
+      const firebaseIdToken = await credential.user.getIdToken(true);
+      await verifyGuardianWithFirebase({
+        guardianName: guardianName.trim(),
+        guardianPhone: sanitizeGuardianPhoneInput(guardianPhone),
+        guardianRelation: guardianRelation.trim(),
+        firebaseIdToken
+      });
+      onSave();
+    } catch (err) {
+      setError(err?.message || 'OTP verification failed. Please retry.');
+    } finally {
+      setVerifying(false);
     }
   };
 
@@ -69,10 +142,11 @@ const GuardianModal = ({ onSave, isAnonymous }) => {
             <label style={labelStyle}>Phone Number *</label>
             <input
               style={inputStyle}
-              placeholder="+91 98765 43210"
+              placeholder="10-digit number"
               value={guardianPhone}
-              onChange={e => setGuardianPhone(e.target.value)}
+              onChange={e => setGuardianPhone(sanitizeGuardianPhoneInput(e.target.value))}
               type="tel"
+              maxLength={10}
             />
           </div>
           <div>
@@ -86,18 +160,44 @@ const GuardianModal = ({ onSave, isAnonymous }) => {
           </div>
         </div>
 
-        <button
-          onClick={handleSave}
-          disabled={saving}
-          style={{
-            marginTop: '1.5rem', width: '100%', padding: '0.9rem',
-            background: 'var(--primary)', color: 'white', border: 'none',
-            borderRadius: '10px', fontWeight: '700', fontSize: '0.95rem',
-            cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.7 : 1
-          }}
-        >
-          {saving ? 'Saving…' : 'Save & Start Chat'}
-        </button>
+        {!otpRequested ? (
+          <button
+            onClick={handleRequestOtp}
+            disabled={saving}
+            style={{
+              marginTop: '1.5rem', width: '100%', padding: '0.9rem',
+              background: 'var(--primary)', color: 'white', border: 'none',
+              borderRadius: '10px', fontWeight: '700', fontSize: '0.95rem',
+              cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.7 : 1
+            }}
+          >
+            {saving ? 'Sending OTP…' : 'Send OTP'}
+          </button>
+        ) : (
+          <div style={{ marginTop: '1rem' }}>
+            <label style={labelStyle}>Enter OTP</label>
+            <input
+              style={inputStyle}
+              placeholder="6-digit OTP"
+              value={otpCode}
+              onChange={(e) => setOtpCode(String(e.target.value || '').replace(/\D/g, '').slice(0, 6))}
+              maxLength={6}
+            />
+            <button
+              onClick={handleVerifyOtp}
+              disabled={verifying}
+              style={{
+                marginTop: '0.75rem', width: '100%', padding: '0.9rem',
+                background: 'var(--primary)', color: 'white', border: 'none',
+                borderRadius: '10px', fontWeight: '700', fontSize: '0.95rem',
+                cursor: verifying ? 'not-allowed' : 'pointer', opacity: verifying ? 0.7 : 1
+              }}
+            >
+              {verifying ? 'Verifying…' : 'Verify OTP & Start Chat'}
+            </button>
+          </div>
+        )}
+        <div id={recaptchaContainerIdRef.current} />
 
         <p style={{ textAlign: 'center', fontSize: '0.75rem', color: '#94a3b8', marginTop: '1rem' }}>
           🔒 This information is encrypted and never shared except in emergencies.
@@ -177,7 +277,7 @@ const ConsultantPing = ({ onDismiss }) => (
 
 // ─── Main Chatbot Component ───────────────────────────────────────────────────
 const Chatbot = () => {
-  const { user } = useContext(AuthContext);
+  const { user, verifyGuardianWithFirebase } = useContext(AuthContext);
 
   const [showGuardianModal, setShowGuardianModal] = useState(false);
   const [guardianSaved, setGuardianSaved] = useState(false);
@@ -210,9 +310,9 @@ const Chatbot = () => {
           }));
           setMessages(restored);
         }
-      } catch (err) {
+      } catch {
         // History load failure is non-fatal — start fresh
-        console.error('Could not load chat history:', err.message);
+        console.error('Could not load chat history.');
       }
     };
     loadHistory();
@@ -221,7 +321,7 @@ const Chatbot = () => {
   // Check if guardian info is already on file
   useEffect(() => {
     if (user) {
-      const hasGuardian = user.guardianPhone && user.guardianPhone.trim().length > 0;
+      const hasGuardian = Boolean(user.guardianPhone && user.guardianPhone.trim().length > 0 && user.guardianPhoneVerified);
       setGuardianSaved(hasGuardian);
       if (!hasGuardian) setShowGuardianModal(true);
     }
@@ -231,7 +331,7 @@ const Chatbot = () => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const handleGuardianSave = (details) => {
+  const handleGuardianSave = () => {
     setGuardianSaved(true);
     setShowGuardianModal(false);
   };
@@ -283,7 +383,7 @@ const Chatbot = () => {
     <div className="animate-fade-in" style={{ display: 'flex', flexDirection: 'column', height: '100%', paddingBottom: '2rem' }}>
 
       {showGuardianModal && (
-        <GuardianModal onSave={handleGuardianSave} isAnonymous={user?.isAnonymous} />
+        <GuardianModal onSave={handleGuardianSave} isAnonymous={user?.isAnonymous} verifyGuardianWithFirebase={verifyGuardianWithFirebase} />
       )}
 
       {/* Header */}
@@ -391,8 +491,9 @@ const Chatbot = () => {
               <Send size={16} />
             </button>
           </form>
-          <p style={{ textAlign: 'center', fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.75rem', marginBottom: 0 }}>
-            MindEase AI is a support tool, not a clinical replacement. In emergencies, call 112 immediately.
+          <p style={{ textAlign: 'center', fontSize: '0.72rem', color: 'var(--text-muted)', marginTop: '0.75rem', marginBottom: 0, lineHeight: 1.5 }}>
+            This chatbot is for emotional support and self-help guidance only. It is not a replacement for a licensed mental health professional.
+            If you are in danger or thinking of self-harm, contact emergency services immediately.
           </p>
         </div>
       </div>

@@ -32,3 +32,22 @@ MindEase is a mental-health support platform with:
 - CORS now supports comma-separated `ALLOWED_ORIGINS` in backend `.env`.
 - If no OpenAI API key is set, chat gracefully uses a local fallback response.
 - Web and mobile token sessions now use Firebase ID tokens with refresh support.
+
+## Kaggle Dataset Integration
+
+MindEase now includes a dataset pipeline in `data-pipeline/` and backend runtime risk scoring.
+
+### Pipeline commands
+
+```bash
+cd /Users/peeyush/Documents/Mindease/mindease-main/data-pipeline
+# Use a dataset slug that exists and you can access (403 = wrong slug or rules not accepted).
+./download_kaggle.sh "ak0212/anxiety-and-depression-mental-health-factors"
+python3 prepare_dataset.py --input "data/raw/anxiety-and-depression-mental-health-factors" --output "data/processed/training.csv"
+python3 train_risk_model.py --input "data/processed/training.csv" --output "../backend/data/risk-model.json"
+```
+
+### Where it is used
+- Chat risk scoring: `backend/controllers/chatController.js`
+- Screening risk scoring: `backend/controllers/screeningController.js`
+- Model loader/scorer: `backend/utils/riskScoring.js`

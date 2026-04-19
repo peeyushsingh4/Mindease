@@ -66,8 +66,12 @@ export const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const login = async (email, password) => {
-    const res = await api.post('/auth/login', { email, password });
+  const login = async (email, password, age) => {
+    const payload = { email, password };
+    if (age !== undefined) {
+      payload.age = age;
+    }
+    const res = await api.post('/auth/login', payload);
     const nextToken = res?.data?.token;
     const nextRefreshToken = res?.data?.refreshToken;
     if (!nextToken) {
@@ -77,8 +81,8 @@ export const AuthProvider = ({ children }) => {
     return extractUser(res);
   };
 
-  const register = async ({ name, email, password, role = 'student' }) => {
-    const res = await api.post('/auth/register', { name, email, password, role });
+  const register = async ({ name, email, password, role = 'student', age }) => {
+    const res = await api.post('/auth/register', { name, email, password, role, age });
     const nextToken = res?.data?.token;
     const nextRefreshToken = res?.data?.refreshToken;
     if (!nextToken) {
@@ -112,6 +116,15 @@ export const AuthProvider = ({ children }) => {
     return updatedUser;
   };
 
+  const verifyGuardianWithFirebase = async (guardianPayload) => {
+    const res = await api.post('/auth/guardian/verify-firebase', guardianPayload);
+    const updatedUser = extractUser(res);
+    if (updatedUser) {
+      setUser(updatedUser);
+    }
+    return updatedUser;
+  };
+
   const logout = async () => {
     await clearSession();
   };
@@ -126,6 +139,7 @@ export const AuthProvider = ({ children }) => {
       register,
       loginAnonymous,
       updateGuardian,
+      verifyGuardianWithFirebase,
       updateUser,
       logout,
     }),

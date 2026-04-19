@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "thresholdHigh": 0.75,
+  "thresholdMedium": 0.45,
+  "bias": 0.12,
+  "keywordWeights": {
+    "binary": 0.4873,
+    "frequent": 0.4324,
+    "bachelor": 0.3288,
+    "regular": 0.3154,
+    "high": 0.311,
+    "school": 0.311,
+    "master": 0.2998,
+    "other": 0.2975,
+    "retired": 0.2809,
+    "unemployed": 0.271,
+    "student": 0.2571,
+    "employed": 0.2532,
+    "occasional": 0.2007,
+    "male": 0.159,
+    "female": 0.1436,
+    "none": 0.0238,
+    "depression": 0.0,
+    "anxiety": 0.0
+  },
+  "screeningWeights": {
+    "PHQ-9": {
+      "base": 0.15,
+      "scoreScale": 0.03
+    },
+    "GAD-7": {
+      "base": 0.1,
+      "scoreScale": 0.04
+    }
+  }
+}

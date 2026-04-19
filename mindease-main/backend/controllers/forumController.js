@@ -3,6 +3,21 @@ const { getDb } = require('../lib/firebase');
 const nowIso = () => new Date().toISOString();
 const postsCollection = () => getDb().collection('posts');
 
+const toPostResponse = (docId, data, viewerUserId) => {
+  const likes = Array.isArray(data.likes) ? data.likes : [];
+  const comments = Array.isArray(data.comments) ? data.comments : [];
+  const viewerId = viewerUserId ? String(viewerUserId) : '';
+
+  return {
+    _id: docId,
+    id: docId,
+    ...data,
+    likeCount: likes.length,
+    commentCount: comments.length,
+    likedByMe: viewerId ? likes.includes(viewerId) : false
+  };
+};
+
 // @desc    Create post
 // @route   POST /api/forum
 // @access  Private
@@ -41,7 +56,7 @@ exports.createPost = async (req, res) => {
       createdAt: nowIso()
     };
     const docRef = await postsCollection().add(payload);
-    const post = { _id: docRef.id, id: docRef.id, ...payload };
+    const post = toPostResponse(docRef.id, payload, req.user.id);
 
     res.status(201).json({
       success: true,
@@ -59,7 +74,7 @@ exports.getPosts = async (req, res) => {
   try {
     const snapshot = await postsCollection().get();
     const posts = snapshot.docs
-      .map((doc) => ({ _id: doc.id, id: doc.id, ...doc.data() }))
+      .map((doc) => toPostResponse(doc.id, doc.data(), req.user.id))
       .sort((a, b) => (a.createdAt < b.createdAt ? 1 : -1));
 
     res.status(200).json({
@@ -104,7 +119,7 @@ exports.addComment = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      data: { _id: postRef.id, id: postRef.id, ...post, comments }
+      data: toPostResponse(postRef.id, { ...post, comments }, req.user.id)
     });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });
@@ -134,7 +149,11 @@ exports.toggleLike = async (req, res) => {
     }
 
     const updated = await postRef.get();
-    res.status(200).json({ success: true, data: { _id: updated.id, id: updated.id, ...updated.data() }, liked: !hasLiked });
+    res.status(200).json({
+      success: true,
+      data: toPostResponse(updated.id, updated.data(), req.user.id),
+      liked: !hasLiked
+    });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });
   }
@@ -154,7 +173,10 @@ exports.reportPost = async (req, res) => {
 
     const nextReports = Number(post.reports || 0) + 1;
     await postRef.update({ reports: nextReports });
-    res.status(200).json({ success: true, data: { _id: postRef.id, id: postRef.id, ...post, reports: nextReports } });
+    res.status(200).json({
+      success: true,
+      data: toPostResponse(postRef.id, { ...post, reports: nextReports }, req.user.id)
+    });
   } catch (err) {
     res.status(400).json({ success: false, error: err.message });
   }

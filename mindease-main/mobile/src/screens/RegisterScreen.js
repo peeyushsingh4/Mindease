@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Platform, SafeAreaView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { extractErrorMessage } from '../api/client';
 import { useAuth } from '../context/AuthContext';
+import { MINIMUM_AGE } from '../config/constants';
 import { colors, commonStyles } from '../styles/common';
+import { isValidGuardianPhone, sanitizeGuardianPhoneInput } from '../utils/guardianPhone';
 
 const roleButtonStyle = (active) => ({
   flex: 1,
@@ -24,12 +26,22 @@ const RegisterScreen = () => {
   const [guardianName, setGuardianName] = useState('');
   const [guardianPhone, setGuardianPhone] = useState('');
   const [guardianRelation, setGuardianRelation] = useState('');
+  const [age, setAge] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async () => {
     if (!name.trim() || !email.trim() || !password.trim()) {
       setError('Name, email, and password are required.');
+      return;
+    }
+    const parsedAge = Number(age);
+    if (!Number.isFinite(parsedAge)) {
+      setError('Please enter your age.');
+      return;
+    }
+    if (parsedAge < MINIMUM_AGE) {
+      setError(`You must be at least ${MINIMUM_AGE} to use MindEase.`);
       return;
     }
     if (password.trim().length < 6) {
@@ -40,14 +52,18 @@ const RegisterScreen = () => {
       setError('Emergency contact name and phone are required.');
       return;
     }
+    if (!isValidGuardianPhone(guardianPhone)) {
+      setError('Emergency contact number must be exactly 10 digits with numbers only.');
+      return;
+    }
 
     setError('');
     setLoading(true);
     try {
-      await register({ name: name.trim(), email: email.trim(), password, role });
+      await register({ name: name.trim(), email: email.trim(), password, role, age: parsedAge });
       await updateGuardian({
         guardianName: guardianName.trim(),
-        guardianPhone: guardianPhone.trim(),
+        guardianPhone: sanitizeGuardianPhoneInput(guardianPhone),
         guardianRelation: guardianRelation.trim(),
       });
     } catch (err) {
@@ -61,8 +77,12 @@ const RegisterScreen = () => {
     <SafeAreaView style={commonStyles.screen}>
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        style={{ flex: 1, justifyContent: 'center', padding: 16 }}
+        style={{ flex: 1 }}
       >
+        <ScrollView
+          contentContainerStyle={{ padding: 16, paddingBottom: 32 }}
+          keyboardShouldPersistTaps="handled"
+        >
         <View style={[commonStyles.card, { gap: 10 }]}>
           <Text style={commonStyles.title}>Create account</Text>
           <Text style={commonStyles.subtitle}>Set up your private MindEase profile.</Text>
@@ -96,6 +116,17 @@ const RegisterScreen = () => {
           </View>
 
           <View>
+            <Text style={commonStyles.label}>Age ({MINIMUM_AGE}+)</Text>
+            <TextInput
+              value={age}
+              onChangeText={setAge}
+              keyboardType="number-pad"
+              style={commonStyles.input}
+              placeholder={`Minimum ${MINIMUM_AGE}`}
+            />
+          </View>
+
+          <View>
             <Text style={commonStyles.label}>Role</Text>
             <View style={{ flexDirection: 'row', gap: 8 }}>
               <TouchableOpacity style={roleButtonStyle(role === 'student')} onPress={() => setRole('student')}>
@@ -121,10 +152,11 @@ const RegisterScreen = () => {
             <Text style={commonStyles.label}>Emergency contact phone *</Text>
             <TextInput
               value={guardianPhone}
-              onChangeText={setGuardianPhone}
+              onChangeText={(value) => setGuardianPhone(sanitizeGuardianPhoneInput(value))}
               style={commonStyles.input}
-              placeholder="+91 98765 43210"
+              placeholder="10-digit number"
               keyboardType="phone-pad"
+              maxLength={10}
             />
           </View>
 
@@ -144,6 +176,7 @@ const RegisterScreen = () => {
             <Text style={commonStyles.buttonText}>{loading ? 'Creating account…' : 'Create Account'}</Text>
           </TouchableOpacity>
         </View>
+        </ScrollView>
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

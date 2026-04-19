@@ -12,15 +12,29 @@ app.use(express.json({ limit: '10kb' }));
 
 // BUG FIX 2: CORS was configured with cors() and no options, which allows ANY
 // origin to call the API. Restricting to the local frontend by default.
-// Change ALLOWED_ORIGIN in .env for production deployment.
+// In development we allow localhost/127.0.0.1 on any port to support Vite's
+// port fallback (5173 -> 5174 -> 5175...).
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || process.env.ALLOWED_ORIGIN || 'http://localhost:5173,http://localhost:19006')
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean);
 
+function isDevLocalhostOrigin(origin) {
+  if (!origin) return true; // Native mobile apps may send no Origin header.
+  try {
+    const url = new URL(origin);
+    const host = url.hostname;
+    return (host === 'localhost' || host === '127.0.0.1') && (url.protocol === 'http:' || url.protocol === 'https:');
+  } catch (e) {
+    return false;
+  }
+}
+
 app.use(cors({
   origin: (origin, callback) => {
-    // Native mobile apps may send no Origin header.
+    if (process.env.NODE_ENV !== 'production' && isDevLocalhostOrigin(origin)) {
+      return callback(null, true);
+    }
     if (!origin || allowedOrigins.includes(origin)) {
       return callback(null, true);
     }

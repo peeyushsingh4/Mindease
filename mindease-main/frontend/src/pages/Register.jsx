@@ -4,11 +4,14 @@ import { AuthContext } from '../context/AuthContext';
 import { CheckCircle2, Eye, EyeOff, User, Mail, Lock, ArrowLeft, Phone, Users } from 'lucide-react';
 import api from '../api';
 
+const sanitizeGuardianPhoneInput = (value) => String(value || '').replace(/\D/g, '').slice(0, 10);
+const isValidGuardianPhone = (value) => sanitizeGuardianPhoneInput(value).length === 10;
+
 const BrainLogo = ({ size = 32 }) => (
   <svg width={size} height={size} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       d="M16 4C13.5 4 11.5 5.5 10.5 7.5C9.8 7.2 9 7 8.2 7C5.8 7 4 8.8 4 11.2C4 11.8 4.1 12.4 4.4 12.9C3 13.7 2 15.2 2 17C2 19.5 3.8 21.5 6.2 21.9C6.5 24.2 8.5 26 11 26L21 26C23.5 26 25.5 24.2 25.8 21.9C28.2 21.5 30 19.5 30 17C30 15.2 29 13.7 27.6 12.9C27.9 12.4 28 11.8 28 11.2C28 8.8 26.2 7 23.8 7C23 7 22.2 7.2 21.5 7.5C20.5 5.5 18.5 4 16 4Z"
-      stroke="white" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(255,255,255,0.2)"
+      stroke="white" strokeWidth="1.5" strokeLinejoin="round" fill="rgba(255,255,255,0.18)"
     />
     <path d="M16 6 L16 26" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeDasharray="2 2.5" />
     <path d="M10 11 Q13.5 15 10 19" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" />
@@ -21,6 +24,7 @@ const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [age, setAge] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [role, setRole] = useState('student');
   const [guardianName, setGuardianName] = useState('');
@@ -35,15 +39,23 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !email.trim() || !password) return setError('Please fill in all required fields.');
+    const parsedAge = Number(age);
+    if (!Number.isFinite(parsedAge)) return setError('Please enter your age.');
+    if (parsedAge < 16) return setError('MindEase is available for users aged 16 and above.');
     if (password.length < 6) return setError('Password must be at least 6 characters.');
     if (!guardianName || !guardianPhone) return setError('Please provide emergency contact details.');
+    if (!isValidGuardianPhone(guardianPhone)) return setError('Emergency contact number must be exactly 10 digits with numbers only.');
     setError('');
     setLoading(true);
     try {
-      await register(name.trim(), email.trim(), password, role);
+      await register(name.trim(), email.trim(), password, role, parsedAge);
       // Save guardian details after registration
       try {
-        await api.put('/auth/guardian', { guardianName, guardianPhone, guardianRelation });
+        await api.put('/auth/guardian', {
+          guardianName: guardianName.trim(),
+          guardianPhone: sanitizeGuardianPhoneInput(guardianPhone),
+          guardianRelation: guardianRelation.trim(),
+        });
       } catch (gErr) {
         console.error('Guardian save failed:', gErr.message);
       }
@@ -56,15 +68,30 @@ const Register = () => {
   };
 
   const handleAnon = async () => {
+    const parsedAge = Number(age);
+    if (!Number.isFinite(parsedAge)) {
+      return setError('Please enter your age before continuing anonymously.');
+    }
+    if (parsedAge < 16) {
+      return setError('MindEase is available for users aged 16 and above.');
+    }
     if (!guardianName || !guardianPhone) {
       return setError('Please fill in your emergency contact details above before continuing anonymously.');
+    }
+    if (!isValidGuardianPhone(guardianPhone)) {
+      return setError('Emergency contact number must be exactly 10 digits with numbers only.');
     }
     setError('');
     setAnonLoading(true);
     try {
-      await loginAnonymous({ guardianName, guardianPhone, guardianRelation });
+      await loginAnonymous({
+        guardianName: guardianName.trim(),
+        guardianPhone: sanitizeGuardianPhoneInput(guardianPhone),
+        guardianRelation: guardianRelation.trim(),
+        age: parsedAge
+      });
       navigate('/dashboard');
-    } catch (err) {
+    } catch {
       setError('Could not start anonymous session. Please try again.');
     } finally {
       setAnonLoading(false);
@@ -75,13 +102,13 @@ const Register = () => {
     <div style={{
       minHeight: '100vh',
       display: 'flex',
-      background: 'linear-gradient(160deg, #F1FAEE 0%, #d4ecee 50%, #F1FAEE 100%)',
+      background: 'linear-gradient(160deg, #f2f9f2 0%, #e8f2ea 50%, #f2f9f2 100%)',
       fontFamily: "'Inter', sans-serif",
     }}>
       {/* Left Panel */}
       <div style={{
         width: '42%',
-        background: 'linear-gradient(160deg, #457B9D 0%, #1D3557 100%)',
+        background: 'linear-gradient(160deg, #4a768f 0%, #1d3557 100%)',
         color: 'white',
         padding: '3.5rem',
         display: 'flex',
@@ -132,7 +159,7 @@ const Register = () => {
       {/* Right Form Panel */}
       <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '3rem 2rem', overflowY: 'auto' }}>
         <div style={{ width: '100%', maxWidth: '420px' }}>
-          <h2 style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--primary-hover)', marginBottom: '0.5rem', letterSpacing: '-0.03em' }}>
+          <h2 style={{ fontSize: '2rem', fontWeight: '800', color: 'var(--secondary)', marginBottom: '0.5rem', letterSpacing: '-0.03em' }}>
             Create Account
           </h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', fontSize: '0.95rem' }}>
@@ -184,6 +211,20 @@ const Register = () => {
               </div>
             </div>
 
+            {/* Age */}
+            <div>
+              <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--primary)', marginBottom: '0.5rem' }}>Age</label>
+              <input
+                type="number"
+                min="16"
+                max="120"
+                placeholder="Your age (16+)"
+                className="input-field"
+                value={age}
+                onChange={e => setAge(e.target.value)}
+              />
+            </div>
+
             {/* Role */}
             <div>
               <label style={{ display: 'block', fontSize: '0.78rem', fontWeight: '700', letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--primary)', marginBottom: '0.5rem' }}>I am a</label>
@@ -216,7 +257,16 @@ const Register = () => {
                 </div>
                 <div style={{ position: 'relative' }}>
                   <Phone size={15} style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
-                  <input type="tel" placeholder="Guardian phone e.g. +91 98765 43210" className="input-field" style={{ paddingLeft: '2.75rem' }} value={guardianPhone} onChange={e => setGuardianPhone(e.target.value)} />
+                  <input
+                    type="tel"
+                    placeholder="10-digit emergency contact number"
+                    className="input-field"
+                    style={{ paddingLeft: '2.75rem' }}
+                    value={guardianPhone}
+                    onChange={e => setGuardianPhone(sanitizeGuardianPhoneInput(e.target.value))}
+                    maxLength={10}
+                    inputMode="numeric"
+                  />
                 </div>
                 <input type="text" placeholder="Relationship (e.g. Mother, Friend) — optional" className="input-field" value={guardianRelation} onChange={e => setGuardianRelation(e.target.value)} />
               </div>

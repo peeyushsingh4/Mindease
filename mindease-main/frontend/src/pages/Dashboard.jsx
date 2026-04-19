@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { MessageCircle, Users, BookOpen, Calendar, Info, Activity, Zap } from 'lucide-react';
+import { MessageCircle, Users, BookOpen, Calendar, Info, Activity, Zap, Music } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 const dummyMoodData = [
@@ -18,6 +18,7 @@ const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const today = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+  const musicUrl = 'https://music-stream-gray.vercel.app/';
 
   return (
     <div className="animate-fade-in" style={{ paddingBottom: '3rem' }}>
@@ -38,16 +39,16 @@ const Dashboard = () => {
       </div>
 
       {/* Alert Banner — Start Exercise navigates to Journal where the breathing widget lives */}
-      <div style={{ backgroundColor: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '12px', padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-        <Info color="#ea580c" size={24} />
+      <div style={{ backgroundColor: 'var(--alert-peach-bg)', border: '1px solid var(--alert-peach-border)', borderRadius: '12px', padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
+        <Info color="var(--alert-peach-accent)" size={24} />
         <div style={{ flex: 1 }}>
-          <h4 style={{ color: '#9a3412', margin: 0, fontSize: '0.95rem' }}>Feeling overwhelmed?</h4>
-          <p style={{ color: '#c2410c', margin: 0, fontSize: '0.85rem' }}>Our AI detected high stress levels in your last session. Would you like to try a 2-minute breathing exercise?</p>
+          <h4 style={{ color: 'var(--alert-peach-title)', margin: 0, fontSize: '0.95rem' }}>Feeling overwhelmed?</h4>
+          <p style={{ color: 'var(--alert-peach-body)', margin: 0, fontSize: '0.85rem' }}>Our AI detected high stress levels in your last session. Would you like to try a 2-minute breathing exercise?</p>
         </div>
         <button
           onClick={() => navigate('/journal')}
           className="btn"
-          style={{ backgroundColor: 'transparent', color: '#ea580c', textDecoration: 'underline', border: 'none', fontWeight: 'bold', padding: 0, cursor: 'pointer' }}
+          style={{ backgroundColor: 'transparent', color: 'var(--alert-peach-accent)', textDecoration: 'underline', border: 'none', fontWeight: 'bold', padding: 0, cursor: 'pointer' }}
         >
           Start Exercise
         </button>
@@ -57,7 +58,7 @@ const Dashboard = () => {
         <div className="card" style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
             <h3 style={{ margin: 0, color: 'var(--secondary)' }}>How are you feeling?</h3>
-            <span style={{ fontSize: '0.75rem', fontWeight: 'bold', backgroundColor: 'var(--primary-light)', color: 'var(--primary)', padding: '0.3rem 0.8rem', borderRadius: '999px', letterSpacing: '1px' }}>WEEKLY TREND</span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 'bold', backgroundColor: 'var(--primary-light)', color: 'var(--secondary)', padding: '0.3rem 0.8rem', borderRadius: '999px', letterSpacing: '1px' }}>WEEKLY TREND</span>
           </div>
           <div style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '1rem' }}>
             <div style={{ textAlign: 'center', color: '#ef4444' }}><div style={{ fontSize: '2rem' }}>☹️</div><small style={{ fontWeight: 'bold' }}>Low</small></div>
@@ -77,7 +78,7 @@ const Dashboard = () => {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          <div className="card" style={{ backgroundColor: '#3b0764', color: 'white', position: 'relative', overflow: 'hidden' }}>
+          <div className="card" style={{ backgroundColor: 'var(--primary)', color: 'white', position: 'relative', overflow: 'hidden', border: 'none' }}>
             <Zap size={100} style={{ position: 'absolute', right: '-20px', top: '10px', opacity: 0.1 }} />
             <h4 style={{ margin: 0, fontSize: '0.9rem', opacity: 0.8 }}>Wellness Streak</h4>
             <div style={{ fontSize: '3rem', fontWeight: '800', lineHeight: 1.2, margin: '0.5rem 0' }}>12 Days</div>
@@ -114,9 +115,21 @@ const Dashboard = () => {
           { icon: <MessageCircle size={24}/>, color: 'var(--primary)', title: 'AI Counselor',  desc: 'Confidential 24/7 mental health assistant.',    route: '/chat' },
           { icon: <Users size={24}/>,         color: '#3b82f6',        title: 'Peer Support',  desc: 'Join the community and share anonymously.',     route: '/forum' },
           { icon: <BookOpen size={24}/>,      color: '#f43f5e',        title: 'Resource Hub',  desc: 'Explore wellness guides and videos.',           route: '/resource-hub' },
+          { icon: <Music size={24}/>,         color: '#10b981',        title: 'Low‑Tempo Music', desc: 'Instrumental focus tracks for calm study.',      external: true, url: musicUrl },
           { icon: <Calendar size={24}/>,      color: '#6366f1',        title: 'Professional',  desc: 'Book a session with a counselor.',              route: '/appointments' },
         ].map(card => (
-          <div key={card.route} className="card" style={{ cursor: 'pointer' }} onClick={() => navigate(card.route)}>
+          <div
+            key={card.route || card.url}
+            className="card"
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              if (card.external) {
+                window.open(card.url, '_blank', 'noreferrer');
+                return;
+              }
+              navigate(card.route);
+            }}
+          >
             <div style={{ width: '48px', height: '48px', backgroundColor: card.color, borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', marginBottom: '1rem' }}>
               {card.icon}
             </div>

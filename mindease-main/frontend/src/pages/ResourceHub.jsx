@@ -1,12 +1,53 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Search, Filter, PlayCircle } from 'lucide-react';
+
+const ResourceImage = ({ src, alt }) => {
+  const [failed, setFailed] = useState(false);
+
+  if (failed || !src) {
+    return (
+      <div
+        aria-label={alt}
+        style={{
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(135deg, rgba(14,165,233,0.18), rgba(16,185,129,0.18))',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          color: 'var(--text-muted)',
+          fontWeight: 700,
+          letterSpacing: '0.04em',
+          fontSize: '0.85rem'
+        }}
+      >
+        Resource
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onError={() => setFailed(true)}
+      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+    />
+  );
+};
+
+const publicAsset = (path) => {
+  const base = import.meta.env.BASE_URL || '/';
+  const normalized = base.endsWith('/') ? base.slice(0, -1) : base;
+  return `${normalized}/${path.replace(/^\//, '')}`;
+};
 
 const ResourceHub = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const filters = ['All', 'Crisis Support', 'Anxiety', 'Sleep', 'Mindfulness', 'Self-Help'];
 
-  const resources = [
+  const resources = useMemo(() => ([
     {
       title: 'Tele-MANAS India (24x7 Mental Health Helpline)',
       tag: 'CRISIS SUPPORT',
@@ -55,7 +96,7 @@ const ResourceHub = () => {
       desc: 'Simple sleep habits that improve focus, energy, and mental health.',
       type: 'article',
       link: 'https://www.cdc.gov/sleep/about/index.html',
-      image: 'https://images.unsplash.com/photo-1455642305367-68834a5f90a9?fit=crop&w=400&h=250&q=80'
+      image: publicAsset('cdc-sleep.svg')
     },
     {
       title: 'Mindful Self-Compassion Practices',
@@ -67,7 +108,7 @@ const ResourceHub = () => {
       link: 'https://self-compassion.org/category/exercises/',
       image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?fit=crop&w=400&h=250&q=80'
     }
-  ];
+  ]), []);
 
   const filteredResources = resources.filter((item) => {
     const matchesFilter = activeFilter === 'All' || item.tag.toLowerCase() === activeFilter.toLowerCase();
@@ -92,7 +133,7 @@ const ResourceHub = () => {
                 onClick={() => setActiveFilter(filter)}
                 className="btn" 
                 style={{ 
-                  backgroundColor: activeFilter === filter ? '#0ea5e9' : 'white', 
+                  backgroundColor: activeFilter === filter ? 'var(--primary)' : 'white', 
                   color: activeFilter === filter ? 'white' : 'var(--text-secondary)',
                   border: activeFilter === filter ? 'none' : '1px solid var(--border-light)',
                   padding: '0.4rem 1.25rem',
@@ -122,7 +163,7 @@ const ResourceHub = () => {
       </div>
 
       {/* Featured Banner */}
-      <div style={{ background: 'linear-gradient(135deg, #0ea5e9, #10b981)', borderRadius: '24px', padding: '3.5rem 3rem', color: 'white', marginBottom: '3rem', position: 'relative', overflow: 'hidden' }}>
+      <div style={{ background: 'linear-gradient(135deg, var(--primary) 0%, #4a8f7e 100%)', borderRadius: '24px', padding: '3.5rem 3rem', color: 'white', marginBottom: '3rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '600px' }}>
           <span style={{ fontSize: '0.75rem', fontWeight: 'bold', letterSpacing: '2px', backgroundColor: 'rgba(255,255,255,0.2)', padding: '0.3rem 0.8rem', borderRadius: '999px', display: 'inline-block', marginBottom: '1.5rem' }}>FEATURED SERIES</span>
           <h2 style={{ fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem' }}>Need Immediate Mental Health Support?</h2>
@@ -132,7 +173,7 @@ const ResourceHub = () => {
             target="_blank"
             rel="noreferrer"
             className="btn"
-            style={{ backgroundColor: 'white', color: '#0ea5e9', padding: '0.75rem 1.5rem', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}
+            style={{ backgroundColor: 'white', color: 'var(--primary)', padding: '0.75rem 1.5rem', fontWeight: 'bold', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}
           >
             Open Tele-MANAS <PlayCircle size={18} />
           </a>
@@ -144,7 +185,7 @@ const ResourceHub = () => {
         {filteredResources.map((item, idx) => (
           <div key={idx} className="card" style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <div style={{ height: '160px', position: 'relative' }}>
-              <img src={item.image} alt={item.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <ResourceImage src={item.image} alt={item.title} />
               <div style={{ position: 'absolute', top: '0.75rem', right: '0.75rem', backgroundColor: 'rgba(255,255,255,0.9)', color: 'var(--text-primary)', fontSize: '0.75rem', fontWeight: 'bold', padding: '0.2rem 0.5rem', borderRadius: '999px', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                 {item.length}
               </div>
@@ -160,7 +201,7 @@ const ResourceHub = () => {
                 href={item.link}
                 target="_blank"
                 rel="noreferrer"
-                style={{ marginTop: 'auto', display: 'inline-block', fontSize: '0.9rem', color: '#0ea5e9', fontWeight: '600' }}
+                style={{ marginTop: 'auto', display: 'inline-block', fontSize: '0.9rem', color: 'var(--primary)', fontWeight: '600' }}
               >
                 Open Resource ↗
               </a>

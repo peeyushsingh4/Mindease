@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext, useMemo } from 'react';
 import api from '../api';
 import { Search, Heart, MessageSquare, AlertTriangle, Plus, Users } from 'lucide-react';
+import { AuthContext } from '../context/AuthContext';
 
 const CATEGORIES = [
   { label: 'All',           value: 'all' },
@@ -20,6 +21,7 @@ const STARTER_POSTS = [
     category: 'stress',
     createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
     likes: 24,
+    likedByMe: false,
     comments: [
       { text: 'This helped me too, thanks for sharing.' },
       { text: 'Tiny goals are a game changer.' }
@@ -34,6 +36,7 @@ const STARTER_POSTS = [
     category: 'general',
     createdAt: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
     likes: 56,
+    likedByMe: false,
     comments: [
       { text: 'Proud of you for taking that step.' },
       { text: 'Needed to hear this today.' },
@@ -49,12 +52,14 @@ const STARTER_POSTS = [
     category: 'stress',
     createdAt: new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString(),
     likes: 15,
+    likedByMe: false,
     comments: [{ text: 'Try 4-6 breathing for 2 minutes right before you start.' }],
     reports: 0
   }
 ];
 
 const Forum = () => {
+  const { user } = useContext(AuthContext);
   const [posts, setPosts] = useState([]);
   const [starterPosts, setStarterPosts] = useState(STARTER_POSTS);
   const [showCreate, setShowCreate] = useState(false);
@@ -70,17 +75,58 @@ const Forum = () => {
   const [commentDrafts, setCommentDrafts] = useState({});
   const [selectedPost, setSelectedPost] = useState(null);
 
-  const fetchPosts = async () => {
-    setLoading(true);
-    setLoadError('');
+  const viewerId = user?.id || user?._id || user?.uid || '';
+
+  const getLikeCount = (post) => {
+    if (typeof post.likeCount === 'number') return post.likeCount;
+    if (Array.isArray(post.likes)) return post.likes.length;
+    return Number(post.likes || 0);
+  };
+
+  const isLikedByMe = (post) => {
+    if (typeof post.likedByMe === 'boolean') return post.likedByMe;
+    if (post._id?.startsWith('demo-')) return Boolean(post.likedByMe);
+    if (!viewerId) return false;
+    if (Array.isArray(post.likes)) return post.likes.includes(String(viewerId));
+    return false;
+  };
+
+  const getCommentCount = (post) => {
+    if (typeof post.commentCount === 'number') return post.commentCount;
+    return post.comments?.length || 0;
+  };
+
+  const formatTimeAgo = (iso) => {
+    if (!iso) return '';
+    const ts = new Date(iso).getTime();
+    if (Number.isNaN(ts)) return '';
+    const diff = Date.now() - ts;
+    const minutes = Math.max(0, Math.floor(diff / 60000));
+    if (minutes < 1) return 'just now';
+    if (minutes < 60) return `${minutes}m ago`;
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return `${hours}h ago`;
+    const days = Math.floor(hours / 24);
+    if (days < 7) return `${days}d ago`;
+    return new Date(iso).toLocaleDateString();
+  };
+
+  const fetchPosts = async (opts = {}) => {
+    const silent = Boolean(opts.silent);
+    if (!silent) {
+      setLoading(true);
+      setLoadError('');
+    }
     try {
       const res = await api.get('/forum');
       setPosts(res.data.data);
     } catch (err) {
       console.error(err);
-      setLoadError('Could not load community posts right now. Please refresh in a moment.');
+      if (!silent) {
+        setLoadError('Could not load community posts right now. Please refresh in a moment.');
+      }
     } finally {
-      setLoading(false);
+      if (!silent) setLoading(false);
     }
   };
 
@@ -112,17 +158,47 @@ const Forum = () => {
     setActiveActionPostId(postId);
     const isDemo = postId.startsWith('demo-');
     if (isDemo) {
-      setStarterPosts((prev) =>
-        prev.map((post) => (post._id === postId ? { ...post, likes: (post.likes || 0) + 1 } : post))
-      );
+      setStarterPosts((prev) => prev.map((post) => {
+        if (post._id !== postId) return post;
+        const currentlyLiked = Boolean(post.likedByMe);
+        const baseLikes = typeof post.likes === 'number' ? post.likes : Number(post.likes || 0);
+        const nextLikes = Math.max(0, baseLikes + (currentlyLiked ? -1 : 1));
+        return { ...post, likes: nextLikes, likedByMe: !currentlyLiked };
+      }));
       setActiveActionPostId(null);
       return;
     }
     try {
-      await api.post(`/forum/${postId}/like`);
-      await fetchPosts();
+      // Optimistic UI update
+      setPosts((prev) => prev.map((post) => {
+        if (post._id !== postId) return post;
+        const currentlyLiked = isLikedByMe(post);
+        const nextCount = Math.max(0, getLikeCount(post) + (currentlyLiked ? -1 : 1));
+        return { ...post, likedByMe: !currentlyLiked, likeCount: nextCount };
+      }));
+
+      const res = await api.post(`/forum/${postId}/like`);
+      const updated = res.data?.data;
+      const liked = res.data?.liked;
+      setPosts((prev) => prev.map((post) => {
+        if (post._id !== postId) return post;
+        // Prefer server-truth response if available.
+        if (updated?._id === postId) {
+          return { ...post, ...updated };
+        }
+        // If API didn't send full post, at least lock in like state from response.
+        if (typeof liked === 'boolean') {
+          const currentCount = getLikeCount(post);
+          const nextCount = liked
+            ? Math.max(currentCount, currentCount + (isLikedByMe(post) ? 0 : 1))
+            : Math.max(0, currentCount - (isLikedByMe(post) ? 1 : 0));
+          return { ...post, likedByMe: liked, likeCount: nextCount };
+        }
+        return post;
+      }));
     } catch (err) {
-      setLoadError(err.response?.data?.error || 'Could not update like. Please try again.');
+      setLoadError(err.response?.data?.error || 'Could not sync like right now. Please try again.');
+      fetchPosts({ silent: true });
     } finally {
       setActiveActionPostId(null);
     }
@@ -176,10 +252,17 @@ const Forum = () => {
     }
   };
 
-  const displayPosts = posts.length > 0 ? posts : starterPosts;
+  // Keep refined starter threads visible while still showing live backend posts.
+  // This avoids empty-looking community feeds on new databases.
+  const displayPosts = posts.length > 0 ? [...starterPosts, ...posts] : starterPosts;
   const selectedPostData = selectedPost
     ? displayPosts.find((post) => post._id === selectedPost) || null
     : null;
+
+  const categoryLabel = useMemo(() => {
+    const map = new Map(CATEGORIES.map((c) => [c.value, c.label]));
+    return (value) => map.get(value) || value;
+  }, []);
 
   const filteredPosts = displayPosts.filter(post => {
     const matchesCategory = activeCategory === 'all' || post.category === activeCategory;
@@ -296,16 +379,24 @@ const Forum = () => {
                 <div>
                   <h4 style={{ margin: 0, color: 'var(--secondary)', fontSize: '0.95rem' }}>{post.authorName}</h4>
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                    {new Date(post.createdAt).toLocaleDateString()} • {post.category}
+                    {formatTimeAgo(post.createdAt)} • {categoryLabel(post.category)}
                   </div>
                 </div>
               </div>
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
-                {post.reports || 0} reports
-              </span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span style={{ background: 'var(--bg-main)', border: '1px solid var(--border-light)', color: 'var(--text-muted)', fontSize: '0.72rem', padding: '0.2rem 0.6rem', borderRadius: '999px', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 700 }}>
+                  {categoryLabel(post.category)}
+                </span>
+                <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}>
+                  {post.reports || 0} reports
+                </span>
+              </div>
             </div>
 
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.75rem', lineHeight: 1.4, color: 'var(--text-primary)' }}>{post.title}</h3>
+            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.65rem', lineHeight: 1.4, color: 'var(--text-primary)' }}>{post.title}</h3>
+            <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+              {getLikeCount(post)} {getLikeCount(post) === 1 ? 'like' : 'likes'} · {getCommentCount(post)} {getCommentCount(post) === 1 ? 'comment' : 'comments'} · tap card for full thread
+            </p>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '1.5rem', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
               {post.content}
             </p>
@@ -345,10 +436,17 @@ const Forum = () => {
                   disabled={activeActionPostId === post._id}
                   style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', background: 'none', border: 'none', cursor: 'pointer' }}
                 >
-                  <Heart size={16} /> {Array.isArray(post.likes) ? post.likes.length : (post.likes || 0)}
+                  <Heart
+                    size={16}
+                    fill={isLikedByMe(post) ? 'currentColor' : 'none'}
+                    style={{ color: isLikedByMe(post) ? 'var(--primary)' : 'var(--text-muted)' }}
+                  />
+                  <span style={{ color: isLikedByMe(post) ? 'var(--primary)' : 'var(--text-muted)' }}>
+                    {getLikeCount(post)}
+                  </span>
                 </button>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem' }}>
-                  <MessageSquare size={16} /> {post.comments?.length || 0}
+                  <MessageSquare size={16} /> {getCommentCount(post)}
                 </span>
               </div>
               <button
@@ -403,9 +501,35 @@ const Forum = () => {
 
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '1rem' }}>{selectedPostData.content}</p>
 
-            <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              <span style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}><Heart size={14} /> {Array.isArray(selectedPostData.likes) ? selectedPostData.likes.length : selectedPostData.likes || 0}</span>
-              <span style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}><MessageSquare size={14} /> {(selectedPostData.comments || []).length}</span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.25rem', color: 'var(--text-muted)', fontSize: '0.9rem', alignItems: 'center' }}>
+              <button
+                type="button"
+                onClick={() => handleLike(selectedPostData._id)}
+                disabled={activeActionPostId === selectedPostData._id}
+                style={{
+                  display: 'inline-flex',
+                  gap: '0.4rem',
+                  alignItems: 'center',
+                  background: 'var(--bg-main)',
+                  border: '1px solid var(--border-light)',
+                  borderRadius: '999px',
+                  padding: '0.35rem 0.85rem',
+                  cursor: activeActionPostId === selectedPostData._id ? 'wait' : 'pointer',
+                  color: 'var(--text-secondary)',
+                  fontSize: '0.88rem'
+                }}
+              >
+                <Heart
+                  size={16}
+                  fill={isLikedByMe(selectedPostData) ? 'currentColor' : 'none'}
+                  style={{ color: isLikedByMe(selectedPostData) ? 'var(--primary)' : 'var(--text-muted)' }}
+                />
+                <span style={{ color: isLikedByMe(selectedPostData) ? 'var(--primary)' : 'inherit', fontWeight: 600 }}>
+                  {getLikeCount(selectedPostData)} {getLikeCount(selectedPostData) === 1 ? 'like' : 'likes'}
+                </span>
+              </button>
+              <span style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}><MessageSquare size={14} /> {getCommentCount(selectedPostData)} comments</span>
+              <span style={{ fontSize: '0.82rem' }}>{categoryLabel(selectedPostData.category)} · {formatTimeAgo(selectedPostData.createdAt)}</span>
             </div>
 
             <h4 style={{ marginBottom: '0.75rem', color: 'var(--secondary)' }}>Community comments</h4>

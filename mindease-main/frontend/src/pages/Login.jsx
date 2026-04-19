@@ -4,14 +4,14 @@ import { AuthContext } from '../context/AuthContext';
 import { Heart, CheckCircle2 } from 'lucide-react';
 
 const AuthLayout = ({ title, submitText, onSubmit, children, alternateLink, error, onAnonymous, isSubmitting, isAnonLoading }) => (
-  <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--primary)', padding: '2rem' }}>
+  <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--auth-page-bg)', padding: '2rem' }}>
     <div style={{ display: 'flex', width: '100%', maxWidth: '1000px', backgroundColor: 'var(--bg-card)', borderRadius: '24px', overflow: 'hidden', boxShadow: 'var(--shadow-lg)' }}>
 
-      {/* Left banner */}
-      <div style={{ width: '45%', backgroundColor: '#9b51e0', color: 'white', padding: '3rem', display: 'flex', flexDirection: 'column' }}>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none', opacity: 0.8, fontSize: '0.9rem', marginBottom: '3rem' }}>&lt; Back to Home</Link>
+      {/* Left banner — matches reference slate-blue panel */}
+      <div style={{ width: '45%', backgroundColor: 'var(--auth-page-bg)', color: 'white', padding: '3rem', display: 'flex', flexDirection: 'column' }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', opacity: 0.85, fontSize: '0.9rem', marginBottom: '3rem' }}>&lt; Back to Home</Link>
         <div style={{ backgroundColor: 'white', width: '48px', height: '48px', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '2rem' }}>
-          <Heart size={24} fill="#9b51e0" color="#9b51e0" />
+          <Heart size={24} fill="var(--auth-page-bg)" color="var(--auth-page-bg)" />
         </div>
         <h1 style={{ fontSize: '2.5rem', fontWeight: '700', lineHeight: 1.2, marginBottom: '1.5rem' }}>Welcome back to MindEase.</h1>
         <p style={{ fontSize: '1rem', opacity: 0.9, marginBottom: '3rem', lineHeight: 1.6 }}>Your confidential space for mental wellness.</p>
@@ -86,6 +86,7 @@ const AuthLayout = ({ title, submitText, onSubmit, children, alternateLink, erro
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [age, setAge] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isAnonLoading, setIsAnonLoading] = useState(false);
@@ -111,10 +112,17 @@ const Login = () => {
   };
 
   const handleAnon = async () => {
+    const parsedAge = Number(age);
+    if (!Number.isFinite(parsedAge)) {
+      return setError('Please enter your age to continue anonymously.');
+    }
+    if (parsedAge < 16) {
+      return setError('MindEase is available for users aged 16 and above.');
+    }
     setError('');
     setIsAnonLoading(true);
     try {
-      await loginAnonymous();
+      await loginAnonymous({ age: parsedAge });
       navigate('/dashboard');
     } catch (err) {
       setError(
@@ -152,6 +160,13 @@ const Login = () => {
         <div style={{ position: 'relative' }}>
           <span style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>🔒</span>
           <input type="password" placeholder="••••••••" className="input-field" style={{ paddingLeft: '2.5rem', margin: 0 }} value={password} onChange={e => setPassword(e.target.value)} />
+        </div>
+      </div>
+      <div>
+        <label style={{ fontSize: '0.75rem', fontWeight: '700', letterSpacing: '1px', color: 'var(--primary)', display: 'block', marginBottom: '0.5rem', textTransform: 'uppercase' }}>Age (anonymous sign-in only)</label>
+        <div style={{ position: 'relative' }}>
+          <span style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }}>🎂</span>
+          <input type="number" min="16" max="120" placeholder="16+ (anonymous only)" className="input-field" style={{ paddingLeft: '2.5rem', margin: 0 }} value={age} onChange={e => setAge(e.target.value)} />
         </div>
       </div>
     </AuthLayout>
